@@ -1,0 +1,21 @@
+/*slider*//* line 37, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_h1-hero.scss */
+.slider-area {
+  margin-top: -1px;
+  background-image: url(../img/hero/h1_slide.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.my_services,.my_services p{
+	font-weight:700;
+	color: #092c3f;
+    font-size: 16px;
+}
+.my_services ul li{
+	list-style: circle
+}
+
+.footer-logo a:hover{
+	color:#ffffff;
+}
