@@ -18,6 +18,9 @@
 <script src="{{asset('assets/js/jquery.nice-select.min.js')}}"></script>
 <script src="{{asset('assets/js/jquery.sticky.js')}}"></script>
 
+<script type='text/javascript' src="{{asset('assets/js/jquery.easing.min.js')}}"></script>
+
+
 <!-- counter , waypoint -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js')}}"></script>
 <script src="{{asset('assets/js/jquery.counterup.min.js')}}"></script>

@@ -1,4 +1,7 @@
 @extends('layouts.main_sunat')
+@section('nav')
+<li><a class="js-scroll-trigger" href="#quehacemos">¿Qué Hacemos?</a></li>
+@endsection
 @section('content')
 
 	

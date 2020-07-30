@@ -3,6 +3,10 @@
 	@section('title')
 	Problemas con la sunat
 	@endsection
+
+    @section('nav')
+    <li><a class="js-scroll-trigger" href="{{url('/')}}#quehacemos">¿Qué Hacemos?</a></li>
+    @endsection
  
 @section('content')
 

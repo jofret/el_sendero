@@ -18,11 +18,10 @@ Auth::routes();
 
 //*******Web
 
-//Route::get('ChicotekaProducciones', 'Web\PageController@ChicotekaProducciones')->name('ChicotekaProducciones');
 
 Route::get('publicaciones', 'Web\PageController@publicaciones')->name('publicaciones');
 
-//para post chicotecasenlima
+//para post publicaciones
 Route::get('publicaciones/{slug}', 		    'Web\PageController@post')->name('post');
 
 
@@ -37,7 +36,11 @@ Route::get('/sendemail','SendEmailController@index');
 
 Route::post('/sendemail/send','SendEmailController@send');
 
+
+
 //*******Administración
+
+Route::get('admin', 'Web\PageController@admin')->name('admin');
 
 
 Route::resource('tags',			'Admin\TagController');

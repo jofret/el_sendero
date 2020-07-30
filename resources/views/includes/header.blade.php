@@ -11,7 +11,7 @@
 </div>
 <header>
     <!-- Header Start -->
-    <div class="header-area">
+    <div class="header-area" id="inicio">
         <div class="main-header ">
             <div class="header-top d-none d-lg-block">
                 <div class="container">
@@ -37,8 +37,12 @@
                     <div class="row align-items-center">
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2">
-                            <div class="logo">
-                                <a href="index.html"><img src="{{asset('assets/img/logo/logo_my.png')}}" alt=""></a>
+                            <div class="logo d-none d-sm-block">
+                                <a href="{{url('/')}}"><img src="{{asset('assets/img/logo/logo_my.png')}}" alt=""></a>
+                            </div>
+
+                            <div class="logo d-block d-sm-none">
+                                <a href="{{url('/')}}"><img src="{{asset('assets/img/logo/logo_movil.png')}}" alt=""></a>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10">
@@ -46,11 +50,11 @@
                                 <!-- Main-menu -->
                                 <div class="main-menu d-none d-lg-block">
                                     <nav> 
-                                        <ul id="navigation">                                                                                          
-                                            <li><a href="index.html">Inicio</a></li>
-                                            <li><a href="about.html">¿Qué Hacemos?</a></li>
-                                            <li><a href="services.html">Contáctenos</a></li>
-                                            <li><a href="blog.html">Publicaciones</a>
+                                        <ul id="navigation">
+                                            <li><a class="js-scroll-trigger" href="#inicio">Inicio</a></li>  
+                                            @yield('nav') 
+                                            <li><a class="js-scroll-trigger" href="#contactenos">Contáctenos</a></li>
+                                            <li><a href="{{url('publicaciones')}}">Publicaciones</a>
                                                 <ul class="submenu">
                                                     @foreach($categories as $category)
                                                      <li>

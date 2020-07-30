@@ -12,6 +12,10 @@
       <meta property="og:image"         content="{{ $post->file }}" />
 @endsection
 
+   @section('nav')
+    <li><a class="js-scroll-trigger" href="{{url('/')}}#quehacemos">¿Qué Hacemos?</a></li>
+    @endsection
+
 @section('content')
     <main>
       @include('includes.top_post')

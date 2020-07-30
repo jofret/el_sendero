@@ -19,6 +19,8 @@
     
     @yield('content')
 
+    @include('includes.form')
+
     @include('includes.footer')
 
     <!-- JS here -->

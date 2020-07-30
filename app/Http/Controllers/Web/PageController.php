@@ -62,4 +62,9 @@ class PageController extends Controller
 
     	return view('web.post', compact('categories','tags','post','posts','recientesPosts'));
     }
+
+    public function admin(){
+        return view('admin.index');
+    }
+    
 }

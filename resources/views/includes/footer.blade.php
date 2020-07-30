@@ -28,9 +28,9 @@
                             <div class="footer-tittle">
                                 <h4>Navegación </h4>
                                 <ul>
-                                    <li><a href="#">Inicio</a></li>
-                                    <li><a href="#">¿Qué Hacemos?</a></li>
-                                    <li><a href="#">Contáctenos</a></li>
+                                    <li><a class="js-scroll-trigger" href="#inicio">Inicio</a></li>
+                                    <li><a class="js-scroll-trigger" href="{{url('/')}}#quehacemos">¿Qué Hacemos?</a></li>
+                                    <li><a class="js-scroll-trigger" href="#contactenos">Contáctenos</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -40,10 +40,13 @@
                             <div class="footer-tittle">
                                 <h4>Publicaciones</h4>
                                 <ul>
-                                    <li><a href="#">Tributario</a></li>
-                                    <li><a href="#">Contingencias</a></li>
-                                    <li><a href="#">Novedades</a></li>
-                                    <li><a href="#">Sunat 2020</a></li>
+                                    @foreach($categories as $category)
+                                     <li>
+                                        <a href="{{ route('category', $category->slug) }}" class="d-flex">
+                                            {{ $category->name }}
+                                        </a>
+                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>

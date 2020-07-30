@@ -1,6 +1,28 @@
 <div class="col-lg-4">
     <div class="blog_right_sidebar">
-        <aside class="single_sidebar_widget search_widget">
+        <div class="single-widget-area">
+            <!-- Post Author Widget -->
+            <div class="post-author-widget">
+                <!-- Thumbnail -->
+                <div class="post-author-avatar">
+                    <img src="{{asset('assets/img/hero/julio-criollo-consultores.jpg')}}" alt="julio criollo valdiviezo">
+                </div>
+                <!-- Author Content -->
+                <div class="post-author-content">
+                    <h5>Julio Criollo Valdiviezo</h5>
+                    <span>OUTSOURSING CONSULTING BUSINESS</span>
+                    <p><i class="lni lni-whatsapp"></i> +51 948 428 132</p>
+                </div>
+                <!-- Social Info -->
+                <div class="author-social-info">
+                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                    <a href="#"><i class="zmdi zmdi-twitter"></i></a>
+                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- <aside class="single_sidebar_widget search_widget">
             <form action="#">
                 <div class="form-group">
                     <div class="input-group mb-3">
@@ -16,7 +38,7 @@
                     type="submit">Search</button>
             </form>
         </aside>
-
+ -->
         <aside class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title">Category</h4>
             <ul class="list cat-list">
