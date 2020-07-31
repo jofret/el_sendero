@@ -35,7 +35,7 @@ class SendEmailController extends Controller
 
     	);
 
-    	Mail::to('consultores.criollo.valdivieso@gmail.com')->send(new SendMail($data));
+    	Mail::to('consultas@problemas-con-la-sunat.com')->send(new SendMail($data));
 
     	return back()->with('success', 'Gracias por contactarnos, en breve nos comunicaremos!');
 

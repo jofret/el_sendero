@@ -16,9 +16,6 @@
                 <!-- Social Info -->
                 <div class="author-social-info">
                     <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-                    <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
                 </div>
             </div>
         </div>
