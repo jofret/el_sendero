@@ -11,38 +11,40 @@
 |
 */
 
+//*****************Aquí Web Enlaces**********************//
 
-Route::get('/',	'Web\PageController@inicio')->name('inicio');
+
+Route::get('/', 'Web\PageController@inicio')->name('inicio');
+
 
 Auth::routes();
 
 //*******Web
 
 
-Route::get('publicaciones', 'Web\PageController@publicaciones')->name('publicaciones');
-
-//para post publicaciones
-Route::get('publicaciones/{slug}', 		    'Web\PageController@post')->name('post');
 
 
-Route::get('problemas-con-la-sunat/{slug}',		    'Web\PageController@category')->name('category');
 
+//para categorias
+Route::get('productos/{slug}',		        'Web\PageController@products')->name('products');
 
-Route::get('problemas-con-sunat/{slug}', 			'Web\PageController@tag')->name('tag');
+//para tags
+Route::get('componentes/{slug}', 			'Web\PageController@tag')->name('tag');
 
+//para post
+Route::get('producto/{slug}', 			'Web\PageController@product')->name('product');
 
-/////rutas para formulario
-Route::get('/sendemail','SendEmailController@index');
-
-Route::post('/sendemail/send','SendEmailController@send');
 
 
 
 //*******Administración
-
 Route::get('admin', 'Web\PageController@admin')->name('admin');
 
+Route::resource('tags',				'Admin\TagController');
+Route::resource('precategories',	'Admin\PrecategoryController');
+Route::resource('categories',		'Admin\CategoryController');
+Route::resource('posts',			'Admin\PostController');
+Route::resource('electrics',		'Admin\EletricoController');
 
-Route::resource('tags',			'Admin\TagController');
-Route::resource('categories',	'Admin\CategoryController');
-Route::resource('posts',		'Admin\PostController');
+
+

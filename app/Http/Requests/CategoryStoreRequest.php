@@ -27,5 +27,8 @@ class CategoryStoreRequest extends FormRequest
             'name' => 'required',
             'slug' => 'required|unique:categories,slug',
         ];
+        
+        if($this->get('file'))
+            $rules = array_merge($rules, ['file' => 'mimes:jpg,jpeg,png' ]);
     }
 }

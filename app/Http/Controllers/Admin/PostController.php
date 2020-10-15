@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 
 use App\Post;
 use App\Category;
+use App\Precategory;
 use App\Tag;
 
 
@@ -38,6 +39,7 @@ class PostController extends Controller
         return view('admin.posts.index', compact('posts'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -45,11 +47,14 @@ class PostController extends Controller
      */
     public function create()
     {
+        $precategories = Precategory::orderBy('name', 'ASC')->pluck('name', 'id');
         $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
         $tags = Tag::orderBy('name', ' ASC')->get();
 
-        return view('admin.posts.create', compact('categories', 'tags'));
+        return view('admin.posts.create', compact('categories', 'tags','precategories'));
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -65,6 +70,12 @@ class PostController extends Controller
         if($request->file('file')){
             $path = Storage::disk('public')->put('image', $request->file('file'));
             $post->fill(['file' => asset($path)])->save();
+        }
+
+        //IMAGE2
+        if($request->file('file2')){
+            $path = Storage::disk('public')->put('image', $request->file('file2'));
+            $post->fill(['file2' => asset($path)])->save();
         }
 
         //TAGS
@@ -95,12 +106,13 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        $precategories = Precategory::orderBy('name', 'ASC')->pluck('name', 'id');
         $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
         $tags = Tag::orderBy('name', ' ASC')->get();
         $post = Post::find($id);
         $this->authorize('pass', $post);
 
-        return view('admin.posts.edit', compact('post', 'categories', 'tags'));
+        return view('admin.posts.edit', compact('post', 'categories', 'tags','precategories'));
     }
 
     /**
@@ -120,6 +132,12 @@ class PostController extends Controller
         if($request->file('file')){
             $path = Storage::disk('public')->put('image', $request->file('file'));
             $post->fill(['file' => asset($path)])->save();
+        }
+
+        //IMAGE2
+        if($request->file('file2')){
+            $path = Storage::disk('public')->put('image', $request->file('file2'));
+            $post->fill(['file2' => asset($path)])->save();
         }
 
         //TAGS

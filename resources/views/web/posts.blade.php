@@ -1,71 +1,80 @@
-@extends('layouts.post')
-
-	@section('title')
-	Problemas con la sunat
-	@endsection
-
-    @section('nav')
-    <li><a class="js-scroll-trigger" href="{{url('/')}}#quehacemos">¿Qué Hacemos?</a></li>
-    @endsection
- 
+@extends('layouts.acuarius')
 @section('content')
+<div class="custom-border-bottom py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mb-0"><a href="{{url('/')}}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Shop</strong></div>
+    </div>
+  </div>
+</div>
+<div class="site-section">
+      <div class="container">
 
-				
+        <div class="row mb-5">
+          <div class="col-md-9 order-1">
 
-    <main>
-        <!--top-post-->
-        @include('includes.top_post')
-        <!--end top post-->
-
-
-        <!--================Blog Area =================-->
-        <section class="blog_area section-padding">
-            <div class="container">
-                <div class="row">
-                    <!-- Single Blog Area -->
-                
-                    <div class="col-lg-8 mb-5 mb-lg-0">
-                        <div class="blog_left_sidebar">
-                            @foreach($posts as $post)
-                            <article class="blog_item">
-                                <div class="blog_item_img">
-                                    <img class="card-img rounded-0" src="{{ $post->file }}" alt="{{ $post->name }}">
-                                    <a href="{{ route('post', $post->slug) }}" class="blog_item_date">
-                                        <h3>15</h3>
-                                        <p>Jan</p>
-                                    </a>
-                                </div>
-
-                                <div class="blog_details">
-                                    <a class="d-inline-block" href="{{ route('post', $post->slug) }}">
-                                        <h2>{{ $post->name }}</h2>
-                                    </a>
-                                    <p>{{ $post->excerpt }}</p>
-                                    <ul class="blog-info-link">
-                                        <li><a href="#"><i class="fa fa-user"></i> {{ $post->user->name }}</a></li>
-                                        <li>
-                                            <i class="lni lni-tag"></i>
-                                                @foreach($post->tags as $tag)
-                                                    <a href="{{ route('tag', $tag->slug) }}">{{$tag->name}}</a>
-                                                @endforeach
-                                            
-                                        </li>
-                                    </ul>
-                                </div>
-                            </article>
-                            @endforeach
-                            <div>{{ $posts->render() }}</div>
-                        </div>
+            <!-- <div class="row align">
+              <div class="col-md-12 mb-5">
+                <div class="float-md-left"><h2 class="text-black h5">Shop All</h2></div>
+                <div class="d-flex">
+                  <div class="dropdown mr-1 ml-md-auto">
+                    <button type="button" class="btn btn-white btn-sm dropdown-toggle px-4" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Latest
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                      <a class="dropdown-item" href="#">Men</a>
+                      <a class="dropdown-item" href="#">Women</a>
+                      <a class="dropdown-item" href="#">Children</a>
                     </div>
-                    <!--aqui left-->
-                    @include('includes.left_posts')
-                    <!--end aqui left-->
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-white btn-sm dropdown-toggle px-4" id="dropdownMenuReference" data-toggle="dropdown">Reference</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                      <a class="dropdown-item" href="#">Relevance</a>
+                      <a class="dropdown-item" href="#">Name, A to Z</a>
+                      <a class="dropdown-item" href="#">Name, Z to A</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Price, low to high</a>
+                      <a class="dropdown-item" href="#">Price, high to low</a>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            </div> -->
+            <div class="d-block d-sm-none">
+              @include('includes.categories')
             </div>
-        </section>
-        <!--================Blog Area =================-->
-    </main>
+            <div class="row mb-5">
+              @foreach($posts as $post)
+              <div class="col-lg-6 col-md-6 item-entry mb-4">
+                <a href="{{ route('post', $post->slug) }}" class="post-item md-height bg-gray d-block">
+                  <img src="{{$post -> file}}" alt="{{$post -> name}}" class="img-fluid">
+                </a>
+                 <div class="mt-3">
+                  <div class="row">
+                    <div class="col-6">
+                      <h2 class="item-title"><a href="{{ route('post', $post->slug) }}">{{$post -> name}}</a></h2>
+                      <p><strong class="item-price">S/{{$post -> pricing}}</strong></p>
+                    </div>
+                    <div class="col-6">
+                      <a href="{{ route('post', $post->slug) }}"><button type="button" class="btn btn-success btn-sm">Más Info <i class="lni lni-arrow-right"></i></button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              @endforeach
+            </div>
+          </div>
 
+<!--desde aqui categorias------>
+		  <!--**** Menu-lateral ****-->
+          @include('includes.menulateralright')
 
+        </div>
 
+      </div>
+    </div>
+<div>
+	
+</div>
 @endsection

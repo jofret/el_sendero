@@ -1,0 +1,13 @@
+/*fuentes*/
+
+@font-face{
+	font-family: 'Kalam-Bold';
+	src: url(../fonts/kalam/Kalam-Bold.ttf);
+	/*Kalam-Regular.ttf*/
+	}
+	
+@font-face{
+	font-family: 'gibson';
+	src: url(../fonts/gibson-cufonfonts/GibsonBold.OTF);
+	
+	}

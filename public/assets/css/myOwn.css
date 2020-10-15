@@ -1,0 +1,135 @@
+/*myOwns*/
+
+/*nav*/
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    color: #999999;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+
+.heading-section .subheading{
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    color: #999999;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.titules{
+    font-family: 'gibson';
+    font-size: 35px;
+    /*color: #fff;*/
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+.mouse-icon {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #d4ca68;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+
+.ftco-navbar-light {
+    background: transparent;
+    background: rgba(255,255,255,1) !important;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.hero-wrap .overlay, .hero-wrap .overlay-2 {
+    opacity: 0;
+}
+
+.slider-text h1 {
+    font-family: 'gibson';
+    font-size: 70px;
+    color: #fff;
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+/*boton*/
+.btn.btn-primary {
+    background: #007bff !important;
+    border-color: #007bff;
+    color: #fff !important;
+}
+/*
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+*/
+
+/**olas**/
+
+
+
+.mouse {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    z-index: 5;
+}
+
+.olas{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+
+
+/*******PRODUCT**********/
+
+.ftco-section {
+    padding: 6em 0;
+    position: relative;
+}
+
+.ftco-section h2{
+    font-size:20px;
+    font-weight: 600
+}
+
+h2.item-title{
+    font-size:14px;
+    font-weight: bold;
+    height:40px;
+}
+
+
+
+/*footer*/
+.ftco-footer {
+    font-size: 16px;
+    padding: 7em 0;
+    background: #1A73E8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+

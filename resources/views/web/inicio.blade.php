@@ -1,47 +1,36 @@
-@extends('layouts.main_sunat')
-@section('nav')
-<li><a class="js-scroll-trigger" href="#quehacemos">¿Qué Hacemos?</a></li>
-@endsection
+@extends('layouts.acuarius')
+
 @section('content')
-
-	
-    <!-- Our Blog Area End -->
-    <div class="home-blog-area section-padding30">
-        <div class="container">
-            <!-- Section Tittle -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-tittle mb-100">
-                        <span>Artículos más recientes</span>
-                        <h2>Publicaciones</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Single Blog Area -->
-                @foreach($posts as $post)
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="home-blog-single mb-30">
-                        <div class="blog-img-cap">
-                            <div class="blog-img">
-                                <a href="{{route('post', $post->slug)}}#{{ $post->category->slug}}"><img src="{{ $post->file }}" alt="{{ $post->name }}"></a>
-                                <ul>
-                                    <li>Por {{ $post->user->name }}   -   {{ \Carbon\Carbon::parse($post->created_at)->format('M d Y')}}</li>
-                                </ul>
-                            </div>
-                            <div class="blog-cap">
-                                <h3><a href="{{route('post', $post->slug)}}">{{ $post->name }}</a></h3>
-                                <p>{{ $post->excerpt }}</p>
-                                <a href="{{route('post', $post->slug)}}" class="more-btn">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-                <!--End Single Blog Area -->
-            </div>
+<section class="ftco-section testimony-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <span class="subheading">Catálogo</span>
+            <h2 class="mb-3 titules">Nuestros Productos</h2>
+          </div>
         </div>
-    </div>
-
-
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              @foreach($categories as $category)
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div>
+                    <a href="{{route('products' , $category->slug)}}"><img src="{{$category->file}}" class="{{$category->name}}"></a>
+                  </div>
+                  <div class="text">
+                    <div class="d-flex align-items-center">
+                      <div class="pl-3">
+                        <p class="name">{{$category->name}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              @endforeach
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 @endsection

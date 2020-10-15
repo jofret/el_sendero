@@ -11,17 +11,17 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" ></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <style>
             html, body {
@@ -96,7 +96,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/catalogo') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -106,9 +106,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url('publicaciones')}}">Publicaciones</a>
-                        </li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -123,15 +121,27 @@
                             </li>
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('posts.index') }}">Publicaciones</a>
-                            </li>
-                            
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('categories.index') }}">Categorias</a>
+                               <a class="nav-link" href="{{ route('posts.index') }}">
+                                    Productos
+                                </a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('tags.index') }}">Etiquetas</a>
+                               <a class="nav-link" href="{{ route('precategories.index') }}" >
+                                    Pre Categoría
+                               </a>
+                            </li>
+
+                            <li class="nav-item">
+                               <a class="nav-link" href="{{ route('categories.index') }}" >
+                                    Categoria
+                               </a>
+                            </li>
+
+                            <li class="nav-item">
+                               <a class="nav-link" href="{{ route('tags.index') }}">
+                                   Componentes
+                                </a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -156,6 +166,7 @@
                 </div>
             </div>
         </nav>
+
         <main class="py-4">
             @if(session('info'))
             <div class="container">
@@ -184,12 +195,12 @@
                 </div>
             </div>
             @endif
+         </main>
 
         <main class="py-4">
             @yield('content')
         </main>
     </div>
-    @yield('scripts')
-
+@yield('scripts')  
 </body>
 </html>

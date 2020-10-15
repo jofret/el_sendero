@@ -29,5 +29,8 @@ class CategoryUpdateRequest extends FormRequest
         'slug' => 'required|unique:categories,slug,'.$this->category,
     ];
 
+     if($this->get('file'))
+            $rules = array_merge($rules, ['file' => 'mimes:jpg,jpeg,png' ]);
+
     }
 }

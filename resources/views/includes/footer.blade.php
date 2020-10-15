@@ -1,80 +1,57 @@
-<footer>
-    <!--? Footer Start-->
-    <div class="footer-area section-bg" data-background="{{asset('assets/img/gallery/footer_bg.jpg')}}">
-        <div class="container">
-            <div class="footer-top footer-padding">
-                <div class="row d-flex justify-content-between">
-                    <div class="col-xl-3 col-lg-4 col-md-5 col-sm-8">
-                        <div class="single-footer-caption mb-50">
-                            <!-- logo -->
-                            <div class="footer-logo" style="text-transform: uppercase">
-                                <div class="footer-tittle">
-                                    <h4>Outsoursing Consulting Business </h4>
-                                </div>
-                            </div>
-                            <div class="footer-tittle">
-                                <div class="footer-pera">
-                                    <p class="info1">Somos una firma consultora especializada, con amplia experiencia en asesoría tributaria interna y externa de empresas vinculadas al sector; Industrial, Agroindustrial, Pesca, Minería, Aeronáutica Civil, Comercial y de Servicios.</p>
-                                </div>
-                            </div>
-                            <div class="footer-number">
-                                <h4><span>+51 </span>948 428 132</h4>
-                                <p>consultas@problemas-con-sunat.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-5">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Navegación </h4>
-                                <ul>
-                                    <li><a class="js-scroll-trigger" href="#inicio">Inicio</a></li>
-                                    <li><a class="js-scroll-trigger" href="{{url('/')}}#quehacemos">¿Qué Hacemos?</a></li>
-                                    <li><a class="js-scroll-trigger" href="#contactenos">Contáctenos</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-5">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Publicaciones</h4>
-                                <ul>
-                                    @foreach($categories as $category)
-                                     <li>
-                                        <a href="{{ route('category', $category->slug) }}" class="d-flex">
-                                            {{ $category->name }}
-                                        </a>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <img src="{{asset('assets/images/logoBlanco.png')}}" class=" mb-5">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-5">
+              
+              <p>Eche un vistazo a una de nuestras increíbles exhibiciones. Nautilus acuarios abre al publico todos los días.
+Tenemos un promedio de 300,000 visitantes anuales</p>
+              <ul class="ftco-footer-social list-unstyled mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+              </ul>
             </div>
-            <div class="footer-bottom">
-                <div class="row d-flex justify-content-between align-items-center">
-                    <div class="col-xl-9 col-lg-8">
-                        <div class="footer-copy-right">
-                            <p>
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Derechos Reservados | Desarrollado por <a href="https://jofret.com" target="_blank">Jofret</a>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4">
-                        <!-- Footer Social -->
-                        <div class="footer-social f-right">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-6">
+              <h2 class="ftco-heading-2">Visítanos</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Entradas y Reserva</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Excursión Educativa Virtual</a></li>
+              </ul>
             </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Exhibiciones</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Instalaciones</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Catátogo</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Contáctenos</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <!-- Footer End-->
-</footer>
-<!-- Scroll Up -->
-<div id="back-top" >
-    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-</div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+  
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Desarrollado por <a href="https://jofret.com" target="_blank">JOfret</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>

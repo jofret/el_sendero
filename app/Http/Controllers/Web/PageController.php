@@ -7,64 +7,99 @@ use App\Http\Controllers\Controller;
 
 use App\Post;
 use App\Category;
+use App\Precategory;
 use App\Tag;
 
 class PageController extends Controller
 {
+
     public function inicio(){
-        $posts = Post::orderBy('id','DESC')->where('status','PUBLISHED')->paginate(2);
-        $categories = Category::orderBy('id', 'DESC')->paginate();
-        return view('web.inicio', compact('posts','categories'));
+
+        $categories = Category::orderBy('id', 'DESC')->get();
+
+
+        return view('web.inicio', compact('categories'));
+    }
+    
+    public function products($slug){
+
+        $category = Category::where('slug', $slug)->pluck('id')->first();
+
+        $products = Post::where('category_id', $category)
+            ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->get();
+
+
+        $categories = Category::all();
+
+        $plans = Tag::all(); 
+
+        return view('web.products', compact('category','categories','products','plans'));
     }
 
-    public function publicaciones(){
-    	$posts = Post::orderBy('id','DESC')->where('status','PUBLISHED')->paginate(3);
-        $recientesPosts=Post::orderBy('id','DESC')->where('status','PUBLISHED')->paginate(6);
-        $categories = Category::orderBy('id', 'DESC')->paginate();
-        $tags = Tag::orderBy('id', 'DESC')->paginate();
-    	return view('web.posts', compact('posts','categories','tags','recientesPosts'));
 
+    public function post($slug){
+    	$product = Post::where('slug', $slug)->first();
+
+        $category = Post::where('slug', $slug)->pluck('category_id')->first();
+
+        $excepto = Post::where('slug',$slug)->pluck('id')->first();
+
+        $productsRelations = Post::orderBy('category_id', 'DESC')->where('category_id', $category)
+                ->orderBy('id','DESC')->where('status','PUBLISHED')->where('id', '<>', $excepto)->get();
+
+    	return view('web.product', compact('product','category','productsRelations','excepto'));
+    }
+
+    public function product($slug){
+        $product = Post::where('slug', $slug)->first();
+
+        $category = Post::where('slug', $slug)->pluck('category_id')->first();
+
+        $categories = Category::all();
+
+        $plans = Tag::all(); 
+
+        $excepto = Post::where('slug',$slug)->pluck('id')->first();
+
+        $productsRelations = Post::orderBy('category_id', 'DESC')->where('category_id', $category)
+                ->orderBy('id','DESC')->where('status','PUBLISHED')->where('id', '<>', $excepto)->get();
+
+        return view('web.product', compact('product','category','categories','plans','productsRelations','excepto'));
     }
 
     public function category($slug){
-        
         $category = Category::where('slug', $slug)->pluck('id')->first();
-        $posts    = Post::where('category_id', $category)
-                ->orderBy('id','DESC')->where('status','PUBLISHED')->paginate(3);
-        $recientesPosts=Post::orderBy('id','DESC')->where('status','PUBLISHED')->paginate(6);
 
-        $categories = Category::orderBy('id', 'DESC')->paginate();
-        $tags = Tag::orderBy('id', 'DESC')->paginate();
-        return view('web.posts', compact('category','categories','tags','posts','recientesPosts'));
+        $categories = Category::all();
 
+        $plans = Tag::all(); 
+
+        $posts = Post::where('category_id', $category)
+            ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->get();
+
+        return view('web.posts', compact('posts','category','categories','plans'));
     }
 
-    public function tag($slug){
-        $recientesPosts=Post::orderBy('id','DESC')->where('status','PUBLISHED')->paginate(6);
-        $posts  = Post::whereHas('tags', function($query) use ($slug){
-            $query->where('slug', $slug);
+    public function tag($slug){ 
         
+        $posts = Post::whereHas('tags', function($query) use ($slug) {
+            $query->where('slug', $slug);
+        })
+        ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
 
-        })->orderBy('id','DESC')->where('status','PUBLISHED')->paginate(3);
-        $categories = Category::orderBy('id', 'DESC')->paginate();
-        $tags = Tag::orderBy('id', 'DESC')->paginate();
+        $category = Category::where('slug', $slug)->pluck('id')->first();
 
-        return view('web.posts', compact('posts','categories','tags','recientesPosts'));
+        $categories = Category::all();
 
+        $plans = Tag::all();
+
+        return view('web.posts', compact('posts','category','categories','plans'));
     }
 
-    public function post($slug){
-        $categories = Category::orderBy('id', 'DESC')->paginate();
-        $tags = Tag::orderBy('id', 'DESC')->paginate();
-    	$post = Post::where('slug', $slug )->first();
-        $posts = Post::orderBy('id','DESC')->where('status','PUBLISHED')->paginate(3);
-        $recientesPosts=Post::orderBy('id','DESC')->where('status','PUBLISHED')->paginate(6);
 
-    	return view('web.post', compact('categories','tags','post','posts','recientesPosts'));
-    }
-
-    public function admin(){
+   
+     public function admin(){
         return view('admin.index');
     }
-    
+  
 }
