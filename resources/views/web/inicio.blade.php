@@ -16,7 +16,7 @@
               <div class="item">
                 <div class="testimony-wrap py-4">
                   <div>
-                    <a href="{{route('products' , $category->slug)}}"><img src="{{$category->file}}" class="{{$category->name}}"></a>
+                    <a href="{{route('products' , $category->slug)}}#acuario-nautilos"><img src="{{$category->file}}" class="{{$category->name}}"></a>
                   </div>
                   <div class="text">
                     <div class="d-flex align-items-center">

@@ -8,9 +8,22 @@
               <section class="ftco-section">
                 <div class="container">
                   <div class="row d-flex">
-                    <img src="{{$product->file}}" alt="" class="img-fluid">
-                    <h2 class="mb-3 pt-4">{{$product->name}}</h2>
-
+                    <div class="col-md-5">
+                      <img src="{{$product->file}}" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-7">
+                      <h2 class="mb-3 pt-4">{{$product->name}}</h2>
+                      <p>S/ {{$product->pricing}}</p>
+                      <div>
+                        <p>Etiquetas:</p>
+                        <div class="tagcloud">
+                          @foreach($product->tags as $tag)
+                          <a href="{{ route('tag', $tag->slug)}}#acuario-nautilos" class="tag-cloud-link">{{$tag->name}}</a>
+                          @endforeach
+                          
+                        </div>
+                      </div>
+                    </div>
                     {!! $product->body !!}
 
                   </div>
@@ -29,8 +42,8 @@
                       @foreach($productsRelations as $productRelation)
                       <div class="item">
                         <div class="item-entry">
-                           <a href="{{route('product',$productRelation->slug)}}" class="product-item md-height bg-gray d-block">
-                              <img src="{{$productRelation->file}}" alt="{{$productRelation->name}}" class="img-fluid">
+                           <a href="{{route('product',$productRelation->slug)}}#acuario-nautilos" class="product-item md-height bg-gray d-block">
+                              <img src="{{$productRelation->file}}" alt="{{$productRelation->name}}" class="img-fluid" style="padding:15%">
                            </a>
                             <div class="star-rating">
                               <span class="icon-star2 text-warning"></span>
@@ -40,7 +53,7 @@
                               <span class="icon-star2 text-warning"></span>
                             </div>
                         </div>
-                          <h2 class="item-title"><a href="{{route('product',$productRelation->slug)}}">{{$productRelation->name}}</a></h2>
+                          <h2 class="item-title"><a href="{{route('product',$productRelation->slug)}}#acuario-nautilos">{{$productRelation->name}}</a></h2>
                           <strong class="item-price">S/ {{$productRelation->pricing}}</strong>
                       </div>
                       @endforeach

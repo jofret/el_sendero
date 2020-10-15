@@ -29,7 +29,7 @@ Auth::routes();
 Route::get('productos/{slug}',		        'Web\PageController@products')->name('products');
 
 //para tags
-Route::get('componentes/{slug}', 			'Web\PageController@tag')->name('tag');
+Route::get('nuestros-productos/{slug}', 			'Web\PageController@tag')->name('tag');
 
 //para post
 Route::get('producto/{slug}', 			'Web\PageController@product')->name('product');

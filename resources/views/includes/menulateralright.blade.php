@@ -13,7 +13,7 @@
               <h3>Filtro por Etiqueta</h3>
               <div class="tagcloud">
                 @foreach($plans as $plan)
-                <a href="{{route('tag', $plan->slug)}}" class="tag-cloud-link">{{$plan->name}}</a>
+                <a href="{{route('tag', $plan->slug)}}#acuario-nautilos" class="tag-cloud-link">{{$plan->name}}</a>
                 @endforeach
                 
               </div>
