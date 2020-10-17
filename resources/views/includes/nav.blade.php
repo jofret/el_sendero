@@ -29,7 +29,7 @@
                 <a class="nav-link" href="#">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#">Nosotros</a>
+                <a class="nav-link " href="{{url('Nosotros')}}#Nautilus">Nosotros</a>
               </li>
             </ul>
             <div class="my-2 my-lg-0">

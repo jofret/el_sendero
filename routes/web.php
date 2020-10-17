@@ -25,6 +25,11 @@ Route::get('/sendemail','SendEmailController@index');
 
 Route::post('/sendemail/send','SendEmailController@send');
 
+/*simple Routes*/
+Route::get('/Nosotros', function(){
+	return view('simpleRoutes.nosotros');
+});
+
 
 Auth::routes();
 
