@@ -30,6 +30,6 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from('info@problemas-con-la-sunat.com')->subject('New Requeriemiento de Cliente')->view('sendemail.dynamic_email_template')->with('data', $this->data);
+        return $this->from('envios@acuarionautilos.com.pe')->subject('Nuevo Requerimiento de Formulario Web Nautilus')->view('sendemail.dynamic_email_template')->with('data', $this->data);
     }
 }

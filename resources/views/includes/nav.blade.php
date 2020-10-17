@@ -12,7 +12,7 @@
                   Visítanos
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Entradas y Reserva</a>
+                  <a class="dropdown-item" href="{{url('/entradas-y-reserva')}}#pide-una-reserva">Entradas y Reserva</a>
                   <a class="dropdown-item" href="#">Excursión Educativa Virtual</a>
                 </div>
               </li>

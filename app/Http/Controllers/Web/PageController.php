@@ -20,6 +20,11 @@ class PageController extends Controller
 
         return view('web.inicio', compact('categories'));
     }
+
+    public function formularioentradas(){
+
+        return view('web.fomularioEntradas');
+    }
     
     public function products($slug){
 

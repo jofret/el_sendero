@@ -20,3 +20,5 @@
     <link rel="stylesheet" href="{{asset('assets/css/fuentes.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/myOwn.css')}}">
+
+    {!! NoCaptcha::renderJs() !!}

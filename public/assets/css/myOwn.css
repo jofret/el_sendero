@@ -157,3 +157,16 @@ h2.item-title{
 
 
 
+/************************************
+***********************************/
+
+.contact-section .contact-info .icon {
+    width: 60px;
+    height: 60px;
+    background: #007bff;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+
+

@@ -60,7 +60,7 @@
                         <!-- <h2>DESCUBRE EL ACUARIO</h2> -->
                         <p>Acuario Nautilus, el acuario más grande y moderno del Perú. Situado en un ambiente abierto, ofrecemos la oportunidad de vivir una experiencia única en sintonía con la naturaleza acuática con el objeto de que cada visitante adquiera conocimientos y desarrolle conductas que vayan de la mano con el cuidado del medio ambiente y preservación de nuestra biodiversidad acuática.<br><br>
                             Eche un vistazo a una de nuestras increíbles exhibiciones. Nautilus acuarios abre al publico todos los días.<br>Tenemos un promedio de 300,000 visitantes anuales</p>
-                        <button class="btn btn-primary">Entradas y Reserva</button> <button class="btn btn-warning">Excursión Educativa Virtual</button>
+                        <a href="{{url('/entradas-y-reserva')}}#pide-una-reserva" class="btn btn-primary">Entradas y Reserva</a> <a href="#" class="btn btn-warning">Excursión Educativa Virtual</a>
                     </div>
                 </div>
                 

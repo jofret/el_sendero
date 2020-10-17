@@ -13,30 +13,34 @@ class SendEmailController extends Controller
     //
     function index()
     {
-    	//uso la vista chicoteca porque la plantilla chicoteca contiene el formulario de envío
-    	return view('layouts.chicoteca');
+    	//uso la vista acuario porque la plantilla acuario contiene el formulario de envío
+    	return view('layouts.acuarius');
     }
 
     function send(Request $request)
     {
     	$this->validate($request, [
-    		'name' 			=>		'required',
-    		'lastname' 		=>		'required',
-    		'email' 		=>		'required|email',
-    		'telephone' 	=>		'required',
+            'particularInstitucion'     =>      'required',
+    		'name' 			            =>		'required',
+    		'email' 		            =>		'required|email',
+    		'telephone' 	            =>		'required',
+            'message'                   =>      'required',
+
     		'g-recaptcha-response' => 'required|captcha'
     	]);
 
     	$data=array(
-    		'name'			=> $request->name,
-    		'lastname'		=> $request->lastname,
-    		'email'			=> $request->email,
-    		'telephone'		=> $request->telephone,
-    		'message'		=> $request->message
+    		'particularInstitucion'        => $request->particularInstitucion,
+            'name'			               => $request->name,
+    		'email'			               => $request->email,
+    		'telephone'		               => $request->telephone,
+            'adultos'                      => $request->adultos,
+            'ninos'                        => $request->ninos,
+    		'message'		               => $request->message
 
     	);
 
-    	Mail::to('cotizaciones@chicoteca.pe')->send(new SendMail($data));
+    	Mail::to('EvelynMonteza@hotmail.com')->send(new SendMail($data));
 
     	return back()->with('success', 'Gracias por contactarnos, en breve nos comunicaremos!');
 

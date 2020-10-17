@@ -17,6 +17,15 @@
 Route::get('/', 'Web\PageController@inicio')->name('inicio');
 
 
+/*formulario*/
+Route::get('/entradas-y-reserva', 'Web\PageController@formularioentradas');
+
+/////rutas para formulario
+Route::get('/sendemail','SendEmailController@index');
+
+Route::post('/sendemail/send','SendEmailController@send');
+
+
 Auth::routes();
 
 //*******Web
@@ -33,6 +42,8 @@ Route::get('nuestros-productos/{slug}', 			'Web\PageController@tag')->name('tag'
 
 //para post
 Route::get('producto/{slug}', 			'Web\PageController@product')->name('product');
+
+//
 
 
 

@@ -16,7 +16,7 @@ Tenemos un promedio de 300,000 visitantes anuales</p>
             <div class="ftco-footer-widget mb-4 ml-md-6">
               <h2 class="ftco-heading-2">Visítanos</h2>
               <ul class="list-unstyled">
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Entradas y Reserva</a></li>
+                <li><a href="{{url('entradas-y-reserva')}}#main_contact_form"><span class="icon-long-arrow-right mr-2"></span>Entradas y Reserva</a></li>
                 <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Excursión Educativa Virtual</a></li>
               </ul>
             </div>
