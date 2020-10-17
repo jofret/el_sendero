@@ -37,8 +37,11 @@ Tenemos un promedio de 300,000 visitantes anuales</p>
               <h2 class="ftco-heading-2">Contáctenos</h2>
               <div class="block-23 mb-3">
                 <ul>
-                  <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Ex fundo Chacra Cerro lt 178, Comas
+Altura cuadra 99 de la Av Universitari - Lima - Perú</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">01 543 6228
+
+ <br>01 543 6149</span></a></li>
                   <li><a href="#"><span class="icon icon-envelope pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
                 </ul>
               </div>

@@ -46,13 +46,16 @@
             </div>
 
             <div class="row">
-                <div class="col-md-6">
-                    <div>
-                        <img src="{{asset('assets/images/visitanos1.jpg')}}">
-                   </div>
+                <div class="col-lg-6">
+                    <div style="position:relative;">
+                        <video width="100%"  autoplay muted loop style="padding: 0 5%">
+                           <source  src="{{asset('assets/video/video_para_web.mp4')}}" type="video/mp4">
+                        </video>
+                        <img style="position:absolute; left:0" src="{{asset('assets/images/whale-1-1024x488.png')}}" class="img-fluid">
+                    </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <div>
                         <!-- <h2>DESCUBRE EL ACUARIO</h2> -->
                         <p>Acuario Nautilus, el acuario más grande y moderno del Perú. Situado en un ambiente abierto, ofrecemos la oportunidad de vivir una experiencia única en sintonía con la naturaleza acuática con el objeto de que cada visitante adquiera conocimientos y desarrolle conductas que vayan de la mano con el cuidado del medio ambiente y preservación de nuestra biodiversidad acuática.<br><br>
