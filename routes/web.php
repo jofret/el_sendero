@@ -26,9 +26,7 @@ Route::get('/sendemail','SendEmailController@index');
 Route::post('/sendemail/send','SendEmailController@send');
 
 /*simple Routes*/
-Route::get('/Nosotros', function(){
-	return view('simpleRoutes.nosotros');
-});
+Route::get('/nosotros', 'Web\PageController@nosotros');
 
 
 Auth::routes();
@@ -50,6 +48,11 @@ Route::get('producto/{slug}', 			'Web\PageController@product')->name('product');
 
 //
 
+//para post
+Route::get('galeria-de-imagenes', 			'Web\PageController@galery')->name('galery');
+
+//
+
 
 
 
@@ -61,6 +64,8 @@ Route::resource('precategories',	'Admin\PrecategoryController');
 Route::resource('categories',		'Admin\CategoryController');
 Route::resource('posts',			'Admin\PostController');
 Route::resource('electrics',		'Admin\EletricoController');
+
+Route::resource('images',		'Admin\ImageController');
 
 
 

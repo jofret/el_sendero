@@ -1,6 +1,6 @@
 @extends('layouts.acuarius')
 @section('content')
-<div id="Nautilus"></div>
+<div id="nautilus"></div>
 <section class="ftco-section goto-here" style="background:rgb(255,255,250)">
       <div class="container pb-5" >
         <div class="row justify-content-center">

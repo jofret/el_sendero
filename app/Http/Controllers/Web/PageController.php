@@ -9,6 +9,7 @@ use App\Post;
 use App\Category;
 use App\Precategory;
 use App\Tag;
+use App\Image;
 
 class PageController extends Controller
 {
@@ -16,14 +17,14 @@ class PageController extends Controller
     public function inicio(){
 
         $categories = Category::orderBy('id', 'DESC')->get();
-
-
-        return view('web.inicio', compact('categories'));
+        $images = Image::orderBy('id', 'DESC')->paginate(6);
+        return view('web.inicio', compact('categories','images'));
     }
 
     public function formularioentradas(){
 
-        return view('web.fomularioEntradas');
+        $images = Image::orderBy('id', 'DESC')->paginate(6);
+        return view('web.fomularioEntradas', compact('images'));
     }
     
     public function products($slug){
@@ -40,7 +41,9 @@ class PageController extends Controller
 
         $plans = Tag::all(); 
 
-        return view('web.products', compact('category','categoryName','categories','products','plans'));
+        $images = Image::orderBy('id', 'DESC')->paginate(6);
+
+        return view('web.products', compact('category','categoryName','categories','products','plans','images'));
     }
 
 
@@ -59,8 +62,12 @@ class PageController extends Controller
         $productsRelations = Post::orderBy('category_id', 'DESC')->where('category_id', $category)
                 ->orderBy('id','DESC')->where('status','PUBLISHED')->where('id', '<>', $excepto)->get();
 
-        return view('web.product', compact('product','category','categories','plans','productsRelations','excepto'));
+        $images = Image::orderBy('id', 'DESC')->paginate(6);
+
+        return view('web.product', compact('product','category','categories','plans','productsRelations','excepto','images'));
     }
+
+
 
    
     
@@ -76,10 +83,26 @@ class PageController extends Controller
         $categories = Category::all();
 
         $plans = Tag::all();
+        $images = Image::orderBy('id', 'DESC')->paginate(6);
 
-        return view('web.products', compact('products','category','categories','plans'));
+        return view('web.products', compact('products','category','categories','plans','images'));
     }
 
+
+    /******imagenes*******/
+
+    public function galery(){
+
+        $imagesGalery = Image::orderBy('id', 'DESC')->paginate(9);
+        $images = Image::orderBy('id', 'DESC')->paginate(6);
+
+        return view('web.galery', compact('images','imagesGalery'));
+    }
+
+    public function nosotros(){
+        $images = Image::orderBy('id', 'DESC')->paginate(6);
+        return view('simpleRoutes.nosotros',compact('images'));
+    }
 
    
      public function admin(){

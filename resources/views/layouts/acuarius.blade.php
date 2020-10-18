@@ -24,7 +24,7 @@
           <div class="col-lg-12 col-md-6 ftco-animate d-flex align-items-end">
             <div class="text text-left w-100">
               <h1 class="mb-4">Ven, Disfruta y Sé Parte de un   <br>Maravilloso Mundo Acuático</h1>
-              <p><a href="#" class="btn btn-warning py-3 px-4">Más Sobre Nautilus</a></p>
+              <p><a href="{{url('Nosotros')}}#Nautilus" class="btn btn-warning py-3 px-4">Más Sobre Nautilus</a></p>
             </div>
           </div>
         </div>

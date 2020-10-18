@@ -120,6 +120,11 @@
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @else
+                        <li class="nav-item">
+                               <a class="nav-link" href="{{ route('images.index') }}">
+                                    Galería
+                                </a>
+                            </li>
                             <li class="nav-item">
                                <a class="nav-link" href="{{ route('posts.index') }}">
                                     Productos
