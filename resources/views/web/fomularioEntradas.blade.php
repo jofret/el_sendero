@@ -36,67 +36,75 @@ Altura cuadra 99 de la Av Universitari - Lima - Perú</p>
             <form action="{{ url('sendemail/send') }}#main_contact_form" method="POST" class="bg-light p-5 contact-form">
               <h3>Solicita una Reserva</h3>
               <hr>
-               {{ csrf_field() }}
-              <div class="form-check">
-				  <input class="form-check-input" type="radio" name="particularInstitucion" id="exampleRadios1" value="Familiar/Particular">
-				  <label class="form-check-label" for="exampleRadios1">
-				    Visita Familiar/Particular
-				  </label>
-			  </div>
+              {{ csrf_field() }}
 
-			  <div class="form-check">
-				  <input class="form-check-input" type="radio" name="particularInstitucion" id="exampleRadios2" value="Institucional">
-				  <label class="form-check-label" for="exampleRadios2">
-				    Instituciones
-				  </label>
-			  </div>
-			  <hr>
+              <div class="row">
+                <div class="col-md-6 form-check">
+        				  <input class="form-check-input" type="radio" name="particularInstitucion" id="exampleRadios1" value="Familiar/Particular">
+        				  <label class="form-check-label" for="exampleRadios1">
+        				    Visita Familiar/Particular
+        				  </label>
+        			  </div>
+
+        			  <div class="col-md-6 form-check">
+        				  <input class="form-check-input" type="radio" name="particularInstitucion" id="exampleRadios2" value="Institucional">
+        				  <label class="form-check-label" for="exampleRadios2">
+        				    Instituciones
+        				  </label>
+        			  </div>
+              </div>
+      			  <hr>
 
               <div class="form-group">
                 <input type="text" name="name" class="form-control" placeholder="Nombre / Institución">
               </div>
-              <div class="form-group">
-                <input type="text" name="email" class="form-control" placeholder="Email">
-              </div>
-              <div class="form-group">
-                <input type="text" name="telephone" class="form-control" placeholder="Teléfono">
+
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" name="telephone" class="form-control" placeholder="Teléfono">
+                </div>
               </div>
               
-              <div class="form-group">
-			    <label for="exampleFormControlSelect1">Adultos</label>
-			    <select class="form-control" name="adultos" id="exampleFormControlSelect1">
-			      <option>0</option>
-			      <option>1</option>
-			      <option>2</option>
-			      <option>3</option>
-			      <option>4</option>
-			      <option>5</option>
-			      <option>6</option>
-			      <option>7</option>
-			      <option>8</option>
-			      <option>9</option>
-			      <option>10</option>
-			      <option>Más de 10</option>
-			    </select>
-			  </div>
+              <div class="row">
+                <div class="col-md-6 form-group">
+        			    <label for="exampleFormControlSelect1">Adultos</label>
+        			    <select class="form-control" name="adultos" id="exampleFormControlSelect1">
+        			      <option>0</option>
+        			      <option>1</option>
+        			      <option>2</option>
+        			      <option>3</option>
+        			      <option>4</option>
+        			      <option>5</option>
+        			      <option>6</option>
+        			      <option>7</option>
+        			      <option>8</option>
+        			      <option>9</option>
+        			      <option>10</option>
+        			      <option>Más de 10</option>
+        			    </select>
+        			  </div>
 
-              <div class="form-group">
-			    <label for="exampleFormControlSelect1">Niños</label>
-			    <select class="form-control" name="ninos" id="exampleFormControlSelect1">
-			      <option>0</option>
-			      <option>1</option>
-			      <option>2</option>
-			      <option>3</option>
-			      <option>4</option>
-			      <option>5</option>
-			      <option>6</option>
-			      <option>7</option>
-			      <option>8</option>
-			      <option>9</option>
-			      <option>10</option>
-			      <option>Más de 10</option>
-			    </select>
-			  </div>
+                <div class="col-md-6 form-group">
+        			    <label for="exampleFormControlSelect1">Niños</label>
+        			    <select class="form-control" name="ninos" id="exampleFormControlSelect1">
+        			      <option>0</option>
+        			      <option>1</option>
+        			      <option>2</option>
+        			      <option>3</option>
+        			      <option>4</option>
+        			      <option>5</option>
+        			      <option>6</option>
+        			      <option>7</option>
+        			      <option>8</option>
+        			      <option>9</option>
+        			      <option>10</option>
+        			      <option>Más de 10</option>
+        			    </select>
+        			  </div>
+              </div>
 		        			
               <div class="form-group">
                 <textarea name="message"  cols="30" rows="7" class="form-control" placeholder="Message"></textarea>

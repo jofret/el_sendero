@@ -8,7 +8,8 @@
     @include('includes.links')
   </head>
   <body>
-    
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v8.0" nonce="aeZzgjMT"></script>
 	  @include('includes.nav')
     <!-- END nav -->
     

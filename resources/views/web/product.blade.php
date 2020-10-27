@@ -13,7 +13,8 @@
                     </div>
                     <div class="col-md-7">
                       <h2 class="mb-3 pt-4">{{$product->name}}</h2>
-                      <p>S/ {{$product->pricing}}</p>
+                      <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+                      <p><strong>S/ {{$product->pricing}}</strong></p>
                       <div>
                         <p>Etiquetas:</p>
                         <div class="tagcloud">

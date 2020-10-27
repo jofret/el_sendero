@@ -34,7 +34,7 @@ class PageController extends Controller
 
 
         $products = Post::where('category_id', $category)
-            ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(9);;
+            ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(9);
 
 
         $categories = Category::all();

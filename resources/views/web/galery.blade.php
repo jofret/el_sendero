@@ -16,18 +16,6 @@
 	        			<div class="img d-flex align-items-center justify-content-center">
 	        				<img src="{{$imageGalery->file}}" data-url="{{$imageGalery->file}}" 
   class="ion-ios-link img fs-gal" />
-
-	        				<div class="list-agent d-flex align-items-center">
-	        					<a href="#" class="agent-info d-flex align-items-center">
-	        						<h3 class="mb-0 ml-2">Ben Ford</h3>
-	        					</a>
-	        					<div class="tooltip-wrap d-flex">
-	        						<a href="#" class="icon-2 d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="top" title="Bookmark">
-	        							<span class="ion-ios-heart"><i class="sr-only">Bookmark</i></span>
-	        						</a>
-	        						
-	        					</div>
-	        				</div>
 	        			</div>
 	        			<div class="text">
 	        				<h3 class="mb-0"><a href="properties-single.html">{{$imageGalery->name}}</a></h3>
