@@ -24,7 +24,7 @@
 
   <script>
     $('.backgrounds').backstretch([
-      "{{asset('assets/images/pezok.jpg')}}",
+      "{{asset('assets/images/pez_ok.jpg')}}",
       "{{asset('assets/images/pez2.jpg')}}",
       ], {
         fade: 750,

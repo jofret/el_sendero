@@ -11,6 +11,19 @@
 }
 
 
+/*******/
+
+/*imagenes*/
+
+@media (min-width: 1000px) {
+    .backgrounds .letrasBanner{
+        padding:6% 5% 0 5% 
+    }
+}
+
+
+/*******/
+
 .heading-section .subheading{
     font-family: Montserrat, Helvetica, Arial, sans-serif;
     color: #999999;

@@ -146,7 +146,7 @@ Altura cuadra 99 de la Av Universitari - Lima - Perú</p>
           </div>
 
           <div class="col-md-6 align-items-stretch d-flex">
-        		<div id="map" class="bg-white border"></div>
+        		<div  class="bg-white border"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1951.992673831285!2d-77.045549!3d-11.906108!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2d0e1fbf00bf15f2!2sAcuario%20Nautilus!5e0!3m2!1ses!2sus!4v1603970814425!5m2!1ses!2sus" width="600" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
           </div>
         </div>
       </div>

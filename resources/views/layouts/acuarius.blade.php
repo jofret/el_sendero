@@ -19,7 +19,7 @@
 
       <div class="overlay"></div>
       <div class="overlay-2"></div>
-      <div class="container">
+      <div class="letrasBanner">
         <div class="row no-gutters slider-text justify-content-center align-items-center">
           <div class="col-lg-12 col-md-6 ftco-animate d-flex align-items-end">
             <div class="text text-left w-100">
@@ -51,7 +51,7 @@
                         <video width="100%"  autoplay muted loop style="padding: 0 5%">
                            <source  src="{{asset('assets/video/video_para_web.mp4')}}" type="video/mp4">
                         </video>
-                        <img style="position:absolute; left:0" src="{{asset('assets/images/whale-1-1024x488.png')}}" class="img-fluid">
+                        <img style="position:absolute; left:0" src="{{asset('assets/images/acuario_Nautilus.png')}}" class="img-fluid">
                     </div>
                 </div>
 
