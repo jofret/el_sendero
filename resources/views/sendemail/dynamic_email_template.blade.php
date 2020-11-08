@@ -403,7 +403,7 @@
                                                     <tr>
                                                         <td valign="top" class="bodyContent">
                                                             <div mc:edit="std_content00">
-                                                                <h1 class="h1">Solicitud de Nautilus Formulario Web</h1>
+                                                                <h1 class="h1">Solicitud de HUGEST Formulario Web</h1>
                                                                
                                                             </div>
 														</td>
@@ -412,9 +412,7 @@
                                                     	<td valign="top" style="padding-top:0; padding-bottom:0;">
                                                           <table border="0" cellpadding="10" cellspacing="0" width="100%" class="templateDataTable">
                                                               <tr>
-                                                                  <th scope="col" valign="top" width="25%" class="dataTableHeading" mc:edit="data_table_heading00">
-                                                                    Requiriente
-                                                                  </th>
+                                                                  
                                                                   <th scope="col" valign="top" width="25%" class="dataTableHeading" mc:edit="data_table_heading01">
                                                                     Nombre
                                                                   </th>
@@ -424,17 +422,10 @@
                                                                   <th scope="col" valign="top" width="50%" class="dataTableHeading" mc:edit="data_table_heading02">
                                                                     Teléfono
                                                                   </th>
-                                                                  <th scope="col" valign="top" width="50%" class="dataTableHeading" mc:edit="data_table_heading02">
-                                                                    Adultos
-                                                                  </th>
-                                                                  <th scope="col" valign="top" width="50%" class="dataTableHeading" mc:edit="data_table_heading02">
-                                                                    Niños
-                                                                  </th>
+                                                          
                                                               </tr>
                                                               <tr mc:repeatable>
-                                                    			  <td valign="top" class="dataTableContent" mc:edit="data_table_content00">
-                                                                    {{ $data['particularInstitucion'] }}
-                                                                  </td>
+                                                    			  
                                                                   <td valign="top" class="dataTableContent" mc:edit="data_table_content00">
                                                                     {{ $data['name'] }}
                                                                   </td>
@@ -444,12 +435,7 @@
                                                                   <td valign="top" class="dataTableContent" mc:edit="data_table_content00">
                                                                     {{ $data['telephone'] }}
                                                                   </td>
-                                                                   <td valign="top" class="dataTableContent" mc:edit="data_table_content00">
-                                                                    {{ $data['adultos'] }}
-                                                                  </td>
-                                                                  <td valign="top" class="dataTableContent" mc:edit="data_table_content00">
-                                                                    {{ $data['ninos'] }}
-                                                                  </td>
+                                                                   
                                                               </tr>
                                                               <tr>
                                                               	<p><strong>Mensaje:</strong> " {{ $data['message'] }} "</p>

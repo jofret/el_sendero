@@ -90,21 +90,53 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim maiores mollitia qui quam labore hic asperiores provident maxime earum eum.</p>
           </div>
           <div class="col-md-6">
-            <div class="quick-contact-form bg-white">
-                <h2>Get Quotation</h2>
-                <form action="#" method="">
+            <div class="quick-contact-form bg-white" id="main_contact_form">
+                <h2>Envie Su Consulta</h2>
+                <form action="{{ url('sendemail/send') }}#main_contact_form" method="POST">
+                  {{ csrf_field() }}
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name">
+                    <input name="name" type="text" class="form-control" placeholder="Nombre">
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input  name="email"  type="email" class="form-control" placeholder="Email">
                   </div>
                   <div class="form-group">
-                    <textarea name="" class="form-control" id="" cols="30" rows="5" placeholder="Message"></textarea>
+                    <input  name="telephone"  type="telephone" class="form-control" placeholder="Teléfono">
                   </div>
+                  <div class="form-group">
+                    <textarea name="message" class="form-control" id="" cols="30" rows="5" placeholder="Requerimiento"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-6">
+                        {!! NoCaptcha::display() !!}
+                    </div>
+                </div>
                   <div class="form-group">
                     <input type="submit" value="Send Message" class="btn btn-primary px-5">
                   </div>
+                @if(count( $errors) > 0)
+                <div class="alert alert-danger" style="margin-top:10px">
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    <ul>
+                        @foreach( $errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                  @endif
+
+                  @if ($errors->has('g-recaptcha-response'))
+                      <span class="help-block text-danger" role="alert">
+                          <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                      </span>
+                  @endif
+
+                  @if($message = Session::get('success'))
+                      <div class="alert alert-success alert-block" style="margin-top:10px">
+                          <button type="button" class="close" data-dismiss="alert">x</button>
+                          <strong>{{ $message }}</strong>
+                      </div>
+                  @endif
                 </form>
               </div>
           </div>
@@ -112,7 +144,101 @@
       </div>
     </div>
 
-   <!--servicios-->
+  <!--servicios-->
+  <div class="site-section" style="background-color: #dedffe;">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4 mx-auto">
+            <h2 class="line-bottom text-center">Nuestros Servicios</h2>
+          </div>
+        </div>
+        <div class="row align-items-stretch">
+          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
+            <div class="service-2 h-100">
+              <div>
+                <img src="{{asset('assets/images/servicios/excavaciones.jpg')}}" alt="Image" class="img-fluid">
+              </div>
+
+              <h3><span>Excavación</span></h3>
+              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+
+            </div>
+          </div>
+          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
+            <div class="service-2 h-100">
+              <div>
+                <img src="{{asset('assets/images/servicios/demolicion.jpg')}}" alt="Image" class="img-fluid">
+              </div>
+
+              <h3><span>Demolición</span></h3>
+              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+
+            </div>
+          </div>
+          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
+            <div class="service-2 h-100">
+              <div>
+                <img src="{{asset('assets/images/servicios/movimiento-de-suelos.jpg')}}" alt="Image" class="img-fluid">
+              </div>
+
+              <h3><span>Movimiento de suelos</span></h3>
+              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+
+            </div>
+          </div>
+
+
+          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
+            <div class="service-2 h-100">
+              <div>
+                <img src="{{asset('assets/images/servicios/redes-cloacales.jpg')}}" alt="Image" class="img-fluid">
+              </div>
+
+              <h3><span>Redes cloacales</span></h3>
+              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+
+            </div>
+          </div>
+          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
+            <div class="service-2 h-100">
+              <div>
+                <img src="{{asset('assets/images/servicios/cableado-alta-media-baja-tension.jpg')}}" alt="Image" class="img-fluid">
+              </div>
+
+              <h3><span>Cableado de Baja-Media-Alta Tensión</span></h3>
+              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+
+            </div>
+          </div>
+          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
+            <div class="service-2 h-100">
+              <div>
+                <img src="{{asset('assets/images/servicios/trabajos-en-altura.jpg')}}" alt="Image" class="img-fluid">
+              </div>
+
+              <h3><span>Poda en Altura</span></h3>
+              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+
+            </div>
+          </div>
+          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
+            <div class="service-2 h-100">
+              <div>
+                <img src="{{asset('assets/images/servicios/extraxcciones-podas.jpg')}}" alt="Image" class="img-fluid">
+              </div>
+
+              <h3><span>Extracciones y corte de raíces de árboles</span></h3>
+              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!--end servicios--->
+
+
+   <!--nosotros-->
     <div class="site-section">
       <div class="container">
         
@@ -170,7 +296,9 @@
         </div>
       </div>
     </div>
-    <!--end servicios-->
+    <!--end nosotros-->
+
+
 
     <!--testimonios-->
     <!-- <div class="site-section bg-light">
@@ -275,7 +403,7 @@
             <div class="border-top pt-5">
               <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Derechos Reservados | Desarrollado por <a href="https://jofret.com" target="_blank" >JOfret</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
             </div>
