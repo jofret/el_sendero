@@ -112,92 +112,7 @@
       </div>
     </div>
 
-    <div class="site-section" style="background-color: #dedffe;">
-      <div class="container">
-        <div class="row align-items-stretch">
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="service-2 h-100">
-              <div>
-                <img src="{{asset('assets/images/servicios/excavaciones.jpg')}}" alt="Image" class="img-fluid">
-              </div>
-
-              <h3><span>Excavación</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
-
-            </div>
-          </div>
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="service-2 h-100">
-              <div>
-                <img src="{{asset('assets/images/servicios/demolicion.jpg')}}" alt="Image" class="img-fluid">
-              </div>
-
-              <h3><span>Demolición</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
-
-            </div>
-          </div>
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="service-2 h-100">
-              <div>
-                <img src="{{asset('assets/images/servicios/movimiento-de-suelos.jpg')}}" alt="Image" class="img-fluid">
-              </div>
-
-              <h3><span>Movimiento de suelos</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
-
-            </div>
-          </div>
-
-
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="service-2 h-100">
-              <div>
-                <img src="{{asset('assets/images/servicios/redes-cloacales.jpg')}}" alt="Image" class="img-fluid">
-              </div>
-
-              <h3><span>Redes cloacales</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
-
-            </div>
-          </div>
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="service-2 h-100">
-              <div>
-                <img src="{{asset('assets/images/servicios/cableado-alta-media-baja-tension.jpg')}}" alt="Image" class="img-fluid">
-              </div>
-
-              <h3><span>Cableado de Baja-Media-Alta Tensión</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
-
-            </div>
-          </div>
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="service-2 h-100">
-              <div>
-                <img src="{{asset('assets/images/servicios/trabajos-en-altura.jpg')}}" alt="Image" class="img-fluid">
-              </div>
-
-              <h3><span>Poda en Altura</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
-
-            </div>
-          </div>
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="service-2 h-100">
-              <div>
-                <img src="{{asset('assets/images/servicios/extraxcciones-podas.jpg')}}" alt="Image" class="img-fluid">
-              </div>
-
-              <h3><span>Extracciones y corte de raíces de árboles</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+   <!--servicios-->
     <div class="site-section">
       <div class="container">
         
@@ -255,8 +170,10 @@
         </div>
       </div>
     </div>
+    <!--end servicios-->
 
-    <div class="site-section bg-light">
+    <!--testimonios-->
+    <!-- <div class="site-section bg-light">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-4 mx-auto">
@@ -293,185 +210,12 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
-
-    <div class="site-section">
-      <div class="container">
-        <div class="row mb-4">
-
-          <div class="col-md-4 mx-auto">
-            <h2 class="line-bottom text-center">Our Projects</h2>
-          </div>
-
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="project-item">
-
-              <img src="{{asset('assets/images/img_1.jpg')}}" alt="Image" class="img-fluid">
-              
-              <div class="project-item-overlay">
-                <a class="category" href="#">Renovate</a>
-                <span class="plus">
-                  <span class="icon-plus"></span>
-                </span>
-
-                <a href="#" class="project-title"><span>Renovate the house</span></a>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="project-item">
-
-              <img src="{{asset('assets/images/img_2.jpg')}}" alt="Image" class="img-fluid">
-              
-              <div class="project-item-overlay">
-                <a class="category" href="#">Renovate</a>
-                <span class="plus">
-                  <span class="icon-plus"></span>
-                </span>
-
-                <a href="#" class="project-title"><span>Renovate the house 2</span></a>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="project-item">
-
-              <img src="{{asset('assets/images/img_3.jpg')}}" alt="Image" class="img-fluid">
-              
-              <div class="project-item-overlay">
-                <a class="category" href="#">Renovate</a>
-                <span class="plus">
-                  <span class="icon-plus"></span>
-                </span>
-
-                <a href="#" class="project-title"><span>Renovate the house 2</span></a>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="project-item">
-
-              <img src="{{asset('assets/images/img_4.jpg')}}" alt="Image" class="img-fluid">
-              
-              <div class="project-item-overlay">
-                <a class="category" href="#">Renovate</a>
-                <span class="plus">
-                  <span class="icon-plus"></span>
-                </span>
-
-                <a href="#" class="project-title"><span>Renovate the house</span></a>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="project-item">
-
-              <img src="{{asset('assets/images/img_1.jpg')}}" alt="Image" class="img-fluid">
-              
-              <div class="project-item-overlay">
-                <a class="category" href="#">Renovate</a>
-                <span class="plus">
-                  <span class="icon-plus"></span>
-                </span>
-
-                <a href="#" class="project-title"><span>Renovate the house 2</span></a>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="project-item">
-
-              <img src="{{asset('assets/images/img_2.jpg')}}" alt="Image" class="img-fluid">
-              
-              <div class="project-item-overlay">
-                <a class="category" href="#">Renovate</a>
-                <span class="plus">
-                  <span class="icon-plus"></span>
-                </span>
-
-                <a href="#" class="project-title"><span>Renovate the house 2</span></a>
-              </div>
-
-            </div>
-          </div>
+    <!--end testimonios-->
 
 
-
-        </div>
-      </div>
-    </div>
-
-    <div class="site-section">
-      <div class="container">
-        <div class="row mb-4">
-
-          <div class="col-md-4 mx-auto">
-            <h2 class="line-bottom text-center">Our Blog</h2>
-          </div>
-
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="post-entry-1 h-100">
-              <a href="single.html">
-                <img src="{{asset('assets/images/img_4.jpg')}}" alt="Image"
-                 class="img-fluid">
-              </a>
-              <div class="post-entry-1-contents">
-                
-                <h2><a href="single.html">We Are Leader In The Construction World</a></h2>
-                <span class="meta d-inline-block mb-3">July 17, 2019 <span class="mx-2">by</span> <a href="#">Admin</a></span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="post-entry-1 h-100">
-              <a href="single.html">
-                <img src="{{asset('assets/images/img_2.jpg')}}" alt="Image"
-                 class="img-fluid">
-              </a>
-              <div class="post-entry-1-contents">
-                
-                <h2><a href="single.html">We Are Leader In The Construction World</a></h2>
-                <span class="meta d-inline-block mb-3">July 17, 2019 <span class="mx-2">by</span> <a href="#">Admin</a></span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="post-entry-1 h-100">
-              <a href="single.html">
-                <img src="{{asset('assets/images/img_3.jpg')}}" alt="Image"
-                 class="img-fluid">
-              </a>
-              <div class="post-entry-1-contents">
-                
-                <h2><a href="single.html">We Are Leader In The Construction World</a></h2>
-                <span class="meta d-inline-block mb-3">July 17, 2019 <span class="mx-2">by</span> <a href="#">Admin</a></span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    @yield('content')
     
 
     <footer class="site-footer">

@@ -15,10 +15,15 @@ class PageController extends Controller
 {
 
     public function inicio(){
+        //aqui  Publicaciones
+        $posts = Post::where('category_id', '1')
+            ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
 
-        $categories = Category::orderBy('id', 'DESC')->get();
+        $projects = Post::where('category_id', '>', 1)
+            ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
+
         $images = Image::orderBy('id', 'DESC')->paginate(6);
-        return view('web.inicio', compact('categories','images'));
+        return view('web.inicio', compact('posts','projects','images'));
     }
 
     public function formularioentradas(){
