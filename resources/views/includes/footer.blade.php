@@ -35,9 +35,9 @@ Altura cuadra 99 de la Av Universitari - Lima - Perú</span></li>
             <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">Links</h2>
               <ul class="list-unstyled">
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Exhibiciones</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Instalaciones</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Catátogo</a></li>
+                <li><a href="{{url('exhibiciones')}}#nautilus"><span class="icon-long-arrow-right mr-2"></span>Exhibiciones</a></li>
+                <li><a href="{{url('instalaciones')}}#nautilus"><span class="icon-long-arrow-right mr-2"></span>Instalaciones</a></li>
+                <li><a href="{{url('/')}}#nautilus"><span class="icon-long-arrow-right mr-2"></span>Catátogo</a></li>
                 <li><a href="{{url('galeria-de-imagenes')}}#ver-imagenes-nautilus"><span class="icon-long-arrow-right mr-2"></span>Ir a la Galeria</a></li>
               </ul>
             </div>

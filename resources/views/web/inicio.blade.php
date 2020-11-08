@@ -1,6 +1,7 @@
-@extends('layouts.acuarius')
+@extends('layouts.construct')
 
 @section('content')
+<div id="nautilus"></div>
 <section class="ftco-section testimony-section bg-light">
       <div class="container">
         <div class="row justify-content-center mb-5">

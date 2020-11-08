@@ -41,11 +41,8 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <div style="position:relative;">
-                        <video width="100%"  autoplay muted loop style="padding: 0 5%">
-                           <source  src="{{asset('assets/video/video_para_web.mp4')}}" type="video/mp4">
-                        </video>
-                        <img style="position:absolute; left:0" src="{{asset('assets/images/MantaRay-1x.png')}}" class="img-fluid">
+                    <div style="position:relative">
+                        <img style="position:absolute; left:0; padding:5px" src="{{asset('assets/images/instalaciones.jpg')}}" class="img-fluid">
                     </div>
                 </div>
 

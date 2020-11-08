@@ -26,7 +26,8 @@ class PageController extends Controller
         $images = Image::orderBy('id', 'DESC')->paginate(6);
         return view('web.fomularioEntradas', compact('images'));
     }
-    
+
+
     public function products($slug){
 
         $category = Category::where('slug', $slug)->pluck('id')->first();
@@ -103,6 +104,19 @@ class PageController extends Controller
         $images = Image::orderBy('id', 'DESC')->paginate(6);
         return view('simpleRoutes.nosotros',compact('images'));
     }
+
+    public function instalaciones(){
+
+        $images = Image::orderBy('id', 'DESC')->paginate(6);
+        return view('simpleRoutes.instalaciones', compact('images'));
+    }
+
+    public function exhibiciones(){
+
+        $images = Image::orderBy('id', 'DESC')->paginate(6);
+        return view('simpleRoutes.exhibiciones', compact('images'));
+    }
+    
 
    
      public function admin(){

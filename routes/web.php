@@ -28,6 +28,13 @@ Route::post('/sendemail/send','SendEmailController@send');
 /*simple Routes*/
 Route::get('/nosotros', 'Web\PageController@nosotros');
 
+Route::get('/instalaciones', 'Web\PageController@instalaciones');
+
+
+Route::get('/exhibiciones', 'Web\PageController@exhibiciones');
+
+
+
 
 Auth::routes();
 

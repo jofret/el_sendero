@@ -17,13 +17,13 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Exhibiciones <!-- <span class="sr-only">(current)</span> --></a>
+                <a class="nav-link" href="{{url('exhibiciones')}}#nautilus">Exhibiciones <!-- <span class="sr-only">(current)</span> --></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Instalaciones</a>
+                <a class="nav-link" href="{{url('instalaciones')}}#nautilus">Instalaciones</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Catálogo</a>
+                <a class="nav-link" href="{{url('/')}}#nautilus">Catálogo</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contacto</a>

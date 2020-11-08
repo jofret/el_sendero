@@ -1,0 +1,12 @@
+/*myOwns*/
+
+.service-2 {
+    padding: 0px;
+    background: #fff;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+}
+
+.service-2 h3, .service-2 p{
+	padding: 10px
+}
