@@ -105,9 +105,9 @@ class PageController extends Controller
         return view('web.galery', compact('images','imagesGalery'));
     }
 
-    public function nosotros(){
+    public function alquileres(){
         $images = Image::orderBy('id', 'DESC')->paginate(6);
-        return view('simpleRoutes.nosotros',compact('images'));
+        return view('simpleRoutes.alquileres',compact('images'));
     }
 
     public function instalaciones(){

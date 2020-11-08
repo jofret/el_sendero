@@ -10,3 +10,15 @@
 .service-2 h3, .service-2 p{
 	padding: 10px
 }
+
+.service-2:hover {
+    background-color: #F4F4F4;
+    -webkit-box-shadow: 0 5px 50px 0 rgba(46, 49, 146, 0.1);
+    box-shadow: 0 5px 50px 0 rgba(46, 49, 146, 0.1); }
+
+ .service-2:hover h3 {
+      color: #6B6B6B; }
+      .service-2:hover h3 span:after {
+        background-color: #fb7400; }
+    .service-2:hover p {
+      color: #6B6B6B }

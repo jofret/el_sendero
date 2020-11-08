@@ -26,7 +26,7 @@ Route::get('/sendemail','SendEmailController@index');
 Route::post('/sendemail/send','SendEmailController@send');
 
 /*simple Routes*/
-Route::get('/nosotros', 'Web\PageController@nosotros');
+Route::get('/alquiler-de-maquinaria', 'Web\PageController@alquileres');
 
 Route::get('/instalaciones', 'Web\PageController@instalaciones');
 

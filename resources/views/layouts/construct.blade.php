@@ -43,14 +43,12 @@
               
 
               <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
-
-              
-
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li class="active"><a href="index.html" class="nav-link">Inicio</a></li>
+                  <li class="active"><a href="{{url('/')}}" class="nav-link">Inicio</a></li>
                   <li><a href="about.html" class="nav-link">Nosotros</a></li>
-                  <li><a href="services.html" class="nav-link">Servicios</a></li>
+                  <li><a href="{{url('/')}}#servicios" class="nav-link">Servicios</a></li>
+                  <li><a href="{{url('/alquiler-de-maquinaria')}}#alquiler-de-maquinaria-pesada" class="nav-link">Alquiler</a></li>
                   <li><a href="projects.html" class="nav-link">Projectos</a></li>
                   <li><a href="blog.html" class="nav-link">Publicaciones</a></li>
                   <li><a href="contact.html" class="nav-link">Contáctenos</a></li>
@@ -144,98 +142,9 @@
       </div>
     </div>
 
-  <!--servicios-->
-  <div class="site-section" style="background-color: #dedffe;">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-4 mx-auto">
-            <h2 class="line-bottom text-center">Nuestros Servicios</h2>
-          </div>
-        </div>
-        <div class="row align-items-stretch">
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="service-2 h-100">
-              <div>
-                <img src="{{asset('assets/images/servicios/excavaciones.jpg')}}" alt="Image" class="img-fluid">
-              </div>
+  @yield('servicios')  
 
-              <h3><span>Excavación</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
-
-            </div>
-          </div>
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="service-2 h-100">
-              <div>
-                <img src="{{asset('assets/images/servicios/demolicion.jpg')}}" alt="Image" class="img-fluid">
-              </div>
-
-              <h3><span>Demolición</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
-
-            </div>
-          </div>
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="service-2 h-100">
-              <div>
-                <img src="{{asset('assets/images/servicios/movimiento-de-suelos.jpg')}}" alt="Image" class="img-fluid">
-              </div>
-
-              <h3><span>Movimiento de suelos</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
-
-            </div>
-          </div>
-
-
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="service-2 h-100">
-              <div>
-                <img src="{{asset('assets/images/servicios/redes-cloacales.jpg')}}" alt="Image" class="img-fluid">
-              </div>
-
-              <h3><span>Redes cloacales</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
-
-            </div>
-          </div>
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="service-2 h-100">
-              <div>
-                <img src="{{asset('assets/images/servicios/cableado-alta-media-baja-tension.jpg')}}" alt="Image" class="img-fluid">
-              </div>
-
-              <h3><span>Cableado de Baja-Media-Alta Tensión</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
-
-            </div>
-          </div>
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="service-2 h-100">
-              <div>
-                <img src="{{asset('assets/images/servicios/trabajos-en-altura.jpg')}}" alt="Image" class="img-fluid">
-              </div>
-
-              <h3><span>Poda en Altura</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
-
-            </div>
-          </div>
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="service-2 h-100">
-              <div>
-                <img src="{{asset('assets/images/servicios/extraxcciones-podas.jpg')}}" alt="Image" class="img-fluid">
-              </div>
-
-              <h3><span>Extracciones y corte de raíces de árboles</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  <!--end servicios--->
+  
 
 
    <!--nosotros-->
@@ -261,7 +170,7 @@
               <div class="tab-pane fade show active" id="nav-one" role="tabpanel" aria-labelledby="nav-one-tab">
                 <div class="row">
                   <div class="col-md-7">
-                    <img src="{{asset('assets/images/hero_1.jpg')}}" alt="Image" class="img-fluid">
+                    <img src="{{asset('assets/images/huges_ok.jpg')}}" alt="Image" class="img-fluid">
                   </div>
                   <div class="col-md-4 ml-auto">
                     <h2 class="line-bottom">Technology</h2>
@@ -350,7 +259,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
-            <h2 class="footer-heading mb-4">About Us</h2>
+
+            <h2 class="footer-heading mb-4"><img src="{{asset('assets/images/logo_white.png')}}" class="img-fluid"></h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis impedit, odit minima repellat, doloribus alias amet consequatur inventore.</p>
           </div>
           <div class="col-lg-8 ml-auto">

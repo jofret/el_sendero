@@ -3,18 +3,16 @@
 @section('content')
 <div id="nautilus"></div>
 
-
-
     <!--Proyetos-->
     <div class="site-section">
       <div class="container">
-        <div class="row mb-4">
+        <div class="row mb-8">
 
           <div class="col-md-4 mx-auto">
             <h2 class="line-bottom text-center">Nuestros Proyectos</h2>
           </div>
-
         </div>
+
 
         <div class="row">
           @foreach($images as $image)
@@ -74,6 +72,104 @@
     </div> -->
     <!--end Blog-->
 @endsection
+
+@section('servicios')
+<!--servicios-->
+<div id="servicios"></div>
+  <div class="site-section" style="background-color: #dedffe;">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-8 mx-auto">
+            <h2 class="line-bottom text-center">Nuestros Servicios</h2>
+            <p class="text-center">Excavación, Demolición, Movimiento de suelos, Redes cloacales, Cableado de Baja-Media-Alta Tensión, Poda en Altura, Extracciones y corte de raíces de árboles</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row align-items-stretch">
+          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
+            <div class="service-2 h-100">
+              <div>
+                <img src="{{asset('assets/images/servicios/excavaciones.jpg')}}" alt="Image" class="img-fluid">
+              </div>
+
+              <h3><span>Excavación</span></h3>
+              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+
+            </div>
+          </div>
+          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
+            <div class="service-2 h-100">
+              <div>
+                <img src="{{asset('assets/images/servicios/demolicion.jpg')}}" alt="Image" class="img-fluid">
+              </div>
+
+              <h3><span>Demolición</span></h3>
+              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+
+            </div>
+          </div>
+          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
+            <div class="service-2 h-100">
+              <div>
+                <img src="{{asset('assets/images/servicios/movimiento-de-suelos.jpg')}}" alt="Image" class="img-fluid">
+              </div>
+
+              <h3><span>Movimiento de suelos</span></h3>
+              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+
+            </div>
+          </div>
+
+
+          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
+            <div class="service-2 h-100">
+              <div>
+                <img src="{{asset('assets/images/servicios/redes-cloacales.jpg')}}" alt="Image" class="img-fluid">
+              </div>
+
+              <h3><span>Redes cloacales</span></h3>
+              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+
+            </div>
+          </div>
+          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
+            <div class="service-2 h-100">
+              <div>
+                <img src="{{asset('assets/images/servicios/cableado-alta-media-baja-tension.jpg')}}" alt="Image" class="img-fluid">
+              </div>
+
+              <h3><span>Cableado de Baja-Media-Alta Tensión</span></h3>
+              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+
+            </div>
+          </div>
+          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
+            <div class="service-2 h-100">
+              <div>
+                <img src="{{asset('assets/images/servicios/trabajos-en-altura.jpg')}}" alt="Image" class="img-fluid">
+              </div>
+
+              <h3><span>Poda en Altura</span></h3>
+              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+
+            </div>
+          </div>
+          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
+            <div class="service-2 h-100">
+              <div>
+                <img src="{{asset('assets/images/servicios/extraxcciones-podas.jpg')}}" alt="Image" class="img-fluid">
+              </div>
+
+              <h3><span>Extracciones y corte de raíces de árboles</span></h3>
+              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!--end servicios--->
+  @endsection
 
 
 
