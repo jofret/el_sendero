@@ -1,3 +1,28 @@
+/*recapcha*/
+#gwd-reCAPTCHA_2, #rc-imageselect   {
+                    transform: scale(0.84);
+                    transform-origin: 0 0;
+                   }
+/**/
+
+@media (max-width: 600px) {
+  .ftco-cover-1.overlay h1 {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 900;
+  }
+
+
+  .quick-contact-form {
+      padding: 10px;
+      border-radius: 7px;
+      margin-top: -200px;
+      -webkit-box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.1);
+  }
+
+}
+
 /*myOwns*/
 
 .service-2 {

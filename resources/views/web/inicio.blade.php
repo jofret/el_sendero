@@ -1,7 +1,7 @@
 @extends('layouts.construct')
 
 @section('content')
-<div id="nautilus"></div>
+<div id="proyectos"></div>
 
     <!--Proyetos-->
     <div class="site-section">
@@ -76,7 +76,7 @@
 @section('servicios')
 <!--servicios-->
 <div id="servicios"></div>
-  <div class="site-section" style="background-color: #dedffe;">
+  <div class="site-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-8 mx-auto">
@@ -93,7 +93,7 @@
               </div>
 
               <h3><span>Excavación</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+              <p>Somos Líderes en Movimiento de Suelos y Acondicionamiento de Rutas</p>
 
             </div>
           </div>
@@ -104,7 +104,7 @@
               </div>
 
               <h3><span>Demolición</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+              <p>Demolición, Excavación, Civiles e Industriales y de Altura</p>
 
             </div>
           </div>
@@ -115,7 +115,7 @@
               </div>
 
               <h3><span>Movimiento de suelos</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+              <p>Contamos con un equipo calificado y con amplia experiencia</p>
 
             </div>
           </div>
@@ -128,7 +128,7 @@
               </div>
 
               <h3><span>Redes cloacales</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+              <p>Soluciones en destapaciones mecanizadas y desagotes en hogares, industria y comercios</p>
 
             </div>
           </div>
@@ -139,7 +139,7 @@
               </div>
 
               <h3><span>Cableado de Baja-Media-Alta Tensión</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+              <p>Especialistas en electrificaciones, en alta, media y baja tensión para centros comerciales, hospitales, hoteles, fraccionamientos, ranchos</p>
 
             </div>
           </div>
@@ -150,7 +150,7 @@
               </div>
 
               <h3><span>Poda en Altura</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+              <p>Disponemos de todas las herramientas y maquinarias necesarias para realizar un excelente trabajo. </p>
 
             </div>
           </div>
@@ -168,6 +168,7 @@
         </div>
       </div>
     </div>
+    
   <!--end servicios--->
   @endsection
 

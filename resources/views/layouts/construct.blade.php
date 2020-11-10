@@ -49,8 +49,8 @@
                   <li><a href="about.html" class="nav-link">Nosotros</a></li>
                   <li><a href="{{url('/')}}#servicios" class="nav-link">Servicios</a></li>
                   <li><a href="{{url('/alquiler-de-maquinaria')}}#alquiler-de-maquinaria-pesada" class="nav-link">Alquiler</a></li>
-                  <li><a href="projects.html" class="nav-link">Projectos</a></li>
-                  <li><a href="blog.html" class="nav-link">Publicaciones</a></li>
+                  <li><a href="{{url('/')}}#proyectos" class="nav-link">Projectos</a></li>
+<!--                   <li><a href="blog.html" class="nav-link">Publicaciones</a></li> -->
                   <li><a href="contact.html" class="nav-link">Contáctenos</a></li>
                 </ul>
               </nav>
@@ -105,7 +105,7 @@
                     <textarea name="message" class="form-control" id="" cols="30" rows="5" placeholder="Requerimiento"></textarea>
                   </div>
                   <div class="form-group">
-                    <div class="col-md-6">
+                    <div class="col-md-6" id="gwd-reCAPTCHA_2">
                         {!! NoCaptcha::display() !!}
                     </div>
                 </div>
@@ -143,6 +143,7 @@
     </div>
 
   @yield('servicios')  
+  <hr>
 
   
 
@@ -153,13 +154,13 @@
         
         <div class="row mb-5">
           <div class="col-md-4 mr-auto">
-            <h2 class="line-bottom">We Are Leader In The Construction World</h2>
+            <h2 class="line-bottom">Un Excelente Servicio A Los Mejores Precios</h2>
           </div>
           <div class="col-md-8 text-right">
             <nav class="custom-tab nav" role="tablist"  class="nav nav-tabs" id="nav-tab" role="tablist">
-              <a href="#nav-one" class="nav-item nav-link active" data-toggle="tab" role="tab"  aria-controls="nav-one" aria-selected="true">Technology</a>
-              <a href="#nav-two" class="nav-item nav-link" data-toggle="tab" role="tab" aria-controls="nav-two" aria-selected="false">Quality</a>
-              <a href="#nav-three" class="nav-item nav-link" data-toggle="tab" role="tab" aria-controls="nav-three" aria-selected="false">Staff</a>
+              <a href="#nav-one" class="nav-item nav-link active" data-toggle="tab" role="tab"  aria-controls="nav-one" aria-selected="true">Alquileres</a>
+              <a href="#nav-two" class="nav-item nav-link" data-toggle="tab" role="tab" aria-controls="nav-two" aria-selected="false">Servicios</a>
+
             </nav>
           </div>
         </div>
@@ -173,8 +174,9 @@
                     <img src="{{asset('assets/images/huges_ok.jpg')}}" alt="Image" class="img-fluid">
                   </div>
                   <div class="col-md-4 ml-auto">
-                    <h2 class="line-bottom">Technology</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi impedit quaerat doloribus magni quisquam amet ipsum? Dolores, vitae, eveniet.</p>
+                    <h2 class="line-bottom">Alquileres</h2>
+                    <p>Alquiler de camiones volcadores, máquinas viales, retro-pala, retro-oruga, bobcat con accesorios e hidroelevadores</p>
+                    <a href="" type="button" class="btn btn-secondary">Ver más </a>
                   </div>
                 </div>
               </div>
@@ -184,19 +186,9 @@
                     <img src="{{asset('assets/images/hero_2.jpg')}}" alt="Image" class="img-fluid">
                   </div>
                   <div class="col-md-4 ml-auto">
-                    <h2 class="line-bottom">Quality</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium assumenda illum voluptatibus voluptas ratione error explicabo inventore obcaecati incidunt.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="nav-three" role="tabpanel" aria-labelledby="nav-three-tab">
-                <div class="row">
-                  <div class="col-md-7">
-                    <img src="{{asset('assets/images/hero_3.jpg')}}" alt="Image" class="img-fluid">
-                  </div>
-                  <div class="col-md-4 ml-auto">
-                    <h2 class="line-bottom">Staff</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quibusdam voluptatum, nesciunt nulla laudantium corporis necessitatibus explicabo nobis sapiente!</p>
+                    <h2 class="line-bottom">Servicios</h2>
+                    <p>Cuadrillas de veredas y zanjeos, limpiezas de obras, movimientos de suelos, excavación, demolición, desmontes, poda en altura, extracción y corte de raíces</p>
+                    <a href="" type="button" class="btn btn-secondary">Ver más </a>
                   </div>
                 </div>
               </div>

@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 25/07/2019 12:04
+    Creation date: 18/07/2019 07:36
     */
 
     @font-face {
@@ -37,18 +37,16 @@
   font-smoothing: antialiased;
     }
 
-    .flaticon-piggy-bank:before { content: "\f100"; }
-.flaticon-wallet:before { content: "\f101"; }
-.flaticon-file:before { content: "\f102"; }
-.flaticon-locked:before { content: "\f103"; }
-.flaticon-bed:before { content: "\f104"; }
-.flaticon-bathtub:before { content: "\f105"; }
-.flaticon-floor-plan:before { content: "\f106"; }
+    .flaticon-car:before { content: "\f100"; }
+.flaticon-car-1:before { content: "\f101"; }
+.flaticon-valet:before { content: "\f102"; }
+.flaticon-valet-1:before { content: "\f103"; }
+.flaticon-traffic:before { content: "\f104"; }
+.flaticon-key:before { content: "\f105"; }
     
-    $font-Flaticon-piggy-bank: "\f100";
-    $font-Flaticon-wallet: "\f101";
-    $font-Flaticon-file: "\f102";
-    $font-Flaticon-locked: "\f103";
-    $font-Flaticon-bed: "\f104";
-    $font-Flaticon-bathtub: "\f105";
-    $font-Flaticon-floor-plan: "\f106";
+    $font-Flaticon-car: "\f100";
+    $font-Flaticon-car-1: "\f101";
+    $font-Flaticon-valet: "\f102";
+    $font-Flaticon-valet-1: "\f103";
+    $font-Flaticon-traffic: "\f104";
+    $font-Flaticon-key: "\f105";
