@@ -10,6 +10,8 @@
     <script src="{{asset('assets/js/bootstrap-datepicker.min.js')}}"></script>
     <script src="{{asset('assets/js/aos.js')}}"></script>
 
+    <script src="{{asset('assets/js/fs-gal.js')}}"></script>
+
     <script src="{{asset('assets/js/main.js')}}"></script>
 
     <script src="{{asset('assets/js/jquery.backstretch.min.js')}}"></script>
@@ -17,7 +19,7 @@
   <script>
     $('.backgrounds').backstretch([
       "{{asset('assets/images/hero.jpg')}}",
-      "{{asset('assets/images/elevadoras.jpg')}}",
+      "{{asset('assets/images/alquler-de-camiones.jpg')}}",
       ], {
         fade: 750,
         duration: 4000

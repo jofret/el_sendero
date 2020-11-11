@@ -1,18 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
   <head>
-    <title>Handyman &mdash; Free Website Template by Colorlib</title>
+    <title>Alquiler de Maquinas Viales</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="alquiler de maquinas viales, alquiler de maquinarias viales, maquinas viales pesadas, maquinas viales, zona norte, maquinas viales en zona norte"/>
 
     @include('includes.links')
-
-    
+    @yield('facebookgraph')
 
   </head>
 
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=971270740036430&autoLogAppEvents=1" nonce="DjIZ37gY"></script>
 
     
     <div class="site-wrap" id="home-section">
@@ -46,12 +48,12 @@
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                   <li class="active"><a href="{{url('/')}}" class="nav-link">Inicio</a></li>
-                  <li><a href="about.html" class="nav-link">Nosotros</a></li>
+                  <li><a href="{{url('/')}}#nosotros" class="nav-link">Nosotros</a></li>
                   <li><a href="{{url('/')}}#servicios" class="nav-link">Servicios</a></li>
                   <li><a href="{{url('/alquiler-de-maquinaria')}}#alquiler-de-maquinaria-pesada" class="nav-link">Alquiler</a></li>
-                  <li><a href="{{url('/')}}#proyectos" class="nav-link">Projectos</a></li>
+                  <li><a href="{{url('/')}}#galeria-de-imagenes" class="nav-link">Imágenes</a></li>
 <!--                   <li><a href="blog.html" class="nav-link">Publicaciones</a></li> -->
-                  <li><a href="contact.html" class="nav-link">Contáctenos</a></li>
+                  <li><a href="https://wa.link/i5yise" class="nav-link"><i class="lni lni-whatsapp"></i> 54 - 11 388-72953</a></li>
                 </ul>
               </nav>
             </div>
@@ -69,10 +71,7 @@
           <div class="row align-items-center">
             <div class="col-lg-5">
               <h1 class="line-bottom">Ofrecemos Un Excelente Servicio A Los Mejores Precios</h1>
-              <button class="btn btn-light">Ver Más</button>
-            </div>
-            <div class="col-lg-5 ml-auto">
-              
+              <a href="{{url('/')}}#nosotros" type="button" class="btn btn-light">Ver Más</a>
             </div>
           </div>
         </div>
@@ -84,8 +83,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-5 pr-md-5 mr-auto">
+            <div class="fb-like" data-href="https://alquilerdemaquinasviales.com.ar/" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
             <h2 class="line-bottom">Envianos Un Mensaje. Nos contactaremos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim maiores mollitia qui quam labore hic asperiores provident maxime earum eum.</p>
+            <p>Envienos sus datos, nos contactaremos para coordinar una <strong>visita a la obra sin costo.</strong></p>
+            <a href="https://wa.link/i5yise" type="button" class="btn btn-success" style="color:white"><i class="lni lni-whatsapp"></i> WhatsApp</a>
           </div>
           <div class="col-md-6">
             <div class="quick-contact-form bg-white" id="main_contact_form">
@@ -149,12 +150,13 @@
 
 
    <!--nosotros-->
-    <div class="site-section">
+    <div class="site-section" id="nosotros">
       <div class="container">
         
         <div class="row mb-5">
           <div class="col-md-4 mr-auto">
             <h2 class="line-bottom">Un Excelente Servicio A Los Mejores Precios</h2>
+
           </div>
           <div class="col-md-8 text-right">
             <nav class="custom-tab nav" role="tablist"  class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -176,7 +178,7 @@
                   <div class="col-md-4 ml-auto">
                     <h2 class="line-bottom">Alquileres</h2>
                     <p>Alquiler de camiones volcadores, máquinas viales, retro-pala, retro-oruga, bobcat con accesorios e hidroelevadores</p>
-                    <a href="" type="button" class="btn btn-secondary">Ver más </a>
+                    <a href="{{url('/alquiler-de-maquinaria')}}#alquiler-de-maquinaria-pesada" type="button" class="btn btn-secondary">Ver más </a>
                   </div>
                 </div>
               </div>
@@ -188,7 +190,7 @@
                   <div class="col-md-4 ml-auto">
                     <h2 class="line-bottom">Servicios</h2>
                     <p>Cuadrillas de veredas y zanjeos, limpiezas de obras, movimientos de suelos, excavación, demolición, desmontes, poda en altura, extracción y corte de raíces</p>
-                    <a href="" type="button" class="btn btn-secondary">Ver más </a>
+                    <a href="{{url('/')}}#servicios" type="button" class="btn btn-secondary">Ver más </a>
                   </div>
                 </div>
               </div>
@@ -253,49 +255,46 @@
           <div class="col-lg-3">
 
             <h2 class="footer-heading mb-4"><img src="{{asset('assets/images/logo_white.png')}}" class="img-fluid"></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis impedit, odit minima repellat, doloribus alias amet consequatur inventore.</p>
+                <p>Somos una empresa en constante crecimiento. Trabajamos en el área de la construcción. Realizamos movimiento de suelos, demoliciones, extracciones, poda en altura, cableado de alta, media y baja tensión.</p>
+                <ul class="list-unstyled">
+                  <li><a href="https://wa.link/i5yise"><i class="lni lni-whatsapp"></i> 54 - 11 388-72953</a></li>
+                  <li><a href="https://www.facebook.com/Alquiler-de-hidroelevadores-100641635200338"><i class="lni lni-facebook-original"></i> facebook</a></li>
+                </ul>
           </div>
           <div class="col-lg-8 ml-auto">
             <div class="row">
               <div class="col-lg-3">
-                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <h2 class="footer-heading mb-4">Links</h2>
                 <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Testimonials</a></li>
-                  <li><a href="#">Terms of Service</a></li>
-                  <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="{{url('/')}}">Inicio</a></li>
+                  <li><a href="{{url('/')}}#nosotros">Nosotros</a></li>
+                  <li><a href="{{url('/')}}#servicios">Servicios</a></li>
+                  <li><a href="{{url('/alquiler-de-maquinaria')}}#alquiler-de-maquinaria-pesada">Alquiler</a></li>
+                  <li><a href="{{url('/')}}#galeria-de-imagenes">Galería de Imágenes</a></li>
                 </ul>
               </div>
-              <div class="col-lg-3">
-                <h2 class="footer-heading mb-4">Quick Links</h2>
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Testimonials</a></li>
-                  <li><a href="#">Terms of Service</a></li>
-                  <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                </ul>
-              </div>
-              <div class="col-lg-3">
-                <h2 class="footer-heading mb-4">Quick Links</h2>
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Testimonials</a></li>
-                  <li><a href="#">Terms of Service</a></li>
-                  <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                </ul>
-              </div>
-              <div class="col-lg-3">
-                <h2 class="footer-heading mb-4">Quick Links</h2>
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Testimonials</a></li>
-                  <li><a href="#">Terms of Service</a></li>
-                  <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                </ul>
+              
+             
+              <div class="col-lg-6">
+                <h2 class="footer-heading mb-4">Imágenes</h2>
+                <div class="row">
+                  @foreach($images as $image)
+                  <div class="col-4 mb-3">
+                    <div class="project-item">
+                        <a class="" href="#">
+                          <img src="{{$image->file}}" data-url="{{$image->file}}" alt="{{$image->name}}" class="fs-gal img-fluid">
+                        </a>
+                    </div>
+                  </div>
+                  @endforeach
+                  <div class="fs-gal-view">
+                      <h1></h1>
+                      <img class="fs-gal-prev fs-gal-nav" src="{{asset('assets/img/prev.svg')}}" alt="Previous picture" title="Previous picture" />
+                      <img class="fs-gal-next fs-gal-nav" src="{{asset('assets/img/next.svg')}}" alt="Next picture" title="Next picture" />
+                      <img class="fs-gal-close" src="{{asset('assets/img/close.svg')}}" alt="Close gallery" title="Close gallery" />
+                      <img class="fs-gal-main" src="" alt="" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -1,7 +1,17 @@
 @extends('layouts.construct')
 
+@section('facebookgraph')
+<!-- You can use open graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+      <meta property="og:url"           content="https://alquilerdemaquinasviales.com.ar"/>
+      <meta property="og:type"          content="website" />
+      <meta property="og:title"         content="Alquiler de Maquinas Viales Telefono: 1138872953" />
+      <meta property="og:description"   content="Trabajamos en el área de la construcción. Realizamos movimiento de suelos, demoliciones, extracciones, poda en altura, cableado de alta, media y baja tensión" />
+      <meta property="og:image"         content="https://alquilerdemaquinasviales.com.ar/assets/images/huges_ok.jpg" />
+@endsection
+
 @section('content')
-<div id="proyectos"></div>
+<div id="galeria-de-imagenes"></div>
 
     <!--Proyetos-->
     <div class="site-section">
@@ -9,68 +19,17 @@
         <div class="row mb-8">
 
           <div class="col-md-4 mx-auto">
-            <h2 class="line-bottom text-center">Nuestros Proyectos</h2>
+            <h2 class="line-bottom text-center">Galería de Imágenes</h2>
           </div>
         </div>
 
 
-        <div class="row">
-          @foreach($images as $image)
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="project-item">
+        @include('includes.galeria_de_imagenes')
 
-              <img src="{{$image->file}}" alt="Image" class="img-fluid">
-              
-              <div class="project-item-overlay">
-                <a class="category" href="#">{{$image->name}}</a>
-                <span class="plus">
-                  <span class="icon-plus"></span>
-                </span>
-
-                <a href="#" class="project-title"><span>{{$image->name}}</span></a>
-              </div>
-
-            </div>
-          </div>
-          @endforeach
-        </div>
       </div>
     </div>
     <!--end proyectos-->
 
-
-    <!--Blog-->
-    <!-- <div class="site-section">
-      <div class="container">
-        <div class="row mb-4">
-
-          <div class="col-md-4 mx-auto">
-            <h2 class="line-bottom text-center">Our Blog</h2>
-          </div>
-
-        </div>
-
-        <div class="row">
-          @foreach($posts as $post)
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="post-entry-1 h-100">
-              <a href="single.html">
-                <img src="{{$post->file}}" alt="Image"
-                 class="img-fluid">
-              </a>
-              <div class="post-entry-1-contents">
-                
-                <h2><a href="single.html">{{$post->name}}</a></h2>
-                <span class="meta d-inline-block mb-3">{{ \Carbon\Carbon::parse($post->created_at)->format('M d Y')}} <span class="mx-2">por</span> <a href="#">{{$post->user->name}}</a></span>
-                <p>{{$post->excerpt}}</p>
-              </div>
-            </div>
-          </div>
-          @endforeach
-        </div>
-      </div>
-    </div> -->
-    <!--end Blog-->
 @endsection
 
 @section('servicios')

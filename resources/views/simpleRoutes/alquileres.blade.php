@@ -14,26 +14,8 @@
 
         </div>
 
-        <div class="row">
-          @foreach($images as $image)
-          <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
-            <div class="project-item">
+        @include('includes.galeria_de_imagenes')
 
-              <img src="{{$image->file}}" alt="Image" class="img-fluid">
-              
-              <div class="project-item-overlay">
-                <a class="category" href="#">{{$image->name}}</a>
-                <span class="plus">
-                  <span class="icon-plus"></span>
-                </span>
-
-                <a href="#" class="project-title"><span>{{$image->name}}</span></a>
-              </div>
-
-            </div>
-          </div>
-          @endforeach
-        </div>
       </div>
     </div>
     <!--end proyectos-->
@@ -43,7 +25,7 @@
 @section('servicios')
 <!--servicios-->
   <div id="alquiler-de-maquinaria-pesada"></div>
-  <div class="site-section" style="background-color: #dedffe;">
+  <div class="site-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-8 mx-auto">
@@ -60,7 +42,7 @@
               </div>
 
               <h3><span>Camiones volcadores</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+              <p>Servicio de Alquiler de Camiones Volcadores para su Obra</p>
 
             </div>
           </div>
@@ -71,7 +53,7 @@
               </div>
 
               <h3><span>Hidroelevador 24m</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+              <p>Hasta 24 metros para Trabajos En Altura</p>
 
             </div>
           </div>
@@ -81,8 +63,8 @@
                 <img src="{{asset('assets/images/alquileres/bob_cat_con_pala.jpg')}}" alt="Image" class="img-fluid">
               </div>
 
-              <h3><span>Bobcat con pala</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+              <h3><span>Bobcat con Pala</span></h3>
+              <p>Alquiler de Minicargadoras</p>
 
             </div>
           </div>
@@ -95,7 +77,7 @@
               </div>
 
               <h3><span>Retro-pala</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+              <p>Somos Especialistas en Trabajos de Movimiento de Tierras</p>
 
             </div>
           </div>
@@ -106,7 +88,7 @@
               </div>
 
               <h3><span>Retro-oruga</span></h3>
-              <p>Consectetur adipisicing elit. Numquam repellendus aut labore</p>
+              <p>Alquiler De Retroexcavadora Pala Con Oruga </p>
 
             </div>
           </div>
