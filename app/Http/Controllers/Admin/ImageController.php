@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 
 use App\Image;
+use App\Category;
+use App\Precategory;
 
 class imageController extends Controller
 {
@@ -43,7 +45,9 @@ class imageController extends Controller
      */
     public function create()
     {
-        return view('admin.images.create');
+        $precategories = Precategory::orderBy('name', 'ASC')->pluck('name', 'id');
+        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+        return view('admin.images.create', compact('categories', 'precategories'));
     }
 
     /**
@@ -75,6 +79,7 @@ class imageController extends Controller
     public function show($id)
     {
         $image = Image::find($id);
+        //$this->authorize('pass', $image);
 
         return view('admin.images.show', compact('image'));
     }
@@ -87,9 +92,11 @@ class imageController extends Controller
      */
     public function edit($id)
     {
+        $precategories = Precategory::orderBy('name', 'ASC')->pluck('name', 'id');
+        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
         $image = Image::find($id);
 
-        return view('admin.images.edit', compact('image'));
+        return view('admin.images.edit', compact('image','categories','precategories'));
     }
 
     /**

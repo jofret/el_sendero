@@ -127,7 +127,7 @@
                             </li>
                             <li class="nav-item">
                                <a class="nav-link" href="{{ route('posts.index') }}">
-                                    Productos
+                                    Proyectos
                                 </a>
                             </li>
 

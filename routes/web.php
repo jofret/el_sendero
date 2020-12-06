@@ -17,8 +17,7 @@
 Route::get('/', 'Web\PageController@inicio')->name('inicio');
 
 
-/*formulario*/
-Route::get('/entradas-y-reserva', 'Web\PageController@formularioentradas');
+
 
 /////rutas para formulario
 Route::get('/sendemail','SendEmailController@index');
@@ -41,6 +40,9 @@ Auth::routes();
 //*******Web
 
 
+
+/*formulario Clientes Satisfechos*/
+Route::get('/Cuente-Su-Experiencia-Con Nosotros', 'Web\PageController@formularioentradas');
 
 
 

@@ -18,19 +18,39 @@
 </div>
 
 <hr>
-<h2><strong>Precio Dólares: </strong></h2>
+<!-- <h2><strong>Precio Dólares: </strong></h2>
 <div>
 	<div class="col-2 form-group">
 		{{ Form::label('Precio', 'Precio') }}
 		{{ Form::number('pricing', null, ['class' => 'form-control', 'id' => 'desde'])}}
 	</div>
 </div>
-<hr>
+<hr> -->
 
 
 <div class="form-group">
     {{ Form::label('file', 'Imagen') }}
     {{ Form::file('file') }}
+</div>
+
+<div class="form-group">
+    {{ Form::label('file2', 'Imagen') }}
+    {{ Form::file('file2') }}
+</div>
+
+<div class="form-group">
+    {{ Form::label('file3', 'Imagen') }}
+    {{ Form::file('file3') }}
+</div>
+
+<div class="form-group">
+    {{ Form::label('file4', 'Imagen') }}
+    {{ Form::file('file4') }}
+</div>
+
+<div class="form-group">
+    {{ Form::label('file5', 'Imagen') }}
+    {{ Form::file('file5') }}
 </div>
 
 <div class="form-group">

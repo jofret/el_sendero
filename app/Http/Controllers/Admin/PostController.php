@@ -78,6 +78,24 @@ class PostController extends Controller
             $post->fill(['file2' => asset($path)])->save();
         }
 
+        //IMAGE2
+        if($request->file('file3')){
+            $path = Storage::disk('public')->put('image', $request->file('file3'));
+            $post->fill(['file3' => asset($path)])->save();
+        }
+
+        //IMAGE2
+        if($request->file('file4')){
+            $path = Storage::disk('public')->put('image', $request->file('file4'));
+            $post->fill(['file4' => asset($path)])->save();
+        }
+
+        //IMAGE2
+        if($request->file('file5')){
+            $path = Storage::disk('public')->put('image', $request->file('file5'));
+            $post->fill(['file5' => asset($path)])->save();
+        }
+
         //TAGS
         $post->tags()->attach($request->get('tags'));
 
@@ -138,6 +156,24 @@ class PostController extends Controller
         if($request->file('file2')){
             $path = Storage::disk('public')->put('image', $request->file('file2'));
             $post->fill(['file2' => asset($path)])->save();
+        }
+
+        //IMAGE3
+        if($request->file('file3')){
+            $path = Storage::disk('public')->put('image', $request->file('file3'));
+            $post->fill(['file3' => asset($path)])->save();
+        }
+
+        //IMAGE4
+        if($request->file('file4')){
+            $path = Storage::disk('public')->put('image', $request->file('file4'));
+            $post->fill(['file4' => asset($path)])->save();
+        }
+
+        //IMAGE2
+        if($request->file('file5')){
+            $path = Storage::disk('public')->put('image', $request->file('file5'));
+            $post->fill(['file5' => asset($path)])->save();
         }
 
         //TAGS

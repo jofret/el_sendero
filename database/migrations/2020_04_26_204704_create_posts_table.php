@@ -22,7 +22,6 @@ class CreatePostsTable extends Migration
 
             $table->string('name', 128);
             $table->string('slug', 128)->unique();
-            $table->decimal('pricing', 9,2);
 
             $table->mediumText('excerpt')->nullable();
             $table->text('body');
@@ -30,6 +29,11 @@ class CreatePostsTable extends Migration
 
             $table->string('file', 128)->nullable();
             $table->string('file2', 128)->nullable();
+            $table->string('file3', 128)->nullable();
+            $table->string('file4', 128)->nullable();
+            $table->string('file5', 128)->nullable();
+
+
             $table->string('youtube', 255)->nullable();
 
             $table->timestamps();

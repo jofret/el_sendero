@@ -29,7 +29,6 @@ class PostStoreRequest extends FormRequest
             'user_id'       => 'required|integer',
             'category_id'   => 'required|integer',
             'tags'          => 'required|array',
-            'pricing'   => 'required',
             'body'          => 'required',
             'status'        => 'required|in:DRAFT,PUBLISHED',
         ];
@@ -40,6 +39,14 @@ class PostStoreRequest extends FormRequest
         if($this->get('file2'))
             $rules = array_merge($rules, ['file2' => 'mimes:jpg,jpeg,png' ]);
 
+        if($this->get('file3'))
+            $rules = array_merge($rules, ['file3' => 'mimes:jpg,jpeg,png' ]);
+
+        if($this->get('file4'))
+            $rules = array_merge($rules, ['file4' => 'mimes:jpg,jpeg,png' ]);
+
+        if($this->get('file5'))
+            $rules = array_merge($rules, ['file5' => 'mimes:jpg,jpeg,png' ]);
 
             return $rules;
     }

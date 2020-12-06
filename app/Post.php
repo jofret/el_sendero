@@ -12,12 +12,15 @@ class Post extends Model
 		'category_id', 
 		'name',
 		'slug', 
-		"pricing", 
 		'excerpt', 
 		'body',
 		'status', 
 		'youtube', 
-		'file'
+		'file',
+		'file2',
+		'file3',
+		'file4',
+		'file5'
 	];
 
 
