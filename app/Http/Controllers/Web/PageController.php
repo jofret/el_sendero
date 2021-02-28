@@ -10,6 +10,7 @@ use App\Category;
 use App\Precategory;
 use App\Tag;
 use App\Image;
+use App\Customer;
 
 class PageController extends Controller
 {
@@ -26,11 +27,48 @@ class PageController extends Controller
         return view('web.inicio', compact('posts','projects','images'));
     }
 
-    public function formularioentradas(){
-
+    public function experiencias(){
         $images = Image::orderBy('id', 'DESC')->paginate(6);
-        return view('web.fomularioEntradas', compact('images'));
+        return view('simpleRoutes.experiencias', compact('images'));
     }
+
+    function CreateCustomerMesagge(Request $request)
+
+        {
+
+        $this->validate($request, [
+            'name'                      =>      'required',
+            'city'                      =>      'required',
+            'email'                     =>      'required|email',
+            'telephone'                 =>      'required',
+            'birthday'                  =>      'required',
+            'birthmonth'                =>     'required',
+            'message'                   =>      'required',
+
+            //'g-recaptcha-response' => 'required|captcha'
+        ]);
+
+        $data=array(
+
+            'name'                         => $request->name,
+            'city'                         => $request->city,
+            'email'                        => $request->email,
+            'telephone'                    => $request->telephone,
+            'birthday'                     => $request->birthday,
+            'birthmonth'                   => $request->birthmonth,
+            'message'                      => $request->message
+
+        );
+
+
+        $CustomenrComent = Customer::create($request->all());
+
+        Mail::to('jofret_@hotmail.com')->send(new SendMail($data));
+
+        return back()->with('success', "Gracias por su testimonio Sr $request->name, será publicado después que sea revisado por el administrador de nuestro sitio web");
+
+    }
+
 
 
     public function products($slug){

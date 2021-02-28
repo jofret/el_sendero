@@ -42,7 +42,9 @@ Auth::routes();
 
 
 /*formulario Clientes Satisfechos*/
-Route::get('/Cuente-Su-Experiencia-Con Nosotros', 'Web\PageController@formularioentradas');
+Route::get('/Cuente-Su-Experiencia-Con-Nosotros', 'Web\PageController@experiencias');
+
+Route::post('/Cuente-Su-Experiencia-Con-Nosotros', 'Web\PageController@CreateCustomerMesagge')->name('create.message');
 
 
 

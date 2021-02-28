@@ -10,7 +10,7 @@ use App\Mail\SendMail;
 
 class SendEmailController extends Controller
 {
-    //
+
     function index()
     {
     	//uso la vista acuario porque la plantilla acuario contiene el formulario de envío
@@ -19,16 +19,16 @@ class SendEmailController extends Controller
 
     function send(Request $request)
     {
-    	$this->validate($request, [
-    		'name' 			            =>		'required',
-    		'email' 		            =>		'required|email',
-    		'telephone' 	            =>		'required',
-            'message'                   =>      'required',
-
-    		'g-recaptcha-response' => 'required|captcha'
+    	
     	]);
 
-    	$data=array(
+    	$data=array($this->validate($request, [
+            'name'                      =>      'required',
+            'email'                     =>      'required|email',
+            'telephone'                 =>      'required',
+            'message'                   =>      'required',
+
+            'g-recaptcha-response' => 'required|captcha'
             'name'			               => $request->name,
     		'email'			               => $request->email,
     		'telephone'		               => $request->telephone,
