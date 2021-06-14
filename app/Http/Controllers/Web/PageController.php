@@ -10,6 +10,7 @@ use App\Category;
 use App\Precategory;
 use App\Tag;
 use App\Image;
+use App\Video;
 use App\Customer;
 
 class PageController extends Controller
@@ -24,7 +25,10 @@ class PageController extends Controller
             ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
         $images = Image::orderBy('id', 'DESC')->paginate(6);
-        return view('web.inicio', compact('posts','projects','images'));
+        
+        $videos = Video::orderBy('id', 'DESC')->paginate(6);
+
+        return view('web.inicio', compact('posts','projects','images','videos'));
     }
 
     public function experiencias(){
@@ -143,23 +147,12 @@ class PageController extends Controller
         return view('web.galery', compact('images','imagesGalery'));
     }
 
-    public function alquileres(){
-        $images = Image::orderBy('id', 'DESC')->paginate(6);
-        return view('simpleRoutes.alquileres',compact('images'));
+    public function videos(){
+
+        $videos = Video::orderBy('id', 'DESC')->paginate(6);
+
+        return view('web.videos', compact('videos'));
     }
-
-    public function instalaciones(){
-
-        $images = Image::orderBy('id', 'DESC')->paginate(6);
-        return view('simpleRoutes.instalaciones', compact('images'));
-    }
-
-    public function exhibiciones(){
-
-        $images = Image::orderBy('id', 'DESC')->paginate(6);
-        return view('simpleRoutes.exhibiciones', compact('images'));
-    }
-    
 
    
      public function admin(){

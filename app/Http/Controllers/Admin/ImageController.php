@@ -67,7 +67,7 @@ class imageController extends Controller
         }
 
 
-        return redirect()->route('images.edit', $image->id)->with('info', 'Categoría creada con éxito');
+        return redirect()->route('images.edit', $image->id)->with('info', 'Imagen creada con éxito');
     }
 
     /**
@@ -118,7 +118,7 @@ class imageController extends Controller
             $image->fill(['file' => asset($path)])->save();
         }
 
-        return redirect()->route('images.edit', $image->id)->with('info', 'Categoría actualizada con éxito');
+        return redirect()->route('images.edit', $image->id)->with('info', 'Imagen actualizada con éxito');
     }
 
     /**

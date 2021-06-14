@@ -121,6 +121,11 @@
                             </li>
                         @else
                         <li class="nav-item">
+                               <a class="nav-link" href="{{ route('videos.index') }}">
+                                    Videoteca
+                                </a>
+                            </li>
+                        <li class="nav-item">
                                <a class="nav-link" href="{{ route('images.index') }}">
                                     Galería
                                 </a>

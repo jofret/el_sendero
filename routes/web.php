@@ -13,10 +13,7 @@
 
 //*****************Aquí Web Enlaces**********************//
 
-
 Route::get('/', 'Web\PageController@inicio')->name('inicio');
-
-
 
 
 /////rutas para formulario
@@ -57,13 +54,11 @@ Route::get('nuestros-productos/{slug}', 			'Web\PageController@tag')->name('tag'
 //para post
 Route::get('producto/{slug}', 			'Web\PageController@product')->name('product');
 
-//
-
-//para post
+//para images
 Route::get('galeria-de-imagenes', 			'Web\PageController@galery')->name('galery');
 
-//
-
+//para videos
+Route::get('videos', 			'Web\PageController@videos')->name('videos');
 
 
 
@@ -77,6 +72,8 @@ Route::resource('posts',			'Admin\PostController');
 Route::resource('electrics',		'Admin\EletricoController');
 
 Route::resource('images',		'Admin\ImageController');
+
+Route::resource('videos',		'Admin\VideoController');
 
 
 

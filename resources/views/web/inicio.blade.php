@@ -1,4 +1,4 @@
-@extends('layouts.construct')
+@extends('layouts.layout_el_sendero')
 
 @section('facebookgraph')
 <!-- You can use open graph tags to customize link previews.

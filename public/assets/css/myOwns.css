@@ -1,49 +1,18 @@
-/*recapcha*/
-#gwd-reCAPTCHA_2, #rc-imageselect   {
-                    transform: scale(0.84);
-                    transform-origin: 0 0;
-                   }
-/**/
+/*myOwns.css*/
 
-@media (max-width: 600px) {
-  .ftco-cover-1.overlay h1 {
-      color: #fff;
-      font-size: 1.5rem;
-      font-weight: 900;
-  }
-
-
-  .quick-contact-form {
-      padding: 10px;
-      border-radius: 7px;
-      margin-top: -200px;
-      -webkit-box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.1);
-      box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.1);
-  }
-
+.newsletter-widget:after {
+    content: "\f003";
+    font-family: FontAwesome;
+    position: absolute;
+    bottom: -75px;
+    right: 27px;
+    font-size: 160px;
+    color: #e8eaed;
+    -webkit-transform: rotate(
+13deg
+);
+    -ms-transform: rotate(13deg);
+    transform: rotate(
+13deg
+);
 }
-
-/*myOwns*/
-
-.service-2 {
-    padding: 0px;
-    background: #fff;
-    -webkit-transition: .3s all ease;
-    -o-transition: .3s all ease;
-}
-
-.service-2 h3, .service-2 p{
-	padding: 10px
-}
-
-.service-2:hover {
-    background-color: #F4F4F4;
-    -webkit-box-shadow: 0 5px 50px 0 rgba(46, 49, 146, 0.1);
-    box-shadow: 0 5px 50px 0 rgba(46, 49, 146, 0.1); }
-
- .service-2:hover h3 {
-      color: #6B6B6B; }
-      .service-2:hover h3 span:after {
-        background-color: #fb7400; }
-    .service-2:hover p {
-      color: #6B6B6B }
