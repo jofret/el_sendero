@@ -6,9 +6,9 @@
         <div class="col-lg-10">
             <div class="card" style="width: 100%">
                 <div class="card-header">
-                    Imágenes 
+                    Videos
                     <a href="{{ route('videos.create') }}" class="btn btn-primary btn-sm float-right">
-                        Crear Youtube Video
+                        Publicar Youtube Video
                     </a>
                 </div>
 

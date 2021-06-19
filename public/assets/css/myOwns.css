@@ -16,3 +16,8 @@
 13deg
 );
 }
+
+.post .post-title {
+    font-size: 18px;
+    height: 35px;
+}

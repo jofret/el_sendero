@@ -132,7 +132,7 @@
                             </li>
                             <li class="nav-item">
                                <a class="nav-link" href="{{ route('posts.index') }}">
-                                    Proyectos
+                                    Publicaciones
                                 </a>
                             </li>
 
@@ -150,7 +150,7 @@
 
                             <li class="nav-item">
                                <a class="nav-link" href="{{ route('tags.index') }}">
-                                   Componentes
+                                   Etiquetas
                                 </a>
                             </li>
 

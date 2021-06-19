@@ -18,17 +18,20 @@ class PageController extends Controller
 
     public function inicio(){
         //aqui  Publicaciones
-        $posts = Post::where('category_id', '1')
-            ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
+        $posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
 
-        $projects = Post::where('category_id', '>', 1)
-            ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
+        $categories = Category::all();
+
+        $plans = Tag::all(); 
+
+        // $projects = Post::where('category_id', '>', 1)
+        //     ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
         $images = Image::orderBy('id', 'DESC')->paginate(6);
         
         $videos = Video::orderBy('id', 'DESC')->paginate(6);
 
-        return view('web.inicio', compact('posts','projects','images','videos'));
+        return view('web.inicio', compact('posts','images','videos','categories','plans'));
     }
 
     public function experiencias(){
