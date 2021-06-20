@@ -55,11 +55,11 @@
 
         <div class="col-md-4">
           <!-- ad widget-->
-          <div class="aside-widget text-center">
+          <!-- <div class="aside-widget text-center">
             <a href="#" style="display: inline-block;margin: auto;">
               <img class="img-responsive" src="./img/ad-3.jpg" alt="">
             </a>
-          </div>
+          </div> -->
           <!-- /ad widget -->
 
           <!-- social widget -->
@@ -93,81 +93,45 @@
           <!-- /social widget -->
 
           <!-- category widget -->
-          <div class="aside-widget">
-            <div class="section-title">
-              <h2 class="title">Categorías</h2>
-            </div>
-            <div class="category-widget">
-              <ul>
-                @foreach($categories as $category)
-                  <li><a href="{{route('category' , $category->slug)}}">{{$category->name}} <span>{{ $category->posts->count() }}</span></a></li>
-                @endforeach
-              </ul>
-            </div>
-          </div>
+          @include('includes.category')
           <!-- /category widget -->
 
+
           <!-- newsletter widget -->
-          <!-- <div class="aside-widget">
+          <!-- 
+          --------------------------------------------
+          SUSCRIPCIONES-------------------------------
+          --------------------------------------------
+          <div class="aside-widget">
             <div class="section-title">
-              <h2 class="title">Newsletter</h2>
+              <h2 class="title">Suscripción</h2>
             </div>
             <div class="newsletter-widget">
               <form>
-                <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium.</p>
-                <input class="input" name="newsletter" placeholder="Enter Your Email">
-                <button class="primary-button">Subscribe</button>
+                <p>Ingresa tus datos y nos contactaremos con vos para finalizar la suscrpción</p>
+                <input class="input" name="name" placeholder="Tu Nombre">
+                <input class="input" name="telephon" placeholder="Teléfono">
+                <input class="input" name="email" placeholder="Email">
+                <button class="primary-button">Subscribirme</button>
               </form>
             </div>
-          </div> -->
+          </div> 
+          --------------------------------------------
+          END SUSCRIPCIONES---------------------------
+          --------------------------------------------
+          -->
           <!-- /newsletter widget -->
 
-          <!-- post widget -->
-          <div class="aside-widget">
-            <div class="section-title">
-              <h2 class="title">Últimas Publicaciones</h2>
-            </div>
-
-            @foreach($lastPosts as $lastPost)
-            <!-- post -->
-            <div class="post post-widget">
-              <a class="post-img" href="blog-post.html"><img src="{{$lastPost->file}}" alt="{{$lastPost->name}}"></a>
-              <div class="post-body">
-                <div class="post-category">
-                  <a href="{{route('category' , $lastPost->category->slug)}}">{{$lastPost->category->name}}</a>
-                </div>
-                <h3 class="post-title"><a href="blog-post.html">{{$lastPost->name}}</a></h3>
-              </div>
-            </div>
-            <!-- /post -->
-            @endforeach
-
-          </div>
-          <!-- /post widget -->
+          <!-- lastPosts widget -->
+          @include('includes.lastPosts')
+          <!-- lastPosts widget -->
 
           <!-- galery widget -->
-          <div class="aside-widget">
-            <div class="section-title">
-              <h2 class="title">Instagram</h2>
-            </div>
-            <div class="galery-widget">
-              <ul>
-                @foreach($images as $image)
-                <li><a href="#"><img src="{{$image->file}}" alt=""></a></li>
-                @endforeach
-              </ul>
-            </div>
-          </div>
-          <!-- /galery widget -->
+          @include('includes.galery')
+          <!-- galery widget -->
 
-          <!-- Ad widget -->
-          <div class="aside-widget text-center">
-            <a href="#" style="display: inline-block;margin: auto;">
-              <img class="img-responsive" src="./img/ad-1.jpg" alt="">
-            </a>
-          </div>
-          <!-- /Ad widget -->
         </div>
+
       </div>
       <!-- /row -->
     </div>

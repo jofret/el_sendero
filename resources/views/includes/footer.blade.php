@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-3">
           <div class="footer-widget">
-            <h3 class="footer-title">Categories</h3>
+            <h3 class="footer-title">Categorías</h3>
             <div class="category-widget">
               <ul>
                 @foreach($categories as $category)
@@ -32,7 +32,7 @@
         </div>
         <div class="col-md-3">
           <div class="footer-widget">
-            <h3 class="footer-title">Tags</h3>
+            <h3 class="footer-title">Filtro de Etiquetas</h3>
             <div class="tags-widget">
               <ul>
                 @foreach($plans as $plan)
@@ -62,10 +62,10 @@
       <div class="footer-bottom row">
         <div class="col-md-6 col-md-push-6">
           <ul class="footer-nav">
-            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Alcoholicos Anónimos</a></li>
             <li><a href="#">Galería</a></li>
-            <li><a href="#">Suscribite</a></li>
-            <li><a href="#">Publicacione</a></li>
+<!--             <li><a href="#">Suscribite</a></li>
+ -->            <li><a href="#">Publicacione</a></li>
             <li><a href="#">Contactanos</a></li>
           </ul>
         </div>

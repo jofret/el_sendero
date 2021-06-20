@@ -32,14 +32,14 @@
             @foreach($posts as $post)
             <div class="col-md-6">
               <div class="post">
-                <a class="post-img" href="blog-post.html"><img src="{{$post->file}}" alt=""></a>
+                <a class="post-img" href="{{route('post' , $post->slug)}}"><img src="{{$post->file}}" alt=""></a>
                 <div class="post-body">
                   <div class="post-category">
                     <a href="{{route('category' , $post->category->slug)}}">{{$post->category->name}}</a>
                   </div>
-                  <h3 class="post-title"><a href="blog-post.html">{{$post->name}}</a></h3>
+                  <h3 class="post-title"><a href="{{route('post' , $post->slug)}}">{{$post->name}}</a></h3>
                   <ul class="post-meta">
-                    <li><a href="author.html">{{$post->user->name}}</a></li>
+                    <li><a href="#">{{$post->user->name}}</a></li>
                     <li> {{ \Carbon\Carbon::parse($post->created_at)->format('M d Y')}} </li>
                   </ul>
                 </div>
@@ -53,9 +53,8 @@
           <!-- /row -->
           <!--END PUBLICACIONES-->
 
-          
-
         </div>
+
         <div class="col-md-4">
           <!-- ad widget-->
           <!-- <div class="aside-widget text-center">
@@ -95,20 +94,10 @@
           </div> -->
           <!-- /social widget -->
 
-          <!-- category widget -->
-          <div class="aside-widget">
-            <div class="section-title">
-              <h2 class="title">Categorías</h2>
-            </div>
-            <div class="category-widget">
-              <ul>
-                @foreach($categories as $category)
-                <li><a href="{{route('category' , $category->slug)}}">{{$category->name}} <span>{{ $category->posts->count() }}</span></a></li>
-                @endforeach
-              </ul>
-            </div>
-          </div>
-          <!-- /category widget -->
+          <!-- Category widget -->
+          @include('includes.category')
+          <!-- /category widget -->    
+          
 
           <!-- newsletter widget -->
           <!-- 
@@ -135,25 +124,11 @@
           -->
           <!-- /newsletter widget -->
 
-          <!-- post widget -->
-
-          <!-- /post widget -->
-
           <!-- galery widget -->
-          <div class="aside-widget">
-            <div class="section-title">
-              <h2 class="title">Galería</h2>
-            </div>
-            <div class="galery-widget">
-              <ul>
-                @foreach($images as $image)
-                <li><a href="#"><img src="{{$image->file}}" alt=""></a></li>
-                @endforeach
-              </ul>
-            </div>
-          </div>
+          @include('includes.galery')
           <!-- /galery widget -->
         </div>
+
       </div>
       <!-- /row -->
     </div>

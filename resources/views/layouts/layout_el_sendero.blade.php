@@ -14,8 +14,12 @@
 </head>
 
 <body>
-
-	@include('includes.header')
+	<header id="header">
+		<!-- NAV -->
+			@include('includes.header')
+		<!-- /NAV -->
+	</header>
+	
 
 	<!-- SECTION -->
 	<div class="section">

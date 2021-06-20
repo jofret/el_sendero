@@ -51,10 +51,10 @@ Route::get('publicaciones',		        'Web\PageController@posts')->name('posts');
 Route::get('publicaciones/{slug}',		        'Web\PageController@category')->name('category');
 
 //para tags
-Route::get('nuestros-productos/{slug}', 			'Web\PageController@tag')->name('tag');
+Route::get('revista-web/{slug}', 			'Web\PageController@tag')->name('tag');
 
 //para post
-//Route::get('producto/{slug}', 			'Web\PageController@product')->name('product');
+Route::get('publicacion/{slug}', 			'Web\PageController@post')->name('post');
 
 //para images
 Route::get('galeria-de-imagenes', 			'Web\PageController@galery')->name('galery');

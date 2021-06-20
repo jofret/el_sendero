@@ -111,7 +111,7 @@ public function posts(){
 
         /*$excepto = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->first();*/
 
-        $posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->where('id', '<>', $lastPost->id)->get();
+        $posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->where('id', '<>', $lastPost->id)->paginate(9);
 
         $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
 
@@ -126,8 +126,10 @@ public function posts(){
     }
 
 
- /*   public function product($slug){
-        $product = Post::where('slug', $slug)->first();
+    public function post($slug){
+        $post = Post::where('slug', $slug)->first();
+
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
 
         $category = Post::where('slug', $slug)->pluck('category_id')->first();
 
@@ -142,8 +144,8 @@ public function posts(){
 
         $images = Image::orderBy('id', 'DESC')->paginate(6);
 
-        return view('web.product', compact('product','category','categories','plans','productsRelations','excepto','images'));
-    }*/
+        return view('web.post', compact('post','lastPosts','category','categories','plans','productsRelations','excepto','images'));
+    }
 
 
 
@@ -151,10 +153,18 @@ public function posts(){
     
     public function tag($slug){ 
         
-        $products = Post::whereHas('tags', function($query) use ($slug) {
+        $lastPost = Post::whereHas('tags', function($query) use ($slug) {
             $query->where('slug', $slug);
         })
-        ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(9);
+        ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->first();
+
+        $posts = Post::whereHas('tags', function($query) use ($slug) {
+            $query->where('slug', $slug);
+        })
+        ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->where('id', '<>', $lastPost->id)
+        ->paginate(9);
+
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
 
         $category = Category::where('slug', $slug)->pluck('id')->first();
 
@@ -163,7 +173,7 @@ public function posts(){
         $plans = Tag::all();
         $images = Image::orderBy('id', 'DESC')->paginate(6);
 
-        return view('web.products', compact('products','category','categories','plans','images'));
+        return view('web.posts', compact('lastPost','posts','lastPosts','category','categories','plans','images'));
     }
 
 
