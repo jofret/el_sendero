@@ -41,11 +41,11 @@
 		<div class="container">
 			<!-- nav -->
 			<ul class="nav-menu">
-				<li><a href="#">Inicio</a></li>
-				<li><a href="#">Galería</a></li>
+				<li><a href="{{url('/')}}">Inicio</a></li>
+				<li><a href="{{url('/galeria-de-imagenes')}}">Galería</a></li>
 <!-- 				<li><a href="#">Suscribite</a></li>
  -->				<li class="has-dropdown">
-					<a href="index.html">Publicaciones</a>
+					<a href="{{url('/publicaciones')}}">Publicaciones</a>
 					<div class="dropdown">
 						<div class="dropdown-body">
 							<ul class="dropdown-list">
@@ -66,8 +66,8 @@
 	<!-- Aside Nav -->
 	<div id="nav-aside">
 		<ul class="nav-aside-menu">
-			<li><a href="#">Inicio</a></li>
-			<li><a href="#">Galería</a></li>
+			<li><a href="{{url('/')}}">Inicio</a></li>
+			<li><a href="{{url('/galeria-de-imagenes')}}">Galería</a></li>
 <!-- 			<li><a href="#">Suscribite</a></li>
  -->			<li class="has-dropdown"><a>Publicaciones</a>
 				<ul class="dropdown">

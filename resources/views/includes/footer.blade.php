@@ -63,9 +63,9 @@
         <div class="col-md-6 col-md-push-6">
           <ul class="footer-nav">
             <li><a href="#">Alcoholicos Anónimos</a></li>
-            <li><a href="#">Galería</a></li>
+            <li><a href="{{url('/galeria-de-imagenes')}}">Galería</a></li>
 <!--             <li><a href="#">Suscribite</a></li>
- -->            <li><a href="#">Publicacione</a></li>
+ -->            <li><a href="{{url('/publicaciones')}}">Publicacione</a></li>
             <li><a href="#">Contactanos</a></li>
           </ul>
         </div>

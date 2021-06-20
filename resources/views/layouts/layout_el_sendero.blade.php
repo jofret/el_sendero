@@ -33,12 +33,12 @@
 						<a class="post-img" href="blog-post.html"><img src="{{asset('assets./img/logo-ok.jpg')}}" alt=""></a>
 						<div class="post-body">
 							<div class="post-category">
-								<a href="#">Edición 0</a>
+								<a>Edición 0</a>
 							</div>
-							<h3 class="post-title title-lg"><a href="blog-post.html">Revista Nacional Edición de Lanzamiento</a></h3>
+							<h3 class="post-title title-lg"><a>Revista Nacional Edición de Lanzamiento</a></h3>
 							<ul class="post-meta">
-								<li><a href="#">Admin</a></li>
-								<li>10 Enero 2021</li>
+								<li><a>Admin</a></li>
+								<!-- <li>10 Enero 2021</li> -->
 							</ul>
 						</div>
 					</div>

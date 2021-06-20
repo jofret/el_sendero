@@ -3,6 +3,7 @@
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.lightbox.min.css')}}">
     <!-- Bootstrap -->
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" />
 

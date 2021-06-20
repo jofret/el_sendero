@@ -181,10 +181,15 @@ public function posts(){
 
     public function galery(){
 
-        $imagesGalery = Image::orderBy('id', 'DESC')->paginate(9);
-        $images = Image::orderBy('id', 'DESC')->paginate(6);
+        $images = Image::orderBy('id', 'DESC')->paginate(9);
 
-        return view('web.galery', compact('images','imagesGalery'));
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
+
+        $categories = Category::all();
+
+        $plans = Tag::all();
+
+        return view('web.galery', compact('images','lastPosts','categories','plans'));
     }
 
     public function videos(){

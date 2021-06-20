@@ -4,11 +4,12 @@
       <h2 class="title">Galería</h2>
     </div>
     <div class="galery-widget">
-      <ul>
+      <ul class="gallery">
         @foreach($images as $image)
-        <li><a href="#"><img src="{{$image->file}}" alt=""></a></li>
+        <li><a href="{{$image->file}}"><img src="{{$image->file}}" alt=""></a></li>
         @endforeach
       </ul>
+      <a href="{{route('galery')}}" class="primary-button" type="button">Ver galería</a>
     </div>
   </div>
   <!-- /galery widget -->
