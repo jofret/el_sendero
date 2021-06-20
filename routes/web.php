@@ -44,15 +44,17 @@ Route::get('/Cuente-Su-Experiencia-Con-Nosotros', 'Web\PageController@experienci
 Route::post('/Cuente-Su-Experiencia-Con-Nosotros', 'Web\PageController@CreateCustomerMesagge')->name('create.message');
 
 
+//todos los posts
+Route::get('publicaciones',		        'Web\PageController@posts')->name('posts');
 
 //para categorias
-Route::get('productos/{slug}',		        'Web\PageController@products')->name('products');
+Route::get('publicaciones/{slug}',		        'Web\PageController@category')->name('category');
 
 //para tags
 Route::get('nuestros-productos/{slug}', 			'Web\PageController@tag')->name('tag');
 
 //para post
-Route::get('producto/{slug}', 			'Web\PageController@product')->name('product');
+//Route::get('producto/{slug}', 			'Web\PageController@product')->name('product');
 
 //para images
 Route::get('galeria-de-imagenes', 			'Web\PageController@galery')->name('galery');

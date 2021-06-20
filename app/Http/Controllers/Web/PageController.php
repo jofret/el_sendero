@@ -77,15 +77,22 @@ class PageController extends Controller
     }
 
 
-
-    public function products($slug){
+    //publicaciones
+    public function category($slug){
 
         $category = Category::where('slug', $slug)->pluck('id')->first();
         $categoryName = Category::where('slug', $slug)->pluck('name')->first();
 
+        $lastPost= Post::where('category_id', $category)
+            ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->first();
 
-        $products = Post::where('category_id', $category)
-            ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(9);
+        /*$excepto = Post::where('category_id', $category)
+            ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->first();*/
+
+        $posts = Post::orderBy('id', 'DESC')->where('category_id', $category)
+                ->where('status', 'PUBLISHED')->where('id', '<>', $lastPost->id)->get();
+
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
 
 
         $categories = Category::all();
@@ -94,12 +101,32 @@ class PageController extends Controller
 
         $images = Image::orderBy('id', 'DESC')->paginate(6);
 
-        return view('web.products', compact('category','categoryName','categories','products','plans','images'));
+        return view('web.posts', compact('category','categoryName','lastPost','posts', 'lastPosts','categories','plans','images'));
     }
 
 
+public function posts(){
 
-    public function product($slug){
+        $lastPost= Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->first();
+
+        /*$excepto = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->first();*/
+
+        $posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->where('id', '<>', $lastPost->id)->get();
+
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
+
+
+        $categories = Category::all();
+
+        $plans = Tag::all(); 
+
+        $images = Image::orderBy('id', 'DESC')->paginate(6);
+
+        return view('web.posts', compact('lastPost','posts', 'lastPosts','categories','plans','images'));
+    }
+
+
+ /*   public function product($slug){
         $product = Post::where('slug', $slug)->first();
 
         $category = Post::where('slug', $slug)->pluck('category_id')->first();
@@ -116,7 +143,7 @@ class PageController extends Controller
         $images = Image::orderBy('id', 'DESC')->paginate(6);
 
         return view('web.product', compact('product','category','categories','plans','productsRelations','excepto','images'));
-    }
+    }*/
 
 
 

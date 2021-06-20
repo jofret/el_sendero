@@ -1,68 +1,65 @@
-@extends('layouts.layout_el_sendero')
-
-@section('facebookgraph')
-<!-- You can use open graph tags to customize link previews.
-    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-      <meta property="og:url"           content="https://alquilerdemaquinasviales.com.ar"/>
-      <meta property="og:type"          content="website" />
-      <meta property="og:title"         content="Alquiler de Maquinas Viales Telefono: 1138872953" />
-      <meta property="og:description"   content="Trabajamos en el área de la construcción. Realizamos movimiento de suelos, demoliciones, extracciones, poda en altura, cableado de alta, media y baja tensión" />
-      <meta property="og:image"         content="https://alquilerdemaquinasviales.com.ar/assets/images/huges_ok.jpg" />
-@endsection
-
+@extends('layouts.categories')
 @section('content')
-
-<!-- SECTION -->
-  <div class="section">
+<div class="section">
     <!-- container -->
     <div class="container">
       <!-- row -->
       <div class="row">
         <div class="col-md-8">
-
-          <!--AQUI PUBLICACIONES-->
-          <!-- row -->
-          <div class="row">
-            <div class="col-md-12">
-              <div class="section-title">
-                <h2 class="title">Publicaciones</h2>
+          <!-- post -->
+          <div class="post post-thumb">
+            <a class="post-img" href="blog-post.html"><img src="{{$lastPost->file}}" alt=""></a>
+            <div class="post-body">
+              <div class="post-category">
+                @foreach($lastPost->tags as $tag)
+                <a href="{{ route('tag', $tag->slug)}}#acuario-nautilos">{{$tag->name}}</a>
+                @endforeach
               </div>
+              <h3 class="post-title title-lg"><a href="blog-post.html">{{$lastPost->name}}</a></h3>
+              <ul class="post-meta">
+                <li><a href="author.html">{{$lastPost->user->name}}</a></li>
+                <li>{{ \Carbon\Carbon::parse($lastPost->created_at)->format('M d Y')}} </li>
+              </ul>
             </div>
-            <!-- post -->
+          </div>
+          <!-- /post -->
+          <div class="row">
             @foreach($posts as $post)
+
+            <!-- post -->
             <div class="col-md-6">
               <div class="post">
                 <a class="post-img" href="blog-post.html"><img src="{{$post->file}}" alt=""></a>
                 <div class="post-body">
                   <div class="post-category">
-                    <a href="{{route('category' , $post->category->slug)}}">{{$post->category->name}}</a>
+                    <a href="{{route('category' , $category->slug)}}">{{$post->category->name}}</a>
                   </div>
                   <h3 class="post-title"><a href="blog-post.html">{{$post->name}}</a></h3>
                   <ul class="post-meta">
-                    <li><a href="author.html">{{$post->user->name}}</a></li>
-                    <li> {{ \Carbon\Carbon::parse($post->created_at)->format('M d Y')}} </li>
+                    <li><a href="author.html">John Doe</a></li>
+                    <li>20 April 2018</li>
                   </ul>
                 </div>
               </div>
             </div>
             <!-- /post -->
             @endforeach
-
-            
           </div>
-          <!-- /row -->
-          <!--END PUBLICACIONES-->
 
-          
+          <!--en esta parte pegar de historias-->
 
+          <!-- <div class="section-row loadmore text-center">
+            <a href="#" class="primary-button">Load More</a>
+          </div> -->
         </div>
+
         <div class="col-md-4">
           <!-- ad widget-->
-          <!-- <div class="aside-widget text-center">
+          <div class="aside-widget text-center">
             <a href="#" style="display: inline-block;margin: auto;">
               <img class="img-responsive" src="./img/ad-3.jpg" alt="">
             </a>
-          </div> -->
+          </div>
           <!-- /ad widget -->
 
           <!-- social widget -->
@@ -98,12 +95,12 @@
           <!-- category widget -->
           <div class="aside-widget">
             <div class="section-title">
-              <h2 class="title">Categorías</h2>
+              <h2 class="title">Categorías OL</h2>
             </div>
             <div class="category-widget">
               <ul>
                 @foreach($categories as $category)
-                <li><a href="{{route('category' , $category->slug)}}">{{$category->name}} <span>{{ $category->posts->count() }}</span></a></li>
+                  <li><a href="{{route('category' , $category->slug)}}">{{$category->name}} <span>{{ $category->posts->count() }}</span></a></li>
                 @endforeach
               </ul>
             </div>
@@ -111,38 +108,47 @@
           <!-- /category widget -->
 
           <!-- newsletter widget -->
-          <!-- 
-          --------------------------------------------
-          SUSCRIPCIONES-------------------------------
-          --------------------------------------------
-          <div class="aside-widget">
+          <!-- <div class="aside-widget">
             <div class="section-title">
-              <h2 class="title">Suscripción</h2>
+              <h2 class="title">Newsletter</h2>
             </div>
             <div class="newsletter-widget">
               <form>
-                <p>Ingresa tus datos y nos contactaremos con vos para finalizar la suscrpción</p>
-                <input class="input" name="name" placeholder="Tu Nombre">
-                <input class="input" name="telephon" placeholder="Teléfono">
-                <input class="input" name="email" placeholder="Email">
-                <button class="primary-button">Subscribirme</button>
+                <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium.</p>
+                <input class="input" name="newsletter" placeholder="Enter Your Email">
+                <button class="primary-button">Subscribe</button>
               </form>
             </div>
-          </div> 
-          --------------------------------------------
-          END SUSCRIPCIONES---------------------------
-          --------------------------------------------
-          -->
+          </div> -->
           <!-- /newsletter widget -->
 
           <!-- post widget -->
+          <div class="aside-widget">
+            <div class="section-title">
+              <h2 class="title">Últimas Publicaciones</h2>
+            </div>
 
+            @foreach($lastPosts as $lastPost)
+            <!-- post -->
+            <div class="post post-widget">
+              <a class="post-img" href="blog-post.html"><img src="{{$lastPost->file}}" alt="{{$lastPost->name}}"></a>
+              <div class="post-body">
+                <div class="post-category">
+                  <a href="{{route('category' , $category->slug)}}">{{$lastPost->category->name}}</a>
+                </div>
+                <h3 class="post-title"><a href="blog-post.html">{{$lastPost->name}}</a></h3>
+              </div>
+            </div>
+            <!-- /post -->
+            @endforeach
+
+          </div>
           <!-- /post widget -->
 
           <!-- galery widget -->
           <div class="aside-widget">
             <div class="section-title">
-              <h2 class="title">Galería</h2>
+              <h2 class="title">Instagram</h2>
             </div>
             <div class="galery-widget">
               <ul>
@@ -153,17 +159,18 @@
             </div>
           </div>
           <!-- /galery widget -->
+
+          <!-- Ad widget -->
+          <div class="aside-widget text-center">
+            <a href="#" style="display: inline-block;margin: auto;">
+              <img class="img-responsive" src="./img/ad-1.jpg" alt="">
+            </a>
+          </div>
+          <!-- /Ad widget -->
         </div>
       </div>
       <!-- /row -->
     </div>
     <!-- /container -->
   </div>
-<!-- /SECTION -->
-
 @endsection
-
-
-
-
-

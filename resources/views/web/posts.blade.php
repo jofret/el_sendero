@@ -1,80 +1,176 @@
-@extends('layouts.acuarius')
+@extends('layouts.categories')
 @section('content')
-<div class="custom-border-bottom py-3">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 mb-0"><a href="{{url('/')}}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Shop</strong></div>
-    </div>
-  </div>
-</div>
-<div class="site-section">
-      <div class="container">
-
-        <div class="row mb-5">
-          <div class="col-md-9 order-1">
-
-            <!-- <div class="row align">
-              <div class="col-md-12 mb-5">
-                <div class="float-md-left"><h2 class="text-black h5">Shop All</h2></div>
-                <div class="d-flex">
-                  <div class="dropdown mr-1 ml-md-auto">
-                    <button type="button" class="btn btn-white btn-sm dropdown-toggle px-4" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Latest
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="#">Men</a>
-                      <a class="dropdown-item" href="#">Women</a>
-                      <a class="dropdown-item" href="#">Children</a>
-                    </div>
-                  </div>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-white btn-sm dropdown-toggle px-4" id="dropdownMenuReference" data-toggle="dropdown">Reference</button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-                      <a class="dropdown-item" href="#">Relevance</a>
-                      <a class="dropdown-item" href="#">Name, A to Z</a>
-                      <a class="dropdown-item" href="#">Name, Z to A</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Price, low to high</a>
-                      <a class="dropdown-item" href="#">Price, high to low</a>
-                    </div>
-                  </div>
-                </div>
+<div class="section">
+    <!-- container -->
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+        <div class="col-md-8">
+          <!-- post -->
+          <div class="post post-thumb">
+            <a class="post-img" href="blog-post.html"><img src="{{$lastPost->file}}" alt=""></a>
+            <div class="post-body">
+              <div class="post-category">
+                @foreach($lastPost->tags as $tag)
+                <a href="{{ route('tag', $tag->slug)}}">{{$tag->name}}</a>
+                @endforeach
               </div>
-            </div> -->
-            <div class="d-block d-sm-none">
-              @include('includes.categories')
-            </div>
-            <div class="row mb-5">
-              @foreach($posts as $post)
-              <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="{{ route('post', $post->slug) }}" class="post-item md-height bg-gray d-block">
-                  <img src="{{$post -> file}}" alt="{{$post -> name}}" class="img-fluid">
-                </a>
-                 <div class="mt-3">
-                  <div class="row">
-                    <div class="col-6">
-                      <h2 class="item-title"><a href="{{ route('post', $post->slug) }}">{{$post -> name}}</a></h2>
-                      <p><strong class="item-price">S/{{$post -> pricing}}</strong></p>
-                    </div>
-                    <div class="col-6">
-                      <a href="{{ route('post', $post->slug) }}"><button type="button" class="btn btn-success btn-sm">Más Info <i class="lni lni-arrow-right"></i></button></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              @endforeach
+              <h3 class="post-title title-lg"><a href="blog-post.html">{{$lastPost->name}}</a></h3>
+              <ul class="post-meta">
+                <li><a href="author.html">{{$lastPost->user->name}}</a></li>
+                <li>{{ \Carbon\Carbon::parse($lastPost->created_at)->format('M d Y')}} </li>
+              </ul>
             </div>
           </div>
+          <!-- /post -->
+          <div class="row">
+            @foreach($posts as $post)
 
-<!--desde aqui categorias------>
-		  <!--**** Menu-lateral ****-->
-          @include('includes.menulateralright')
+            <!-- post -->
+            <div class="col-md-6">
+              <div class="post">
+                <a class="post-img" href="blog-post.html"><img src="{{$post->file}}" alt=""></a>
+                <div class="post-body">
+                  <div class="post-category">
+                    <a href="{{route('category' , $post->category->slug)}}">{{$post->category->name}}</a>
+                  </div>
+                  <h3 class="post-title"><a href="blog-post.html">{{$post->name}}</a></h3>
+                  <ul class="post-meta">
+                    <li><a href="author.html">John Doe</a></li>
+                    <li>20 April 2018</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- /post -->
+            @endforeach
+          </div>
 
+          <!--en esta parte pegar de historias-->
+
+          <!-- <div class="section-row loadmore text-center">
+            <a href="#" class="primary-button">Load More</a>
+          </div> -->
         </div>
 
+        <div class="col-md-4">
+          <!-- ad widget-->
+          <div class="aside-widget text-center">
+            <a href="#" style="display: inline-block;margin: auto;">
+              <img class="img-responsive" src="./img/ad-3.jpg" alt="">
+            </a>
+          </div>
+          <!-- /ad widget -->
+
+          <!-- social widget -->
+          <!-- <div class="aside-widget">
+            <div class="section-title">
+              <h2 class="title">Social Media</h2>
+            </div>
+            <div class="social-widget">
+              <ul>
+                <li>
+                  <a href="#" class="social-facebook">
+                    <i class="fa fa-facebook"></i>
+                    <span>21.2K<br>Followers</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="social-twitter">
+                    <i class="fa fa-twitter"></i>
+                    <span>10.2K<br>Followers</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="social-google-plus">
+                    <i class="fa fa-google-plus"></i>
+                    <span>5K<br>Followers</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div> -->
+          <!-- /social widget -->
+
+          <!-- category widget -->
+          <div class="aside-widget">
+            <div class="section-title">
+              <h2 class="title">Categorías</h2>
+            </div>
+            <div class="category-widget">
+              <ul>
+                @foreach($categories as $category)
+                  <li><a href="{{route('category' , $category->slug)}}">{{$category->name}} <span>{{ $category->posts->count() }}</span></a></li>
+                @endforeach
+              </ul>
+            </div>
+          </div>
+          <!-- /category widget -->
+
+          <!-- newsletter widget -->
+          <!-- <div class="aside-widget">
+            <div class="section-title">
+              <h2 class="title">Newsletter</h2>
+            </div>
+            <div class="newsletter-widget">
+              <form>
+                <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium.</p>
+                <input class="input" name="newsletter" placeholder="Enter Your Email">
+                <button class="primary-button">Subscribe</button>
+              </form>
+            </div>
+          </div> -->
+          <!-- /newsletter widget -->
+
+          <!-- post widget -->
+          <div class="aside-widget">
+            <div class="section-title">
+              <h2 class="title">Últimas Publicaciones</h2>
+            </div>
+
+            @foreach($lastPosts as $lastPost)
+            <!-- post -->
+            <div class="post post-widget">
+              <a class="post-img" href="blog-post.html"><img src="{{$lastPost->file}}" alt="{{$lastPost->name}}"></a>
+              <div class="post-body">
+                <div class="post-category">
+                  <a href="{{route('category' , $lastPost->category->slug)}}">{{$lastPost->category->name}}</a>
+                </div>
+                <h3 class="post-title"><a href="blog-post.html">{{$lastPost->name}}</a></h3>
+              </div>
+            </div>
+            <!-- /post -->
+            @endforeach
+
+          </div>
+          <!-- /post widget -->
+
+          <!-- galery widget -->
+          <div class="aside-widget">
+            <div class="section-title">
+              <h2 class="title">Instagram</h2>
+            </div>
+            <div class="galery-widget">
+              <ul>
+                @foreach($images as $image)
+                <li><a href="#"><img src="{{$image->file}}" alt=""></a></li>
+                @endforeach
+              </ul>
+            </div>
+          </div>
+          <!-- /galery widget -->
+
+          <!-- Ad widget -->
+          <div class="aside-widget text-center">
+            <a href="#" style="display: inline-block;margin: auto;">
+              <img class="img-responsive" src="./img/ad-1.jpg" alt="">
+            </a>
+          </div>
+          <!-- /Ad widget -->
+        </div>
       </div>
+      <!-- /row -->
     </div>
-<div>
-	
-</div>
+    <!-- /container -->
+  </div>
 @endsection
