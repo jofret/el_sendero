@@ -30,7 +30,7 @@
 				<div class="col-md-12 hot-post-left">
 					<!-- post -->
 					<div class="post post-thumb">
-						<a class="post-img" href="blog-post.html"><img src="{{asset('assets./img/logo-ok.jpg')}}" alt=""></a>
+						<a class="post-img"><img src="{{asset('assets/img/logo-ok.jpg')}}" alt=""></a>
 						<div class="post-body">
 							<div class="post-category">
 								<a>Edición 0</a>
