@@ -6,7 +6,7 @@
  		<div class="col-lg-10">
  			<div class="card" style="width: 100%">
  				<div class="card-header">
- 					Lista de Publicaciones
+ 					Lista de Artículos
  					<a href="{{ route('posts.create') }}" class="btn btn-primary btn-sm float-right">
  						Crear
  					</a>
