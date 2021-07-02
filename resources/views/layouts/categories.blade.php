@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Callie HTML Template</title>
+	<title>@yield('title')</title>
 
 	<!-- Google font -->
 	@include('includes.links')
@@ -25,7 +25,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-offset-1 col-md-10 text-center">
-						<h1 class="text-uppercase">Publicaciones</h1>
+						@yield('titulosCabecera')
 					</div>
 				</div>
 			</div>

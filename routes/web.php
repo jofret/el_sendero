@@ -40,7 +40,7 @@ Route::get('publicaciones',		        'Web\PageController@posts')->name('posts');
 //para categorias
 Route::get('publicaciones/{slug}',		        'Web\PageController@category')->name('category');
 
-//para tags
+//para tags - Posts
 Route::get('revista-web/{slug}', 			'Web\PageController@tag')->name('tag');
 
 //para post
@@ -48,6 +48,9 @@ Route::get('publicacion/{slug}', 			'Web\PageController@post')->name('post');
 
 //para images
 Route::get('galeria-de-imagenes', 			'Web\PageController@galery')->name('galery');
+
+//para tags - Images
+Route::get('imagenes-por-etiquetas/{slug}', 			'Web\PageController@tagImage')->name('tagImage');
 
 //para videos
 Route::get('videos', 			'Web\PageController@videos')->name('videos');

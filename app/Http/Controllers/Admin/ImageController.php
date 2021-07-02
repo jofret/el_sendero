@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\Image;
 use App\Category;
 use App\Precategory;
+use App\Tag;
 
 class imageController extends Controller
 {
@@ -47,7 +48,9 @@ class imageController extends Controller
     {
         $precategories = Precategory::orderBy('name', 'ASC')->pluck('name', 'id');
         $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
-        return view('admin.images.create', compact('categories', 'precategories'));
+        $tags = Tag::orderBy('name', ' ASC')->get();
+
+        return view('admin.images.create', compact('categories','precategories','tags'));
     }
 
     /**
@@ -65,6 +68,9 @@ class imageController extends Controller
             $path = Storage::disk('public')->put('image', $request->file('file'));
             $image->fill(['file' => asset($path)])->save();
         }
+
+        //TAGS
+        $image->tags()->attach($request->get('tags'));
 
 
         return redirect()->route('images.edit', $image->id)->with('info', 'Imagen creada con éxito');
@@ -94,9 +100,10 @@ class imageController extends Controller
     {
         $precategories = Precategory::orderBy('name', 'ASC')->pluck('name', 'id');
         $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+        $tags = Tag::orderBy('name', ' ASC')->get();
         $image = Image::find($id);
 
-        return view('admin.images.edit', compact('image','categories','precategories'));
+        return view('admin.images.edit', compact('image','categories','tags','precategories'));
     }
 
     /**
@@ -117,6 +124,9 @@ class imageController extends Controller
             $path = Storage::disk('public')->put('image', $request->file('file'));
             $image->fill(['file' => asset($path)])->save();
         }
+
+        //TAGS
+        $image->tags()->sync($request->get('tags'));
 
         return redirect()->route('images.edit', $image->id)->with('info', 'Imagen actualizada con éxito');
     }

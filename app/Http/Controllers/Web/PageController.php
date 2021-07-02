@@ -192,6 +192,24 @@ public function posts(){
         return view('web.galery', compact('images','lastPosts','categories','plans'));
     }
 
+    public function tagImage($slug){
+        //$images = Image::orderBy('id', 'DESC')->paginate(9);
+
+        $images = Image::whereHas('tags', function($query) use ($slug) {
+            $query->where('slug', $slug);
+        })
+        ->orderBy('id', 'DESC')
+        ->paginate(9);
+
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
+
+        $categories = Category::all();
+
+        $plans = Tag::all();
+
+        return view('web.galery', compact('images','lastPosts','categories','plans'));
+    }
+
     public function videos(){
 
         $videos = Video::orderBy('id', 'DESC')->paginate(6);

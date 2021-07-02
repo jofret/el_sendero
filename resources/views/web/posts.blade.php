@@ -1,4 +1,10 @@
 @extends('layouts.categories')
+@section('title')
+Revista el Sendero: Publicaciones
+@endsection
+@section('titulosCabecera')
+<h1 class="text-uppercase">Publicaciones</h1>
+@endsection
 @section('content')
 <div class="section">
     <!-- container -->

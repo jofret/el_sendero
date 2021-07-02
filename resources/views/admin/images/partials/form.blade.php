@@ -20,6 +20,19 @@
     {{ Form::text('slug', null, ['class' => 'form-control', 'id' => 'slug']) }}
 </div>
 
+<hr>
+
+<div class="form-group">
+	{{ Form::label('tags', 'Componentes del Producto') }}
+	<div>
+	@foreach($tags as $tag)
+		<label>
+			{{ Form::checkbox('tags[]', $tag->id) }} {{ $tag->name }}
+		</label>
+	@endforeach
+	</div>
+</div>
+
 <div class="form-group">
     {{ Form::label('file', 'Imagen') }}
     {{ Form::file('file') }}

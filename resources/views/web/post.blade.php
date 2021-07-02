@@ -1,4 +1,10 @@
 @extends('layouts.categories')
+@section('title')
+{{$post->name}}
+@endsection
+@section('titulosCabecera')
+<h1 class="text-uppercase">Publicaciones</h1>
+@endsection
 
 @section('content')
     

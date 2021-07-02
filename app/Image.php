@@ -31,4 +31,9 @@ class Image extends Model
 	}
 
     //un post pertenece y tiene a muchas etiquetas
+
+    public function tags()
+    {
+    	return $this->belongsToMany(Tag::class);
+    }
 }

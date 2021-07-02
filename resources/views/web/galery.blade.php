@@ -1,4 +1,11 @@
 @extends('layouts.categories')
+@section('title')
+Revista el Sendero: Galería de Imágenes
+@endsection
+@section('titulosCabecera')
+<h1 class="text-uppercase">Galería de Imágenes</h1>
+@endsection
+
 @section('content')
 <div class="section">
     <!-- container -->
@@ -12,12 +19,17 @@
 
             <!-- post -->
             <div class="col-md-6">
+              <div style="font-size: 13px; height:25px;">
+                <strong>
+                  @foreach($image->tags as $tag)
+                  <i class="lni lni-tag"></i> <a href="{{ route('tagImage', $tag->slug)}}" class="tag-cloud-link">{{$tag->name}}</a>
+                  @endforeach
+                </strong>
+              </div>
               <div class="post gallery">
                 <a class="post-img" href="{{$image->file}}"><img src="{{$image->file}}" alt=""></a>
                 <div>
-                  
-                  <p style="font-size: 11px" class="post-title">{{$image->name}}</p>
-                  
+                  <p style="font-size: 11px; height:15px;" class="post-title"><strong>Titulo: </strong>{{$image->name}}</p>
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <!--el sendero-->
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">
