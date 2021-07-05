@@ -52,6 +52,16 @@ Route::get('galeria-de-imagenes', 			'Web\PageController@galery')->name('galery'
 //para tags - Images
 Route::get('imagenes-por-etiquetas/{slug}', 			'Web\PageController@tagImage')->name('tagImage');
 
+
+//trailers-edición impresa
+Route::get('ediciones-impresas',		        'Web\PageController@trailers')->name('trailers');
+
+//para trailer
+Route::get('edicion-impresa/{slug}', 			'Web\PageController@trailer')->name('trailer');
+
+//para trailer-categorias
+Route::get('ediciones-impresas/{slug}',		        'Web\PageController@trailercategory')->name('trailercategory');
+
 //para videos
 Route::get('videos', 			'Web\PageController@videos')->name('videos');
 
@@ -64,7 +74,10 @@ Route::resource('tags',				'Admin\TagController');
 Route::resource('precategories',	'Admin\PrecategoryController');
 Route::resource('categories',		'Admin\CategoryController');
 Route::resource('posts',			'Admin\PostController');
-Route::resource('electrics',		'Admin\EletricoController');
+Route::resource('trailers',			'Admin\TrailerController');
+Route::resource('trailer_categories',			'Admin\TrailerCategoryController');
+
+//Route::resource('electrics',		'Admin\EletricoController');
 
 Route::resource('images',		'Admin\ImageController');
 

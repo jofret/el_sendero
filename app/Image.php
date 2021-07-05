@@ -8,6 +8,7 @@ class Image extends Model
 {
     protected $fillable = [
 			'file',
+			'file2',
 			'precategory_id',
 			'category_id', 
 			'name',

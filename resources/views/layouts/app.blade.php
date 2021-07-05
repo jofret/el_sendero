@@ -121,28 +121,11 @@
                             </li>
                         @else
                         <li class="nav-item">
-                               <a class="nav-link" href="{{ route('videos.index') }}">
-                                    Videoteca
-                                </a>
-                            </li>
-                        <li class="nav-item">
-                               <a class="nav-link" href="{{ route('images.index') }}">
-                                    Galería
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                               <a class="nav-link" href="{{ route('posts.index') }}">
-                                    Artículos
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
                                <a class="nav-link" href="{{ route('precategories.index') }}" >
                                     Pre Categoría
                                </a>
                             </li>
-
-                            <li class="nav-item">
+                        <li class="nav-item">
                                <a class="nav-link" href="{{ route('categories.index') }}" >
                                     Categoria
                                </a>
@@ -152,6 +135,41 @@
                                <a class="nav-link" href="{{ route('tags.index') }}">
                                    Etiquetas
                                 </a>
+                            </li>
+
+                        <li class="nav-item">
+                               <a class="nav-link" href="{{ route('videos.index') }}">
+                                    Videoteca
+                                </a>
+                            </li>
+                        <li class="nav-item">
+                               <a class="nav-link" href="{{ route('images.index') }}">
+                                    Galería
+                                </a>
+                            </li>
+                        
+                            <li class="nav-item">
+                               <a class="nav-link" href="{{ route('posts.index') }}">
+                                    Artículos-Publicaciones
+                                </a>
+                            </li>
+
+                            
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Trailers <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('trailer_categories.index') }}">
+                                        Categorías-Trilers
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('trailers.index') }}">
+                                        Publicaciones-Trilers
+                                    </a>
+
+                                    
+                                </div>
                             </li>
 
                             <li class="nav-item dropdown">

@@ -35,15 +35,15 @@ Revista el Sendero: Publicaciones
             <!-- post -->
             <div class="col-md-6">
               <div class="post">
-                <a class="post-img" href="{{route('category' , $post->category->slug)}}"><img src="{{$post->file}}" alt=""></a>
+                <a class="post-img" href="{{route('post' , $post->slug)}}"><img src="{{$post->file2}}" alt=""></a>
                 <div class="post-body">
                   <div class="post-category">
                     <a href="{{route('category' , $post->category->slug)}}">{{$post->category->name}}</a>
                   </div>
-                  <h3 class="post-title"><a href="blog-post.html">{{$post->name}}</a></h3>
+                  <h3 class="post-title"><a href="{{route('post' , $post->slug)}}">{{$post->name}}</a></h3>
                   <ul class="post-meta">
-                    <li><a href="author.html">John Doe</a></li>
-                    <li>20 April 2018</li>
+                    <li><a href="author.html">{{$post->user->name}}</a></li>
+                    <li>{{ \Carbon\Carbon::parse($post->created_at)->format('M d Y')}}</li>
                   </ul>
                 </div>
               </div>

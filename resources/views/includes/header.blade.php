@@ -56,6 +56,20 @@
 						</div>
 					</div>
 				</li>
+				<li class="has-dropdown">
+					<a href="{{url('/publicaciones')}}">Ediciones</a>
+					<div class="dropdown">
+						<div class="dropdown-body">
+							<ul class="dropdown-list">
+								@foreach($ediciones as $edicion)
+				                <li><a href="{{route('trailercategory', $edicion->slug)}}">{{$edicion->name}} <span>
+				                  
+				                  </span></a></li>
+				                @endforeach
+							</ul>
+						</div>
+					</div>
+				</li>
 				<li><a href="#">Contactanos</a></li>
 			</ul>
 			<!-- /nav -->

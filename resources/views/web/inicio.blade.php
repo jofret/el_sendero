@@ -32,7 +32,7 @@
             @foreach($posts as $post)
             <div class="col-md-6">
               <div class="post">
-                <a class="post-img" href="{{route('post' , $post->slug)}}"><img src="{{$post->file}}" alt=""></a>
+                <a class="post-img" href="{{route('post' , $post->slug)}}"><img src="{{$post->file2}}" alt=""></a>
                 <div class="post-body">
                   <div class="post-category">
                     <a href="{{route('category' , $post->category->slug)}}">{{$post->category->name}}</a>
@@ -53,6 +53,36 @@
           <!-- /row -->
           <!--END PUBLICACIONES-->
 
+          <!--AQUI EDICIONES - TRAILERS-->
+          <!-- row -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="section-title">
+                <h2 class="title">Ediciones Impresas - <span style="font-style:italic; color:#999; ">Trailers</span></h2>
+              </div>
+            </div>
+
+            @foreach($trailers as $trailer)
+            <!-- post -->
+            <div class="col-md-4">
+              <div class="post post-sm">
+                <a class="post-img" href="{{route('trailer' , $trailer->slug)}}"><img src="{{$trailer->file2}}" alt=""></a>
+                <div class="post-body">
+                  <div class="post-category">
+                    <a href="category.html">{{$trailer->category->name}}</a>
+                  </div>
+                  <h3 class="post-title title-sm"><a href="#">{{$trailer->name}}</a></h3>
+                  <ul class="post-meta">
+                    <li><a href="#">{{$trailer->user->name}}</a></li>
+                    <li>{{ \Carbon\Carbon::parse($trailer->created_at)->format('M d Y')}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- /post -->
+            @endforeach
+          </div>
+          <!--END EDICIONES - TRAILERS-->
         </div>
 
         <div class="col-md-4">

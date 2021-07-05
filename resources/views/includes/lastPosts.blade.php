@@ -7,10 +7,10 @@
   @foreach($lastPosts as $lastPost)
   <!-- post -->
   <div class="post post-widget">
-    <a class="post-img" href="{{route('post' , $lastPost->slug)}}"><img src="{{$lastPost->file}}" alt="{{$lastPost->name}}"></a>
+    <a class="post-img" href="{{route('post' , $lastPost->slug)}}"><img src="{{$lastPost->file2}}" alt="{{$lastPost->name}}"></a>
     <div class="post-body">
       <div class="post-category">
-        <a href="{{route('category' , $lastPost->category->slug)}}">{{$lastPost->category->name}}</a>
+        <a href="{{route('post' , $lastPost->slug)}}">{{$lastPost->category->name}}</a>
       </div>
       <h3 class="post-title"><a href="{{route('post' , $lastPost->slug)}}">{{$lastPost->name}}</a></h3>
     </div>

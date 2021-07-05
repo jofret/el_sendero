@@ -3,7 +3,8 @@
 {{$post->name}}
 @endsection
 @section('titulosCabecera')
-<h1 class="text-uppercase">Publicaciones</h1>
+<h4 class="text-uppercase" style="color:white">Publicaciones:</h4>
+<h1 class="text-uppercase">{{$post->name}}</h1>
 @endsection
 
 @section('content')
@@ -31,6 +32,7 @@
             <figure class="pull-right">
               <img src="{{$post->file}}" alt="{{$post->name}}">
             </figure>
+            <h5><a href="{{route('category', $post->category->slug)}}"><span>Categoría: </span>{{$post->category->name}}</a></h5>
             <h3>{{$post->name}}</h3>
             <!-- post tags -->
           <div class="section-row">

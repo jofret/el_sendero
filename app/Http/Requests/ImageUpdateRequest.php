@@ -32,5 +32,8 @@ class ImageUpdateRequest extends FormRequest
      if($this->get('file'))
             $rules = array_merge($rules, ['file' => 'mimes:jpg,jpeg,png' ]);
 
+         if($this->get('file2'))
+            $rules = array_merge($rules, ['file2' => 'mimes:jpg,jpeg,png' ]);
+
     }
 }

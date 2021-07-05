@@ -33,9 +33,22 @@
 	</div>
 </div>
 
-<div class="form-group">
-    {{ Form::label('file', 'Imagen') }}
-    {{ Form::file('file') }}
+<div class="container">
+<hr>
+	<div class="row">
+		<div class="col-lg-6 form-group" style="border:1px solid #ddd;padding: 5%">
+			<h5>Cargar Imagen Pequeña de la Publicación</h5>
+		    {{ Form::label('file', 'Imagen') }}
+		    {{ Form::file('file') }}
+		</div>
+
+		<div class="col-lg-6 form-group" style="border:1px solid #ddd;padding: 5%">
+			<h5>Cargar Imagen Grande de la Publicación</h5>
+		    {{ Form::label('file2', 'Imagen') }}
+		    {{ Form::file('file2') }}
+		</div>
+	</div>
+<hr>
 </div>
 
 <div class="form-group">

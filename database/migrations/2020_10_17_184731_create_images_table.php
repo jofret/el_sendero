@@ -22,6 +22,7 @@ class CreateImagesTable extends Migration
             $table->string('name', 128);
             $table->string('slug', 128)->unique();
             $table->string('file', 128)->nullable();
+            $table->string('file2', 128)->nullable();
 
             $table->timestamps();
 

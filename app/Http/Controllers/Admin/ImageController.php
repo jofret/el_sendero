@@ -66,7 +66,13 @@ class imageController extends Controller
         //IMAGE
         if($request->file('file')){
             $path = Storage::disk('public')->put('image', $request->file('file'));
-            $image->fill(['file' => asset($path)])->save();
+            $post->fill(['file' => asset($path)])->save();
+        }
+
+        //IMAGE2
+        if($request->file('file2')){
+            $path = Storage::disk('public')->put('image', $request->file('file2'));
+            $post->fill(['file2' => asset($path)])->save();
         }
 
         //TAGS
@@ -122,7 +128,13 @@ class imageController extends Controller
         //IMAGE
         if($request->file('file')){
             $path = Storage::disk('public')->put('image', $request->file('file'));
-            $image->fill(['file' => asset($path)])->save();
+            $post->fill(['file' => asset($path)])->save();
+        }
+
+        //IMAGE2
+        if($request->file('file2')){
+            $path = Storage::disk('public')->put('image', $request->file('file2'));
+            $post->fill(['file2' => asset($path)])->save();
         }
 
         //TAGS
