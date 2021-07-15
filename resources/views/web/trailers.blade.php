@@ -106,7 +106,6 @@ Ediciones Impresas Trilers
               <ul>
                 @foreach($ediciones as $edicion)
                 <li><a href="">{{$edicion->name}} <span>
-                  
                   </span></a></li>
                 @endforeach
               </ul>

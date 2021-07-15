@@ -6,7 +6,7 @@
  		<div class="col-lg-10">
  			<div class="card" style="width: 100%">
  				<div class="card-header">
- 					Editar Publicación
+ 					Editar Articulo de Publicación
  				</div>
  				<div class="card-body">
 				    {!! Form::model($post,['route' => ['posts.update', $post->id],

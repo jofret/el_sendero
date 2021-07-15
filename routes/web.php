@@ -65,6 +65,9 @@ Route::get('ediciones-impresas/{slug}',		        'Web\PageController@trailercate
 //para videos
 Route::get('videos', 			'Web\PageController@videos')->name('videos');
 
+//contact_information
+Route::get('contactanos', 			'Web\PageController@contact')->name('contact');
+
 
 
 //*******Administración

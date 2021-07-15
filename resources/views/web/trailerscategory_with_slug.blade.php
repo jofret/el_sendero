@@ -3,7 +3,7 @@
 Revista el Sendero: Publicaciones
 @endsection
 @section('titulosCabecera')
-<h5 class="text-uppercase" style="color:white">Trailers</h5>
+<h5 class="text-uppercase" style="color:white">Revista el Sendero</h5>
 <h1 class="text-uppercase">{{$categoryName}}</h1>
 @endsection
 @section('content')

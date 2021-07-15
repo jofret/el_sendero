@@ -21,6 +21,8 @@ class PageController extends Controller
 
     public function inicio(){
 
+        $edicion_actual = TrailerCategory::orderBy('id', 'DESC')->first();
+
         $ediciones = TrailerCategory::orderBy('id', 'DESC')->get();
 
         //aqui  Publicaciones
@@ -39,7 +41,7 @@ class PageController extends Controller
         
         $videos = Video::orderBy('id', 'DESC')->paginate(6);
 
-        return view('web.inicio', compact('ediciones','posts','images','videos','categories','plans','trailers'));
+        return view('web.inicio', compact('edicion_actual','ediciones','posts','images','videos','categories','plans','trailers'));
     }
 
     public function experiencias(){
@@ -319,6 +321,23 @@ public function posts(){
         $videos = Video::orderBy('id', 'DESC')->paginate(6);
 
         return view('web.videos', compact('videos'));
+    }
+
+   
+   public function contact(){
+
+        $ediciones = TrailerCategory::orderBy('id', 'DESC')->get();
+
+        $images = Image::orderBy('id', 'DESC')->paginate(9);
+
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
+
+        $categories = Category::all();
+
+        $plans = Tag::all();
+
+        return view('web.contact_information', compact('ediciones','images','lastPosts','categories','plans'));
+        //return view('web.contact_information');
     }
 
    

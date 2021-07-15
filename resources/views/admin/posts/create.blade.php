@@ -6,7 +6,7 @@
  		<div class="col-lg-10">
  			<div class="card" style="width: 100%">
  				<div class="card-header">
- 					Crear Publicación
+ 					Crear Articulo de Publicación
  				</div>
  				<div class="card-body">
 				    {!! Form::open(['route'=> 'posts.store', 'files'=> true]) !!}

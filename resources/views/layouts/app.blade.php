@@ -132,6 +132,12 @@
                             </li>
 
                             <li class="nav-item">
+                               <a class="nav-link" href="{{ route('posts.index') }}">
+                                    Artículos
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
                                <a class="nav-link" href="{{ route('tags.index') }}">
                                    Etiquetas
                                 </a>
@@ -148,24 +154,20 @@
                                 </a>
                             </li>
                         
-                            <li class="nav-item">
-                               <a class="nav-link" href="{{ route('posts.index') }}">
-                                    Artículos-Publicaciones
-                                </a>
-                            </li>
+                            
 
                             
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Trailers <span class="caret"></span>
+                                    Revista El Sendero <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('trailer_categories.index') }}">
-                                        Categorías-Trilers
+                                        Ediciones
                                     </a>
                                     <a class="dropdown-item" href="{{ route('trailers.index') }}">
-                                        Publicaciones-Trilers
+                                        Avances
                                     </a>
 
                                     

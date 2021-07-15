@@ -17,7 +17,7 @@ class CreateImagesTable extends Migration
             $table->increments('id');
 
             $table->integer('precategory_id')->unsigned();
-            $table->integer('category_id')->unsigned();
+            //$table->integer('category_id')->unsigned();
 
             $table->string('name', 128);
             $table->string('slug', 128)->unique();
@@ -32,10 +32,10 @@ class CreateImagesTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->foreign('category_id')->references('id')->on('categories')
+            /*$table->foreign('category_id')->references('id')->on('categories')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-
+*/
 
         });
     }

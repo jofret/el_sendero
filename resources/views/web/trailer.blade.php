@@ -3,7 +3,7 @@
 {{$trailer->name}}
 @endsection
 @section('titulosCabecera')
-<h4 class="text-uppercase" style="color:white">Ediciones Impresas - <span style="font-style: italic"> -- Trailers</span></h4>
+<h4 class="text-uppercase" style="color:white">Revista El Sendero <span style="font-style: italic"> -- Avances</span></h4>
 <h1 class="text-uppercase">{{$trailer->name}}</h1>
 
 @endsection

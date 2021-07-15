@@ -6,7 +6,7 @@
  		<div class="col-lg-10">
  			<div class="card" style="width: 100%">
  				<div class="card-header">
- 					Editar Publicación
+ 					Editar Artículo para Trailer
  				</div>
  				<div class="card-body">
 				    {!! Form::model($trailer,['route' => ['trailers.update', $trailer->id],

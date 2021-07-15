@@ -20,15 +20,20 @@ class SendEmailController extends Controller
     function send(Request $request)
     {
     	
-    	]);
+    	
 
-    	$data=array($this->validate($request, [
+    	$this->validate($request, [
             'name'                      =>      'required',
             'email'                     =>      'required|email',
             'telephone'                 =>      'required',
             'message'                   =>      'required',
+            'g-recaptcha-response'      => 'required|captcha'
 
-            'g-recaptcha-response' => 'required|captcha'
+            ]);
+
+            $data=array(
+
+            
             'name'			               => $request->name,
     		'email'			               => $request->email,
     		'telephone'		               => $request->telephone,

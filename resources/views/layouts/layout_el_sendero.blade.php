@@ -21,35 +21,33 @@
 	</header>
 	
 
-	<!-- SECTION -->
 	<div class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div id="hot-post" class="row hot-post">
-				<div class="col-md-12 hot-post-left">
-					<!-- post -->
-					<div class="post post-thumb">
-						<a class="post-img"><img src="{{asset('assets/img/logo-ok.jpg')}}" alt=""></a>
-						<div class="post-body">
-							<div class="post-category">
-								<a>Edición 0</a>
-							</div>
-							<h3 class="post-title title-lg"><a>Revista Nacional Edición de Lanzamiento</a></h3>
-							<ul class="post-meta">
-								<li><a>Admin</a></li>
-								<!-- <li>10 Enero 2021</li> -->
-							</ul>
-						</div>
-					</div>
-					<!-- /post -->
-				</div>
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /SECTION -->
+    <!-- container -->
+	    <div class="container">
+	      <!-- row -->
+	      <div id="hot-post" class="row hot-post">
+	        <div class="col-md-12 hot-post-left">
+	          <!-- post -->
+	          <div class="post post-thumb">
+	            <a class="post-img"><img src="{{asset('assets/img/portada.jpg')}}" alt=""></a>
+	            <div class="post-body">
+	              <div class="post-category">
+	                <a>Edición O</a>
+	              </div>
+	              <h3 class="post-title title-lg"><a>Revista Nacional Edición de Lanzamiento</a></h3>
+	              <ul class="post-meta">
+	                <li><a>Admin</a></li>
+	                <!-- <li>10 Enero 2021</li> -->
+	              </ul>
+	            </div>
+	          </div>
+	          <!-- /post -->
+	        </div>
+	      </div>
+	      <!-- /row -->
+	    </div>
+	    <!-- /container -->
+	  </div>
 
  	@yield('content')
 

@@ -10,7 +10,7 @@ class Image extends Model
 			'file',
 			'file2',
 			'precategory_id',
-			'category_id', 
+/*			'category_id', */
 			'name',
 			'slug'];
 

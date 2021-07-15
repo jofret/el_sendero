@@ -10,6 +10,7 @@
       <meta property="og:image"         content="https://alquilerdemaquinasviales.com.ar/assets/images/huges_ok.jpg" />
 @endsection
 
+
 @section('content')
 
 <!-- SECTION -->
@@ -61,20 +62,15 @@
                 <h2 class="title">Ediciones Impresas - <span style="font-style:italic; color:#999; ">Trailers</span></h2>
               </div>
             </div>
-
-            @foreach($trailers as $trailer)
+            @foreach($ediciones as $edicion)
             <!-- post -->
             <div class="col-md-4">
               <div class="post post-sm">
-                <a class="post-img" href="{{route('trailer' , $trailer->slug)}}"><img src="{{$trailer->file2}}" alt=""></a>
+                <a class="post-img" href="{{route('trailercategory', $edicion->slug)}}"><img src="{{$edicion->file}}" alt=""></a>
                 <div class="post-body">
-                  <div class="post-category">
-                    <a href="category.html">{{$trailer->category->name}}</a>
-                  </div>
-                  <h3 class="post-title title-sm"><a href="#">{{$trailer->name}}</a></h3>
                   <ul class="post-meta">
-                    <li><a href="#">{{$trailer->user->name}}</a></li>
-                    <li>{{ \Carbon\Carbon::parse($trailer->created_at)->format('M d Y')}}</li>
+                    <li><a href="{{route('trailercategory', $edicion->slug)}}"><strong>{{$edicion->name}}</strong></a></li>
+                    <li>{{ \Carbon\Carbon::parse($edicion->created_at)->format('M d Y')}}</li>
                   </ul>
                 </div>
               </div>

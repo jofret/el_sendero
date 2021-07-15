@@ -403,7 +403,7 @@
                                                     <tr>
                                                         <td valign="top" class="bodyContent">
                                                             <div mc:edit="std_content00">
-                                                                <h1 class="h1">Solicitud de HUGEST Formulario Web</h1>
+                                                                <h1 class="h1">RevistaElSendero.com.ar</h1>
                                                                
                                                             </div>
 														</td>

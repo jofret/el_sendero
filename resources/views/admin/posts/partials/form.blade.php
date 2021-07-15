@@ -9,7 +9,7 @@
 	{{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
 </div> 
 <div class="form-group">
-    {{ Form::label('name', 'Nombre del Producto') }}
+    {{ Form::label('name', 'Nombre del Artículo para Publicacions') }}
     {{ Form::text('name', null, ['class' => 'form-control', 'id' => 'name']) }}
 </div>
 <div class="form-group">

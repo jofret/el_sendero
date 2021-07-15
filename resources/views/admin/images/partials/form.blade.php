@@ -3,10 +3,11 @@
 	{{ Form::select('precategory_id', $precategories, null, ['class' => 'form-control']) }}
 </div> 
 
-<div class="form-group">
+<!-- <div class="form-group">
 	{{ Form::label('category_id', 'Elige una Categoría') }}
 	{{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
-</div> 
+</div>  -->
+
 
 <div class="form-group">
     {{ Form::label('name', 'Nombre') }}

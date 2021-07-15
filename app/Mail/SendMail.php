@@ -30,6 +30,6 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from('info@alquilerdemaquinasviales.com.ar')->subject('Nuevo Requerimiento de Hugest')->view('sendemail.dynamic_email_template')->with('data', $this->data);
+        return $this->from('info@revistaelsendero.com.ar')->subject('Te contacto por la Revista el Sendero')->view('sendemail.dynamic_email_template')->with('data', $this->data);
     }
 }

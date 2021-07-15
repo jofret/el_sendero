@@ -6,7 +6,7 @@
  		<div class="col-lg-10">
  			<div class="card" style="width: 100%">
  				<div class="card-header">
- 					Ver Publicación 
+ 					Ver Articulo de Publicación
  				</div>
  				<div class="card-body">
 				    <p><strong>Nombre: </strong> {{ $post->name }}</p>

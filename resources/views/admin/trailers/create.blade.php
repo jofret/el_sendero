@@ -6,7 +6,7 @@
  		<div class="col-lg-10">
  			<div class="card" style="width: 100%">
  				<div class="card-header">
- 					Crear Publicación
+ 					Crear Artículo para Trailer
  				</div>
  				<div class="card-body">
 				    {!! Form::open(['route'=> 'trailers.store', 'files'=> true]) !!}
