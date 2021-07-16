@@ -2,7 +2,7 @@
   @foreach($images as $image)
   <div class="col-md-6 mb-5 mb-lg-5 col-lg-4">
     <div>
-        <img src="{{$image->file}}" data-url="{{$image->file}}" class="fs-gal img-fluid" alt="{{$image->name}}">
+        <img src="{{$image->file}}" data-url="{{$image->file}}" class="fs-gal img-fluid" alt="{{$image->name}}" style="width:150px; height: 90px">
     </div>
   </div>
   @endforeach

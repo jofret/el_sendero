@@ -3,7 +3,7 @@
 Revista el Sendero: Publicaciones
 @endsection
 @section('titulosCabecera')
-<h5 class="text-uppercase" style="color:white">Revista el Sendero</h5>
+<h5 class="text-uppercase" style="color:white"><span style="font-weight: 300">Revista-el-Sendero/</span>Edición:</h5>
 <h1 class="text-uppercase">{{$categoryName}}</h1>
 @endsection
 @section('content')
@@ -22,7 +22,7 @@ Revista el Sendero: Publicaciones
               </div>
               <h3 class="post-title title-lg"><a href="{{route('trailer' , $lastTrailer->slug)}}">{{$lastTrailer->name}}</a></h3>
               <ul class="post-meta">
-                <li><a href="author.html">{{$lastTrailer->user->name}}</a></li>
+                <li><li>Admin:</li></li>
                 <li>{{ \Carbon\Carbon::parse($lastTrailer->created_at)->format('M d Y')}} </li>
               </ul>
             </div>
@@ -40,7 +40,7 @@ Revista el Sendero: Publicaciones
                   </div>
                   <h3 class="post-title title-sm"><a href="#">{{$trailer->name}}</a></h3>
                   <ul class="post-meta">
-                    <li><a href="#">{{$trailer->user->name}}</a></li>
+                    <li>Admin:</li>
                     <li>{{ \Carbon\Carbon::parse($trailer->created_at)->format('M d Y')}}</li>
                   </ul>
                 </div>
@@ -95,6 +95,10 @@ Revista el Sendero: Publicaciones
             </div>
           </div> -->
           <!-- /social widget -->
+
+          <!--ediciones-->
+          @include('includes.ediciones')
+          <!--end ediciones-->
 
           <!-- category widget -->
           @include('includes.category')

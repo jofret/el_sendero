@@ -26,28 +26,28 @@
 				<form action="{{ url('sendemail/send') }}#main_contact_form" method="post" id="main_contact_form">
 					<div>
 						@if(count( $errors) > 0)
-                                <div class="alert alert-danger" style="margin-top:10px">
-                                    <button type="button" class="close" data-dismiss="alert">x</button>
-                                    <ul>
-                                        @foreach( $errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
+                <div class="alert alert-danger" style="margin-top:10px">
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    <ul>
+                        @foreach( $errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-                            @if ($errors->has('g-recaptcha-response'))
-                                <span class="help-block text-danger" role="alert">
-                                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                                </span>
-                            @endif
+            @if ($errors->has('g-recaptcha-response'))
+                <span class="help-block text-danger" role="alert">
+                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                </span>
+            @endif
 
-                            @if($message = Session::get('success'))
-                                <div class="alert alert-success alert-block" style="margin-top:10px">
-                                    <button type="button" class="close" data-dismiss="alert">x</button>
-                                    <strong>{{ $message }}</strong>
-                                </div>
-                            @endif
+            @if($message = Session::get('success'))
+                <div class="alert alert-success alert-block" style="margin-top:10px">
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+            @endif
 					</div>
 					{{ csrf_field() }}
 					<div class="row">
@@ -74,11 +74,10 @@
 
 						</div>
 						<div class="col-md-12">
-                                            {!! NoCaptcha::display() !!}
-                                        </div>
-                        <div class="col-md-12" style="margin-top:20px">
+                {!! NoCaptcha::display() !!}
+            </div>
+            <div class="col-md-12" style="margin-top:20px">
 							<button class="primary-button">Submit</button>
-
 						</div>	
 					</div>
 				</form>

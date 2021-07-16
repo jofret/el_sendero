@@ -62,11 +62,15 @@
       <div class="footer-bottom row">
         <div class="col-md-6 col-md-push-6">
           <ul class="footer-nav">
-            <li><a href="#">Alcoholicos Anónimos</a></li>
-            <li><a href="{{url('/galeria-de-imagenes')}}">Galería</a></li>
+            <li><a href="#">AA</a></li>
+            
 <!--             <li><a href="#">Suscribite</a></li>
- -->            <li><a href="{{url('/publicaciones')}}">Publicaciones</a></li>
-            <li><a href="#">Contactanos</a></li>
+ -->        
+            <li><a href="{{url('#')}}">Artículos</a></li>
+            <li><a href="{{url('#')}}">El Sendero</a></li>
+            <li><a href="{{url('/galeria-de-imagenes')}}">Galería</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="{{url('/contactanos')}}#informacion-para-contactarnos">Contactanos</a></li>
           </ul>
         </div>
         <div class="col-md-6 col-md-pull-6">

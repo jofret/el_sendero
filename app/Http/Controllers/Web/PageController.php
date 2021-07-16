@@ -103,7 +103,7 @@ class PageController extends Controller
         $posts = Post::orderBy('id', 'DESC')->where('category_id', $category)
                 ->where('status', 'PUBLISHED')->where('id', '<>', $lastPost->id)->get();
 
-        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
 
         $categories = Category::all();
@@ -126,7 +126,7 @@ public function posts(){
 
         $posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->where('id', '<>', $lastPost->id)->paginate(9);
 
-        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
 
         $categories = Category::all();
@@ -145,7 +145,7 @@ public function posts(){
 
         $post = Post::where('slug', $slug)->first();
 
-        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
         $category = Post::where('slug', $slug)->pluck('category_id')->first();
 
@@ -170,6 +170,8 @@ public function posts(){
     public function tag($slug){ 
 
         $ediciones = TrailerCategory::orderBy('id', 'DESC')->get();
+
+        $categoryName = Tag::where('slug', $slug)->pluck('name')->first();
         
         $lastPost = Post::whereHas('tags', function($query) use ($slug) {
             $query->where('slug', $slug);
@@ -182,7 +184,7 @@ public function posts(){
         ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->where('id', '<>', $lastPost->id)
         ->paginate(9);
 
-        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
         $category = Category::where('slug', $slug)->pluck('id')->first();
 
@@ -191,7 +193,7 @@ public function posts(){
         $plans = Tag::all();
         $images = Image::orderBy('id', 'DESC')->paginate(6);
 
-        return view('web.posts', compact('ediciones','lastPost','posts','lastPosts','category','categories','plans','images'));
+        return view('web.category_with_slug', compact('ediciones','categoryName','lastPost','posts','lastPosts','category','categories','plans','images'));
     }
 
 
@@ -201,9 +203,9 @@ public function posts(){
 
         $ediciones = TrailerCategory::orderBy('id', 'DESC')->get();
 
-        $images = Image::orderBy('id', 'DESC')->paginate(9);
+        $images = Image::orderBy('id', 'DESC')->paginate(10);
 
-        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
         $categories = Category::all();
 
@@ -223,7 +225,7 @@ public function posts(){
         ->orderBy('id', 'DESC')
         ->paginate(9);
 
-        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
         $categories = Category::all();
 
@@ -243,7 +245,7 @@ public function posts(){
 
         $ediciones = TrailerCategory::orderBy('id', 'DESC')->get();
 
-        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
 
         $categories = Category::all();
@@ -261,7 +263,7 @@ public function posts(){
 
         $ediciones = TrailerCategory::orderBy('id', 'DESC')->get();
 
-        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
         $category = Post::where('slug', $slug)->pluck('category_id')->first();
 
@@ -300,7 +302,7 @@ public function posts(){
 
         $ediciones = TrailerCategory::orderBy('id', 'DESC')->get();
 
-        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
 
         $categories = Category::all();
@@ -330,7 +332,7 @@ public function posts(){
 
         $images = Image::orderBy('id', 'DESC')->paginate(9);
 
-        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(4);
+        $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
         $categories = Category::all();
 

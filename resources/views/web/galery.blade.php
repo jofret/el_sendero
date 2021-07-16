@@ -27,7 +27,7 @@ Revista el Sendero: Galería de Imágenes
                 </strong>
               </div>
               <div class="post gallery">
-                <a class="post-img" href="{{$image->file}}"><img src="{{$image->file}}" alt=""></a>
+                <a class="post-img" href="{{$image->file}}"><img src="{{$image->file}}" alt="{{$image->name}}" class="galery" ></a>
                 <div>
                   <p style="font-size: 11px; height:15px;" class="post-title"><strong>Titulo: </strong>{{$image->name}}</p>
                 </div>
@@ -36,6 +36,7 @@ Revista el Sendero: Galería de Imágenes
             <!-- /post -->
             @endforeach
           </div>
+          {{ $images->render() }}
 
           <!--en esta parte pegar de historias-->
 

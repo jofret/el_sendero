@@ -5,7 +5,8 @@
 		<div class="container">
 			<!-- social -->
 			<ul class="nav-social">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<!-- <li><a href="#"><i class="fa fa-facebook"></i> Inicio</a></li> -->
+				<li><a href="{{url('/')}}"><img src="{{asset('assets/img/casa-web.svg')}}" style="height:30%; width:30%"></a></li>
 				<!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li>
 				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 				<li><a href="#"><i class="fa fa-instagram"></i></a></li> -->
@@ -14,7 +15,7 @@
 
 			<!-- logo -->
 			<div class="nav-logo">
-				<a href="#" class="logo"><img src="{{asset('assets/./img/logo-top-ok-maybe.png')}}" alt="" class="img-fluid"></a>
+				<a href="{{url('/')}}" class="logo"><img src="{{asset('assets/./img/logo-top-ok-maybe.png')}}" alt="" class="img-fluid"></a>
 			</div>
 			<!-- /logo -->
 
@@ -41,7 +42,7 @@
 		<div class="container">
 			<!-- nav -->
 			<ul class="nav-menu">
-				<li><a href="{{url('/')}}">Inicio</a></li>
+				<li><a href="#">Quiénes Somos</a></li>
 				<li class="has-dropdown">
 					<a href="#">Revista El Sendero</a>
 					<div class="dropdown">
@@ -83,26 +84,31 @@
 	<!-- Aside Nav -->
 	<div id="nav-aside">
 		<ul class="nav-aside-menu">
-			<li><a href="{{url('/')}}">Inicio</a></li>
-			<li><a href="{{url('/galeria-de-imagenes')}}">Galería</a></li>
+			<li><a href="#">Quiénes Somos</a></li>
+			
 <!-- 			<li><a href="#">Suscribite</a></li>
- -->		<li class="has-dropdown"><a>Publicaciones</a>
+
+ -->		
+ 			<li class="has-dropdown"><a>Revista El Sendero</a>
+				<ul class="dropdown">
+					@foreach($ediciones as $edicion)
+		                <li><a href="{{route('trailercategory', $edicion->slug)}}">{{$edicion->name}} <span>
+		                  
+		                  </span></a></li>
+	                @endforeach
+				</ul>
+			</li>
+
+ 			<li class="has-dropdown"><a>Artículos</a>
 				<ul class="dropdown">
 					@foreach($categories as $category)
 	                <li><a href="{{route('category' , $category->slug)}}">{{$category->name}}</a></li>
 	                @endforeach
 				</ul>
 			</li>
-			<li class="has-dropdown"><a>Ediciones</a>
-				<ul class="dropdown">
-					@foreach($ediciones as $edicion)
-	                <li><a href="{{route('trailercategory', $edicion->slug)}}">{{$edicion->name}} <span>
-	                  
-	                  </span></a></li>
-	                @endforeach
-				</ul>
-			</li>
-			<li><a href="#">Contactanos</a></li>
+			<li><a href="#">Videos</a></li>
+			<li><a href="{{url('/galeria-de-imagenes')}}">Galería</a></li>
+			<li><a href="{{url('/contactanos')}}#informacion-para-contactarnos">Contactanos</a></li>
 		</ul>
 		<button class="nav-close nav-aside-close"><span></span></button>
 	</div>

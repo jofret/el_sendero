@@ -33,14 +33,14 @@
             @foreach($posts as $post)
             <div class="col-md-6">
               <div class="post">
-                <a class="post-img" href="{{route('post' , $post->slug)}}"><img src="{{$post->file2}}" alt=""></a>
+                <a class="post-img" href="{{route('post' , $post->slug)}}"><img src="{{$post->file}}" alt="{{$post->name}}" class="galery"></a>
                 <div class="post-body">
                   <div class="post-category">
                     <a href="{{route('category' , $post->category->slug)}}">{{$post->category->name}}</a>
                   </div>
-                  <h3 class="post-title"><a href="{{route('post' , $post->slug)}}">{{$post->name}}</a></h3>
+                  <h3 class="post-title"><a href="{{route('post' , $post->slug)}}" style="font-size:13px; text-transform: uppercase">{{$post->name}}</a></h3>
                   <ul class="post-meta">
-                    <li><a href="#">{{$post->user->name}}</a></li>
+                    <li>Admin:</li>
                     <li> {{ \Carbon\Carbon::parse($post->created_at)->format('M d Y')}} </li>
                   </ul>
                 </div>

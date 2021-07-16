@@ -21,7 +21,7 @@ Ediciones Impresas Trilers
             <div class="post-body">
               <h3 class="post-title title-lg"><a href="{{route('trailer' , $lastTrailer->slug)}}">{{$lastTrailer->name}}</a></h3>
               <ul class="post-meta">
-                <li><a href="author.html">{{$lastTrailer->user->name}}</a></li>
+                <li>Admin:</li>
                 <li>{{ \Carbon\Carbon::parse($lastTrailer->created_at)->format('M d Y')}} </li>
               </ul>
             </div>
@@ -45,7 +45,7 @@ Ediciones Impresas Trilers
                   </div>
                   <h3 class="post-title title-sm"><a href="#">{{$trailer->name}}</a></h3>
                   <ul class="post-meta">
-                    <li><a href="#">{{$trailer->user->name}}</a></li>
+                    <li>Admin:</li>
                     <li>{{ \Carbon\Carbon::parse($trailer->created_at)->format('M d Y')}}</li>
                   </ul>
                 </div>

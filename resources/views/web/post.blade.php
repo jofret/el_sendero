@@ -3,7 +3,7 @@
 {{$post->name}}
 @endsection
 @section('titulosCabecera')
-<h4 class="text-uppercase" style="color:white">Publicaciones:</h4>
+<h4 class="text-uppercase" style="color:white"><span style="font-weight: 300">Publicaciones/</span><a href="{{route('category', $post->category->slug)}}" style="color:white">{{$post->category->name}}</a>:</h4>
 <h1 class="text-uppercase">{{$post->name}}</h1>
 @endsection
 
@@ -30,7 +30,7 @@
           <!-- post content -->
           <div class="section-row">
             <figure class="pull-right">
-              <img src="{{$post->file}}" alt="{{$post->name}}">
+              <img src="{{$post->file2}}" alt="{{$post->name}}">
             </figure>
             <h5><a href="{{route('category', $post->category->slug)}}"><span>Categoría: </span>{{$post->category->name}}</a></h5>
             <h3>{{$post->name}}</h3>
@@ -38,10 +38,10 @@
           <div class="section-row">
             <div class="post-tags">
               <ul>
-                <li>TAGS:</li>
+                <li><i class="lni lni-tag"></i> TAGS:</li>
                 <li>
                   @foreach($post->tags as $tag)
-                  <a href="{{ route('tag', $tag->slug)}}" class="tag-cloud-link">{{$tag->name}}</a>
+                  <a href="{{ route('tag', $tag->slug)}}" class="tag-cloud-link">{{$tag->name}}, </a>
                   @endforeach
                 </li>
                 
@@ -53,8 +53,68 @@
             
             <blockquote class="blockquote">
               <p>{{$post->excerpt}}</p>
-              <footer class="blockquote-footer">{{$post->user->name}}</footer>
+              <footer class="blockquote-footer">Admin</footer>
             </blockquote>
+
+            <!-- <div>
+              <div class="section-title">
+                <h2 class="title">Comentá</h2>
+                @if(count( $errors) > 0)
+                    <div class="alert alert-danger" style="margin-top:10px">
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <ul>
+                            @foreach( $errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                @if ($errors->has('g-recaptcha-response'))
+                    <span class="help-block text-danger" role="alert">
+                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                    </span>
+                @endif
+
+                @if($message = Session::get('success'))
+                    <div class="alert alert-success alert-block" style="margin-top:10px">
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
+              </div>
+              <form>
+                {{ csrf_field() }}
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input class="input" type="text" name="name" placeholder="nombre">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input class="input" type="text" name="surname" placeholder="apellido">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input class="input" type="email" name="email" placeholder="email">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <textarea class="input" name="message" placeholder="Comentario"></textarea>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                      {!! NoCaptcha::display() !!}
+                  </div>
+                  <div class="col-md-12" style="margin-top:20px">
+                    <button class="primary-button">Submit</button>
+                  </div>  
+                </div>
+              </form>
+            </div> -->
           </div>
           <!-- /post content -->
 

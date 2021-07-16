@@ -14,16 +14,16 @@ Revista el Sendero: Publicaciones
         <div class="col-md-8">
           <!-- post -->
           <div class="post post-thumb">
-            <a class="post-img" href="{{route('post' , $lastPost->slug)}}"><img src="{{$lastPost->file}}" alt=""></a>
+            <a class="post-img" href="{{route('post' , $lastPost->slug)}}"><img src="{{$lastPost->file2}}" alt="{{$lastPost->name}}" class="galery"></a>
             <div class="post-body">
               <div class="post-category">
                 @foreach($lastPost->tags as $tag)
                 <a href="{{ route('tag', $tag->slug)}}">{{$tag->name}}</a>
                 @endforeach
               </div>
-              <h3 class="post-title title-lg"><a href="{{route('post' , $lastPost->slug)}}">{{$lastPost->name}}</a></h3>
+              <h3 class="post-title title-lg"><a href="{{route('post' , $lastPost->slug)}}" style="font-size:13px; text-transform: uppercase">{{$lastPost->name}}</a></h3>
               <ul class="post-meta">
-                <li><a href="author.html">{{$lastPost->user->name}}</a></li>
+                <li><li>Admin:</li></li>
                 <li>{{ \Carbon\Carbon::parse($lastPost->created_at)->format('M d Y')}} </li>
               </ul>
             </div>
@@ -35,14 +35,14 @@ Revista el Sendero: Publicaciones
             <!-- post -->
             <div class="col-md-6">
               <div class="post">
-                <a class="post-img" href="{{route('post' , $post->slug)}}"><img src="{{$post->file2}}" alt=""></a>
+                <a class="post-img" href="{{route('post' , $post->slug)}}"><img src="{{$post->file}}" alt="{{$post->name}" class="galery"></a>
                 <div class="post-body">
                   <div class="post-category">
                     <a href="{{route('category' , $post->category->slug)}}">{{$post->category->name}}</a>
                   </div>
                   <h3 class="post-title"><a href="{{route('post' , $post->slug)}}">{{$post->name}}</a></h3>
                   <ul class="post-meta">
-                    <li><a href="author.html">{{$post->user->name}}</a></li>
+                    <li><li>Admin:</li></li>
                     <li>{{ \Carbon\Carbon::parse($post->created_at)->format('M d Y')}}</li>
                   </ul>
                 </div>

@@ -8,6 +8,7 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 	<title>Revista el sendero</title>
+	<!--desarrollado por agencia conosur-->
 
 	@include('includes.links')
 
@@ -29,12 +30,12 @@
 	        <div class="col-md-12 hot-post-left">
 	          <!-- post -->
 	          <div class="post post-thumb">
-	            <a class="post-img"><img src="{{asset('assets/img/portada.jpg')}}" alt=""></a>
+	            <a class="post-img"><img src="{{asset('assets/img/portada2.jpg')}}" alt=""></a>
 	            <div class="post-body">
 	              <div class="post-category">
-	                <a>Edición O</a>
+	                <a>Edición 2</a>
 	              </div>
-	              <h3 class="post-title title-lg"><a>Revista Nacional Edición de Lanzamiento</a></h3>
+	              <h3 class="post-title title-lg"><a>Revista Nacional El Sendero: Siempre Unidos</a></h3>
 	              <ul class="post-meta">
 	                <li><a>Admin</a></li>
 	                <!-- <li>10 Enero 2021</li> -->
