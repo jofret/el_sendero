@@ -27,7 +27,7 @@ class SendEmailController extends Controller
             'email'                     =>      'required|email',
             'telephone'                 =>      'required',
             'message'                   =>      'required',
-            'g-recaptcha-response'      => 'required|captcha'
+            'g-recaptcha-response'      =>      'required|captcha'
 
             ]);
 

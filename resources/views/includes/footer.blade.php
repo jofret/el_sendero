@@ -82,6 +82,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
       </div>
       <!-- /row -->
+      <a href="#" style="font-size: 12px">Desarrollado por <span style="font-style: italic">CONOZUR</span></a>
     </div>
     <!-- /container -->
   </footer>

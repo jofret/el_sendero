@@ -46,6 +46,65 @@
               <p>{{$trailer->excerpt}}</p>
               <footer class="blockquote-footer">Admin</footer>
             </blockquote>
+            <div id="main_contact_form">>
+              @include('includes.errors')
+              <form action="{{ route('create.message') }}#main_contact_form" method="POST">
+                {{ csrf_field() }}
+                
+                <input class="input" name="trailer_id" type="hidden" value="{{$trailer->id}}">
+                <input class="input" name="publicacion" type="hidden" value="trailer">
+                <input class="input" name="link" type="hidden" 
+                value="{{asset('edicion-impresa/'.$trailer->slug)}}">
+
+                
+                @include('includes.coment_form_contact')
+              </form>
+            </div>
+            <!-- post comments -->
+            <div class="section-row" style="margin-top:20px">
+              <div class="section-title">
+                <h3 class="title">{{$comentarios->count()}} Comentarios</h3>
+              </div>
+              <div class="post-comments">
+                @foreach($comentarios as $comentario)
+                <!-- comment -->
+                <div class="media">
+                  <div class="media-left">
+                    <img class="media-object" src="./img/avatar-2.jpg" alt="">
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">
+                      <h4>{{$comentario->name}}</h4>
+                      <span class="time">{{ \Carbon\Carbon::parse($comentario->created_at)->format('M d Y')}}</span>
+                    </div>
+                    <p>{{$comentario->body}}</p>
+                    <!-- <a href="#" class="reply">Reply</a> -->
+                    @if($comentario->respuesta)
+                    <!-- comment -->
+                    <div class="media media-author">
+                      <div class="media-left">
+                        <img class="media-object" src="./img/avatar-1.jpg" alt="">
+                      </div>
+                      <div class="media-body">
+                        <div class="media-heading">
+                          <h4>Admin respondió:</h4>
+                          <span class="time">5 min ago</span>
+                        </div>
+                        <p>{!!$comentario->respuesta!!}</p>
+                        <hr>
+                        <!-- <a href="#" class="reply">Reply</a> -->
+                      </div>
+                    </div>
+                    <!-- /comment -->
+                    @endif
+                  </div>
+                </div>
+                <!-- /comment -->
+                @endforeach
+
+              </div>
+            </div>
+            <!-- /post comments -->
           </div>
           <!-- /post content -->
 

@@ -5,6 +5,11 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\SendToAdminComentMail;
+
+
 use App\Post;
 use App\Trailer;
 use App\TrailerCategory;
@@ -14,7 +19,7 @@ use App\Tag;
 use App\Image;
 use App\Video;
 use App\Customer;
-
+use App\Comentario;
 
 class PageController extends Controller
 {
@@ -44,45 +49,52 @@ class PageController extends Controller
         return view('web.inicio', compact('edicion_actual','ediciones','posts','images','videos','categories','plans','trailers'));
     }
 
-    public function experiencias(){
-        $images = Image::orderBy('id', 'DESC')->paginate(6);
-        return view('simpleRoutes.experiencias', compact('images'));
+    // public function experiencias(){
+    //     $images = Image::orderBy('id', 'DESC')->paginate(6);
+    //     return view('simpleRoutes.experiencias', compact('images'));
+    // }
+
+    public function index()
+    {
+        //uso la vista acuario porque la plantilla acuario contiene el formulario de envío
+        return view('layouts.construct');
     }
 
-    function CreateCustomerMesagge(Request $request)
+
+
+    public function CreateCustomerMesagge(Request $request)
 
         {
 
         $this->validate($request, [
             'name'                      =>      'required',
-            'city'                      =>      'required',
             'email'                     =>      'required|email',
             'telephone'                 =>      'required',
-            'birthday'                  =>      'required',
-            'birthmonth'                =>     'required',
-            'message'                   =>      'required',
+            'body'                      =>      'required',
+            'link'                      =>      'required',
 
             //'g-recaptcha-response' => 'required|captcha'
         ]);
 
         $data=array(
 
+            'post_id'                      => $request->post_id,
+            'trailer_id'                   => $request->trailer_id,
+            'publicacion'                  => $request->publicacion,
             'name'                         => $request->name,
-            'city'                         => $request->city,
             'email'                        => $request->email,
             'telephone'                    => $request->telephone,
-            'birthday'                     => $request->birthday,
-            'birthmonth'                   => $request->birthmonth,
-            'message'                      => $request->message
+            'body'                         => $request->body,
+            'link'                         => $request->link
 
         );
 
 
-        $CustomenrComent = Customer::create($request->all());
+        $CustomenrComent = Comentario::create($request->all());
 
-        Mail::to('jofret_@hotmail.com')->send(new SendMail($data));
+        Mail::to('jofret_@hotmail.com')->send(new SendToAdminComentMail($data));
 
-        return back()->with('success', "Gracias por su testimonio Sr $request->name, será publicado después que sea revisado por el administrador de nuestro sitio web");
+        return back()->with('success', "Sr. $request->name, gracias por su mensaje, será revisado por el administrador de nuestro sitio web antes de ser publicado. Se le notificará vía email. Felices 24 horas.");
 
     }
 
@@ -145,6 +157,8 @@ public function posts(){
 
         $post = Post::where('slug', $slug)->first();
 
+        $comentarios = Comentario::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->where('publicacion', 'publicacion')->where('post_id', $post->id)->get();
+
         $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
         $category = Post::where('slug', $slug)->pluck('category_id')->first();
@@ -160,7 +174,7 @@ public function posts(){
 
         $images = Image::orderBy('id', 'DESC')->paginate(6);
 
-        return view('web.post', compact('ediciones','post','lastPosts','category','categories','plans','productsRelations','excepto','images'));
+        return view('web.post', compact('ediciones','post','comentarios','lastPosts','category','categories','plans','productsRelations','excepto','images'));
     }
 
 
@@ -265,6 +279,8 @@ public function posts(){
 
         $lastPosts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
+        $comentarios = Comentario::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->where('publicacion', 'trailer')->where('trailer_id', $trailer->id)->get();
+
         $category = Post::where('slug', $slug)->pluck('category_id')->first();
 
         $categories = Category::all();
@@ -278,7 +294,7 @@ public function posts(){
 
         $images = Image::orderBy('id', 'DESC')->paginate(6);
 
-        return view('web.trailer', compact('trailer','ediciones','lastPosts','category','categories','plans','productsRelations','excepto','images'));
+        return view('web.trailer', compact('trailer','ediciones','lastPosts','comentarios','category','categories','plans','productsRelations','excepto','images'));
     }
 
 

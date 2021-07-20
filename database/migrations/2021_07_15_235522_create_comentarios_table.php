@@ -20,21 +20,33 @@ class CreateComentariosTable extends Migration
             $table->integer('trailer_id')->unsigned()->nullable();
 
             $table->string('name', 128);
-            $table->string('surname', 128);
             $table->string('email', 128);
             $table->mediumText('body');
             
             //sería la respuesta
-            $table->mediumText('respuesta')->nullable();
+            $table->text('respuesta')->nullable();
+            $table->string('fecha_respuesta', 128)->nullable();
 
+            //publicación: post o trailer
+            $table->string('publicacion', 128);
             
 
-            $table->enum('status',['PUBLISHED','DRAFT'])->default('DRAFT');
+            $table->string('status')->default('DRAFT');
 
-            $table->enum('sender',['SENDED','NO_SENDED'])->default('NO_SENDED');
+            $table->string('link')->nullable();
 
 
             $table->timestamps();
+
+            //relations
+
+            $table->foreign('post_id')->references('id')->on('posts')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('trailer_id')->references('id')->on('trailers')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

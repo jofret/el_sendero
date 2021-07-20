@@ -29,9 +29,9 @@ Auth::routes();
 
 
 /*formulario Clientes Satisfechos*/
-Route::get('/Cuente-Su-Experiencia-Con-Nosotros', 'Web\PageController@experiencias');
+Route::get('post', 'Web\PageController@index');
 
-Route::post('/Cuente-Su-Experiencia-Con-Nosotros', 'Web\PageController@CreateCustomerMesagge')->name('create.message');
+Route::post('post', 'Web\PageController@CreateCustomerMesagge')->name('create.message');
 
 
 //todos los posts
@@ -73,18 +73,20 @@ Route::get('contactanos', 			'Web\PageController@contact')->name('contact');
 //*******Administración
 Route::get('admin', 'Web\PageController@admin')->name('admin');
 
-Route::resource('tags',				'Admin\TagController');
-Route::resource('precategories',	'Admin\PrecategoryController');
-Route::resource('categories',		'Admin\CategoryController');
-Route::resource('posts',			'Admin\PostController');
-Route::resource('trailers',			'Admin\TrailerController');
+Route::resource('tags',							'Admin\TagController');
+Route::resource('precategories',				'Admin\PrecategoryController');
+Route::resource('categories',					'Admin\CategoryController');
+Route::resource('posts',						'Admin\PostController');
+Route::resource('trailers',						'Admin\TrailerController');
 Route::resource('trailer_categories',			'Admin\TrailerCategoryController');
 
-//Route::resource('electrics',		'Admin\EletricoController');
+Route::resource('comments',						'Admin\ComentarioController');
 
-Route::resource('images',		'Admin\ImageController');
+//Route::resource('electrics',					'Admin\EletricoController');
 
-Route::resource('videos',		'Admin\VideoController');
+Route::resource('images',						'Admin\ImageController');
+
+Route::resource('videos',						'Admin\VideoController');
 
 
 

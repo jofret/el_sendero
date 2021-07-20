@@ -55,69 +55,63 @@
               <p>{{$post->excerpt}}</p>
               <footer class="blockquote-footer">Admin</footer>
             </blockquote>
-
-            <!-- <div>
-              <div class="section-title">
-                <h2 class="title">Comentá</h2>
-                @if(count( $errors) > 0)
-                    <div class="alert alert-danger" style="margin-top:10px">
-                        <button type="button" class="close" data-dismiss="alert">x</button>
-                        <ul>
-                            @foreach( $errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
-                @if ($errors->has('g-recaptcha-response'))
-                    <span class="help-block text-danger" role="alert">
-                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                    </span>
-                @endif
-
-                @if($message = Session::get('success'))
-                    <div class="alert alert-success alert-block" style="margin-top:10px">
-                        <button type="button" class="close" data-dismiss="alert">x</button>
-                        <strong>{{ $message }}</strong>
-                    </div>
-                @endif
-              </div>
-              <form>
+<!--comentarios-->
+            <div id="main_contact_form">
+              @include('includes.errors')
+              <form action="{{ route('create.message') }}#main_contact_form" method="POST">
                 {{ csrf_field() }}
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input class="input" type="text" name="name" placeholder="nombre">
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input class="input" type="text" name="surname" placeholder="apellido">
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <input class="input" type="email" name="email" placeholder="email">
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <textarea class="input" name="message" placeholder="Comentario"></textarea>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                      {!! NoCaptcha::display() !!}
-                  </div>
-                  <div class="col-md-12" style="margin-top:20px">
-                    <button class="primary-button">Submit</button>
-                  </div>  
-                </div>
+                <input class="input" name="post_id" type="hidden" value="{{$post->id}}">
+                <input class="input" name="publicacion" type="hidden" value="publicacion">
+                <input class="input" name="link" type="hidden" value="{{asset('publicacion/'.$post->slug)}}">
+                @include('includes.coment_form_contact')
               </form>
-            </div> -->
+            </div>
+
+            <!-- post comments -->
+            <div class="section-row" style="margin-top:20px">
+              <div class="section-title">
+                <h3 class="title">{{$comentarios->count()}} Comentarios</h3>
+              </div>
+              <div class="post-comments">
+                @foreach($comentarios as $comentario)
+                <!-- comment -->
+                <div class="media">
+                  <div class="media-left">
+                    <img class="media-object" src="./img/avatar-2.jpg" alt="">
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">
+                      <h4>{{$comentario->name}}</h4>
+                      <span class="time">{{ \Carbon\Carbon::parse($comentario->created_at)->format('M d Y')}}</span>
+                    </div>
+                    <p>{{$comentario->body}}</p>
+                    <!-- <a href="#" class="reply">Reply</a> -->
+                    @if($comentario->respuesta)
+                    <!-- comment -->
+                    <div class="media media-author">
+                      <div class="media-body">
+                        <div class="media-heading">
+                          <h4>Admin respondió:</h4>
+                          <span class="time">{{$comentario->fecha_respuesta}}</span>
+                        </div>
+                        <p>{!!$comentario->respuesta!!}</p>
+                        <hr>
+                        <!-- <a href="#" class="reply">Reply</a> -->
+                      </div>
+                    </div>
+                    <!-- /comment -->
+                    @endif
+                  </div>
+                </div>
+                <!-- /comment -->
+                @endforeach
+
+              </div>
+            </div>
+            <!-- /post comments -->
           </div>
           <!-- /post content -->
-
+<!--end comentarios-->
           
 
           <!-- post nav -->
