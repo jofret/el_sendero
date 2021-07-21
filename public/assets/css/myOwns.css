@@ -45,3 +45,21 @@
     }
 
 }
+
+.foo{
+    display: none
+}
+.flotante{
+    width: 100%; 
+    height: 100vh; 
+    position: fixed;
+    background-color: white;
+    z-index: 1000 
+}
+
+#encuesta ul li{
+    line-height: 35px;
+}
+#encuesta ul li input{
+    font-size: 40px;
+}

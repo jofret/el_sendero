@@ -1,7 +1,12 @@
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <!--el sendero-->
     <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">
+    <link 
+    href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
 
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.lightbox.min.css')}}">
     <!-- Bootstrap -->

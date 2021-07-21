@@ -15,6 +15,9 @@
 </head>
 
 <body>
+	<!--encuesta -->
+	@include('includes.encuesta')
+	<!--end encuesta-->
 	<!-- HEADER -->
 	<header id="header">
 		@include('includes.header')

@@ -103,29 +103,8 @@ Revista el Sendero: Publicaciones
           <!-- /category widget -->
 
 
-          <!-- newsletter widget -->
-          <!-- 
-          --------------------------------------------
-          SUSCRIPCIONES-------------------------------
-          --------------------------------------------
-          <div class="aside-widget">
-            <div class="section-title">
-              <h2 class="title">Suscripción</h2>
-            </div>
-            <div class="newsletter-widget">
-              <form>
-                <p>Ingresa tus datos y nos contactaremos con vos para finalizar la suscrpción</p>
-                <input class="input" name="name" placeholder="Tu Nombre">
-                <input class="input" name="telephon" placeholder="Teléfono">
-                <input class="input" name="email" placeholder="Email">
-                <button class="primary-button">Subscribirme</button>
-              </form>
-            </div>
-          </div> 
-          --------------------------------------------
-          END SUSCRIPCIONES---------------------------
-          --------------------------------------------
-          -->
+          @include('includes.suscriptions')
+          
           <!-- /newsletter widget -->
 
           <!-- lastPosts widget -->

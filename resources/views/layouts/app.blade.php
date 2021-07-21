@@ -106,7 +106,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        @guest
+                        @else
+                            @yield('encuestas')
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -194,6 +197,7 @@
                         @endguest
                     </ul>
                 </div>
+
             </div>
         </nav>
 

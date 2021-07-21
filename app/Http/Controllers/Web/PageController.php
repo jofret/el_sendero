@@ -20,6 +20,8 @@ use App\Image;
 use App\Video;
 use App\Customer;
 use App\Comentario;
+use App\Encuesta;
+
 
 class PageController extends Controller
 {
@@ -39,6 +41,8 @@ class PageController extends Controller
 
         $plans = Tag::all(); 
 
+        $encuestas = Encuesta::orderBy('id','DESC')->get();
+
         // $projects = Post::where('category_id', '>', 1)
         //     ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(6);
 
@@ -46,7 +50,7 @@ class PageController extends Controller
         
         $videos = Video::orderBy('id', 'DESC')->paginate(6);
 
-        return view('web.inicio', compact('edicion_actual','ediciones','posts','images','videos','categories','plans','trailers'));
+        return view('web.inicio', compact('edicion_actual','ediciones','posts','images','videos','categories','plans','encuestas','trailers'));
     }
 
     // public function experiencias(){
@@ -360,7 +364,19 @@ public function posts(){
 
    
      public function admin(){
-        return view('admin.index');
+
+        $encuestas = Encuesta::orderBy('id','DESC')->get();
+
+        $google = Encuesta::orderBy('id','DESC')->where('encuesta','google')->get();
+        $television = Encuesta::orderBy('id','DESC')->where('encuesta','television')->get();
+        $radio = Encuesta::orderBy('id','DESC')->where('encuesta','radio')->get();
+        $facebook = Encuesta::orderBy('id','DESC')->where('encuesta','facebook')->get();
+        $otros = Encuesta::orderBy('id','DESC')->where('encuesta','otros')->get();
+
+
+
+
+        return view('admin.index', compact('encuestas','google','television','radio','facebook','otros'));
     }
   
 }

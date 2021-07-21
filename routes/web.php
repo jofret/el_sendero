@@ -26,6 +26,12 @@ Auth::routes();
 
 //*******Web
 
+//Route::resource('encuesta',						'EncuestaController');
+
+/*formulario de encuesta*/
+Route::get('encuesta', 'EncuestaController@store')->name('store.encuesta');
+
+
 
 
 /*formulario Clientes Satisfechos*/

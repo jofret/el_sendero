@@ -15,6 +15,10 @@
 </head>
 
 <body>
+	<!--encuesta -->
+	@include('includes.encuesta')
+	<!--end encuesta-->
+
 	<header id="header">
 		<!-- NAV -->
 			@include('includes.header')

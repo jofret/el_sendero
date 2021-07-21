@@ -15,3 +15,9 @@
 	</script>
 
 
+	@yield('botonesSuscripcion')
+
+
+
+
+
